@@ -1,0 +1,20 @@
+---
+import {getCollection, render} from "astro:content";
+import createSlug from "../../lib/createSlug"
+import StoreItemLayout from "../../layouts/StoreItemLayout.astro";
+
+export async function getStaticPaths() {
+    const itemEntries = await getCollection("store");
+    return itemEntries.map((entry) => ({
+        params: {slug: createSlug(entry.data.title, entry.id)},
+        props: {entry},
+    }));
+}
+
+const {entry} = Astro.props;
+const {Content} = await render(entry);
+---
+
+<StoreItemLayout item={entry}>
+    <Content/>
+</StoreItemLayout>
