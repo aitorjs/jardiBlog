@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://astrofy-template.netlify.app',
+    site: 'https://aitorjs.github.io',
+    base: '/jardiBlog',
     integrations: [mdx(), sitemap()],
     vite: {
         plugins: [tailwindcss()],
