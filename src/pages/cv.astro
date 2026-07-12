@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout title="Curriculum Vitae | aitor ibañez" sideBarActiveItemID="cv">
   <div class="mb-5 flex">
     <div class="text-xl w-full font-bold">Curriculum Vitae</div>
     <div>
@@ -32,6 +32,13 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   <div class="my-4 text-center">
     <p class="text-4xl font-bold">Aitor Ibañez</p>
     <p class="text-3xl font-light">Jardinero - horticultor certificado</p>
+    <p>
+      <a href="tel:0034635713404">
+        <span class="text-[10px] text-green-500!" style="vertical-align:2px;"
+          >📞</span
+        > 635713404</a
+      >&nbsp;&nbsp;&nbsp;<a href="mailto:aitori@ni.eus">✉️ aitori@ni.eus</a>
+    </p>
   </div>
 
   <div class="mb-10 text-lg">
@@ -49,12 +56,12 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <TimeLineElement
       data="2026"
       title="Actividades auxiliares en viveros, parques y centros de jardinería (AGAO0108)"
-      subtitle="Certificado de Profesionalidad de nivel 1 (280 horas). <br /> Prácticas en Blasenea mintegia de producción ecológica (80 horas).<br /> Fraisoro eskola, Zizurkil."
+      subtitle="Certificado de Profesionalidad de nivel 1 (280 horas). <br /> Prácticas en <a href='https://www.blasenea.com/' target='_blank'>Blasenea mintegia</a> de producción ecológica (80 horas).<br /> <a href='https://fraisoroeskola.eus' target='_blank'>Fraisoro eskola</a>, Zizurkil."
     />
     <TimeLineElement
       data="2002-2004"
       title="Administración de sistemas informáticos"
-      subtitle="Grado superior (2000 horas). Centro SEIM, Donostia."
+      subtitle="Grado superior (2000 horas). <a href='https://centroseim.com' target='_blank'>Centro SEIM</a>, Donostia."
     />
   </div>
 
