@@ -1,23 +1,39 @@
 ---
-const {sideBarActiveItemID} = Astro.props;
+const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto w-full">
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "home" ? activeClass : ""}`} href="/">Home</a></li>
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "projects" ? activeClass : ""}`}
-           href="/projects">Projects</a></li>
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "services" ? activeClass : ""}`}
-           href="/services">Services</a></li>
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "store" ? activeClass : ""}`} href="/store">Store</a></li>
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "blog" ? activeClass : ""}`} href="/blog/">Blog</a></li>
-    <li><a class={`py-3 text-base ${sideBarActiveItemID === "cv" ? activeClass : ""}`} href="/cv">CV</a></li>
-    <li>
-        <a
-                class="py-3 text-base"
-                href="mailto:contact.manuelernestog@gmail.com"
-                target="_blank"
-                referrerpolicy="no-referrer-when-downgrade">Contact</a
-        >
-    </li>
+  <li>
+    <a
+      class={`py-3 text-base ${sideBarActiveItemID === "home" ? activeClass : ""}`}
+      href="/">Inicio</a
+    >
+  </li>
+  <li>
+    <a
+      class={`py-3 text-base ${sideBarActiveItemID === "blog" ? activeClass : ""}`}
+      href="/blog/">Blog</a
+    >
+  </li>
+  <li>
+    <a
+      class={`py-3 text-base ${sideBarActiveItemID === "services" ? activeClass : ""}`}
+      href="/services">Galería</a
+    >
+  </li>
+  <li>
+    <a
+      class={`py-3 text-base ${sideBarActiveItemID === "cv" ? activeClass : ""}`}
+      href="/cv">CV</a
+    >
+  </li>
+  <li>
+    <a
+      class="py-3 text-base"
+      href="mailto:aitori@ni.eus"
+      target="_blank"
+      referrerpolicy="no-referrer-when-downgrade">Contacto</a
+    >
+  </li>
 </ul>
