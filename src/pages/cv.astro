@@ -4,101 +4,120 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-    <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Profile</div>
-    </div>
-
-    <div class="mb-10 text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-
-    <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Education</div>
-    </div>
-
-    <div class="time-line-container grid gap-4 mb-10">
-        <TimeLineElement
-                title="Title Name"
-                subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-        />
-        <TimeLineElement
-                title="Title Name"
-                subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-        />
-    </div>
-
-    <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Experience</div>
-    </div>
-
-    <div class="time-line-container mb-10">
-        <TimeLineElement
-                title="Job Title at Project or Company Name"
-                subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+  <div class="mb-5 flex">
+    <div class="text-xl w-full font-bold">Curriculum Vitae</div>
+    <div>
+      <a
+        href="/cv-aitoribanez.pdf"
+        class="flex items-center gap-2 text-primary hover:opacity-80 transition w-max"
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
         >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-        </TimeLineElement>
-        <TimeLineElement
-                title="Job Title at Project or Company Name"
-                subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-        >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-        </TimeLineElement>
-        <TimeLineElement
-                title="Job Title at Project or Company Name"
-                subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
-        >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-        </TimeLineElement>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          ></path>
+        </svg>
+        Descargar CV
+      </a>
     </div>
+  </div>
 
-    <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Certifications</div>
-    </div>
+  <div class="my-4 text-center">
+    <p class="text-4xl font-bold">Aitor Ibañez</p>
+    <p class="text-3xl font-light">Jardinero - horticultor certificado</p>
+  </div>
 
-    <ul class="list-disc mx-6 mb-10 grid gap-2">
-        <li>
-            <a href="#" target="_blank"> Certification Name (with link)</a>
-        </li>
-        <li>
-            <a href="#" target="_blank"> Certification Name (with link)</a>
-        </li>
-    </ul>
+  <div class="mb-10 text-lg">
+    Jardinero certificado con +15 años de experiencia en desarrollo de software
+    y gestión de proyectos. Tras una transición deliberada hacia la jardinería,
+    combino rigor técnico con creatividad y mantenimiento. Aporto disciplina,
+    capacidad analítica y metodología sistemática.
+  </div>
 
-    <div class="mb-5">
-        <div class="text-3xl w-full font-bold">Skills</div>
-    </div>
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Educación</div>
+  </div>
 
-    <ul class="list-disc md:columns-5 columns-2 mx-6">
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-        <li>Skill Name</li>
-    </ul>
+  <div class="time-line-container grid mb-5">
+    <TimeLineElement
+      data="2026"
+      title="Actividades auxiliares en viveros, parques y centros de jardinería (AGAO0108)"
+      subtitle="Certificado de Profesionalidad de nivel 1 (280 horas). <br /> Prácticas en Blasenea mintegia de producción ecológica (80 horas).<br /> Fraisoro eskola, Zizurkil."
+    />
+    <TimeLineElement
+      data="2002-2004"
+      title="Administración de sistemas informáticos"
+      subtitle="Grado superior (2000 horas). Centro SEIM, Donostia."
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experiencia laboral</div>
+  </div>
+
+  <div class="time-line-container mb-5">
+    <TimeLineElement data="06/2026" title="Horticultor en Blasenea mintegia">
+      - Recolecta de hojas y flores junto con su correcto procesamiento y
+      envasado. <br />
+      - Escarda y limpieza de plantas contra plagas. <br />
+      - Llenado de tiestos, semilleros y bandejas. <br />
+    </TimeLineElement>
+    <TimeLineElement
+      data="07/2024 - Actualidad"
+      title="Horticultor y gestor de huerta ecológica propia"
+    >
+      - Diseño, planificación, implantación y mantenimiento de una huerta
+      ecológica de más de 100 m2 destinada al autoconsumo.<br />
+      - Cultivo de frutas y hortalizas mediante técnicas de agricultura sostenible,
+      natural y respetuosa con el medio ambiente.<br />
+      - Gestión integral de la producción: preparación del terreno, siembra, riego,
+      abonado, control biológico de plagas y planificación de cultivos.<br />
+      - Aplicación de criterios de eficiencia, organización y mejora continua para
+      optimizar la producción y la calidad de los productos obtenidos.<br />
+      - Experiencia previa de más de cinco años en una huerta de autoconsumo de 25
+      m2, desarrollando conocimientos prácticos en cultivo en condiciones de alta
+      humedad y limitada exposición solar.
+    </TimeLineElement>
+    <TimeLineElement
+      data="01/2007 - 01/2025"
+      title="Profesional técnico en desarrollo de software y gestión de proyectos"
+    >
+      - Más de 15 años de experiencia en desarrollo de software y gestión de
+      proyectos tecnológicos.<br />
+      - Planificación, organización y seguimiento de proyectos orientados al cumplimiento
+      de objetivos y plazos.<br />
+      - Resolución analítica de problemas complejos y toma de decisiones basada en
+      datos.<br />
+      - Desarrollo de competencias transferibles como la disciplina, la capacidad
+      de aprendizaje continuo, la gestión eficiente de recursos y la orientación a
+      resultados.<br />
+      - Experiencia en trabajo autónomo y en equipo, coordinación de tareas y mejora
+      de procesos.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Idiomas</div>
+  </div>
+
+  <ul class="list-disc text-lg mx-6 mb-10 grid gap-2">
+    <li>Inglés (B1)</li>
+    <li>Castellano (nativo)</li>
+    <li>Euskara (nativo)</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Otros</div>
+  </div>
+
+  <ul class="list-disc text-lg mx-6">
+    <li>Permiso de conducir: B</li>
+  </ul>
 </BaseLayout>
