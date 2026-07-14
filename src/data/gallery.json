@@ -1,29 +1,20 @@
 [
   {
     "id": "semilleros-trasplantados",
-    "src": "/gallery/semilleros-trasplantados.jpg",
-    "width": 2560,
-    "height": 1129,
     "title": "Semilleros trasplantados",
     "description": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
     "tags": ["semillero", "plántulas", "trasplante"]
   },
   {
     "id": "rincon-terraza",
-    "src": "/gallery/rincon-terraza.jpg",
-    "width": 1129,
-    "height": 2560,
     "title": "Rincón de la terraza",
     "description": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
     "tags": ["terraza", "tomates", "manzanilla"]
   },
   {
     "id": "enfermedades-fungicas",
-    "src": "/gallery/enfermedades-fungicas.jpg",
-    "width": 960,
-    "height": 1280,
     "title": "Chuleta de enfermedades fúngicas",
-    "description": "Guía rápida que hice para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
+    "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
     "tags": ["enfermedades", "hongos", "guía"]
   }
-] 
+]
