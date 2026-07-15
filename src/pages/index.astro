@@ -14,53 +14,33 @@ const last_posts = posts.slice(0, 3);
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm aitor</div>
+    <div class="text-xl py-1">Kaixo 👋</div>
+    <div class="text-5xl font-bold">Soy aitor</div>
     <div class="text-3xl py-3 font-bold">
-      Software Engineer and Entrepreneur
+      Jardinero y horticultor certificado
     </div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio
-        Website built with Astro and TailwindCSS. Create a website in minutes with
-        a Blog, CV, Project Section, Store and RSS Feed. I hope you find it useful!
+        Bienvenido a este mi pequeño rincón en la red. Escribire sobre mis
+        fracasos y algun logro tambien no te vayas a creer que tengo con las
+        plantas. Pondre fotos dentro de la galería. Se puede ver mi curriculum
+        vitae como jardinero y horticultor certificado. Tambien puedes
+        escribirme para darme los buenos dias, preguntarme mi opinion sobre tus
+        plantas, hablarme sobre una planta curiosa...
       </text>
     </div>
     <div class="mt-8 flex items-center space-x-3">
-      <a class="btn btn-lg btn-soft" href="#" target="_blank">Let's connect!</a>
+      <!-- <a class="btn btn-lg btn-soft" href="#" target="_blank">Let's connect!</a> -->
       <a class="btn btn-lg btn-primary" href="/cv">Leer CV</a>
     </div>
   </div>
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My latest projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img={projectImage}
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+  <p>Ocupado con...</p>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">
+      Últimas entradas de blog
+    </div>
   </div>
 
   {
@@ -78,4 +58,8 @@ const last_posts = posts.slice(0, 3);
       </>
     ))
   }
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Últimas fotos</div>
+  </div>
 </BaseLayout>
