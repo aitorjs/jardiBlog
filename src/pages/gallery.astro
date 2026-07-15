@@ -54,10 +54,7 @@ const photos = await Promise.all(
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">Diario de la huerta</h1>
-    <p class="text-sm opacity-70">
-      Algunas fotos de lo que va saliendo por el huerto.
-    </p>
+    <h1 class="text-2xl font-bold">Fotos de la huerta, balcón y demás</h1>
   </div>
 
   <section>
@@ -202,158 +199,162 @@ const photos = await Promise.all(
 </style>
 
 <script define:vars={{ photos }}>
-  const items = Array.from(document.querySelectorAll(".gallery-item"));
-  const lightbox = document.getElementById("lightbox");
-  const stage = document.getElementById("lb-stage");
-  const lbImg = document.getElementById("lb-img");
-  const lbTitle = document.getElementById("lb-title");
-  const lbDesc = document.getElementById("lb-desc");
-  const lbTags = document.getElementById("lb-tags");
-  const lbCounter = document.getElementById("lb-counter");
-  const infoPanel = document.getElementById("lb-info");
-  const btnClose = document.getElementById("lb-close");
-  const btnInfo = document.getElementById("lb-info-toggle");
-  const btnPrev = document.getElementById("lb-prev");
-  const btnNext = document.getElementById("lb-next");
+  function setupGallery() {
+    const items = Array.from(document.querySelectorAll(".gallery-item"));
+    const lightbox = document.getElementById("lightbox");
+    const stage = document.getElementById("lb-stage");
+    const lbImg = document.getElementById("lb-img");
+    const lbTitle = document.getElementById("lb-title");
+    const lbDesc = document.getElementById("lb-desc");
+    const lbTags = document.getElementById("lb-tags");
+    const lbCounter = document.getElementById("lb-counter");
+    const infoPanel = document.getElementById("lb-info");
+    const btnClose = document.getElementById("lb-close");
+    const btnInfo = document.getElementById("lb-info-toggle");
+    const btnPrev = document.getElementById("lb-prev");
+    const btnNext = document.getElementById("lb-next");
 
-  let current = 0;
-  let infoOpen = false;
+    let current = 0;
+    let infoOpen = false;
 
-  function canAnimate() {
-    return (
-      typeof document.startViewTransition === "function" &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    function canAnimate() {
+      return (
+        typeof document.startViewTransition === "function" &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      );
+    }
+
+    function clearNames() {
+      items.forEach((el) => (el.style.viewTransitionName = ""));
+    }
+
+    function render() {
+      const p = photos[current];
+      lbImg.src = p.src;
+      lbImg.alt = p.title;
+      lbImg.style.aspectRatio = `${p.width} / ${p.height}`;
+      lbTitle.textContent = p.title;
+      lbDesc.textContent = p.description;
+      lbTags.innerHTML = "";
+      (p.tags || []).forEach((tag) => {
+        const span = document.createElement("span");
+        span.className = "badge badge-outline badge-sm";
+        span.textContent = `#${tag}`;
+        lbTags.appendChild(span);
+      });
+      lbCounter.textContent = `${current + 1} / ${photos.length}`;
+    }
+
+    function withTransition(sourceIndex, mutate) {
+      if (canAnimate()) {
+        clearNames();
+        const sourceEl = items[sourceIndex];
+        if (sourceEl) sourceEl.style.viewTransitionName = "gallery-photo";
+        lbImg.style.viewTransitionName = "gallery-photo";
+        const transition = document.startViewTransition(mutate);
+        transition.finished.finally(() => {
+          clearNames();
+          lbImg.style.viewTransitionName = "";
+        });
+      } else {
+        mutate();
+      }
+    }
+
+    function open(index) {
+      withTransition(index, () => {
+        current = index;
+        render();
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      });
+    }
+
+    function close() {
+      infoOpen = false;
+      infoPanel.classList.remove("open");
+      withTransition(current, () => {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        document.body.style.overflow = "";
+      });
+    }
+
+    function go(delta) {
+      const newIndex = (current + delta + photos.length) % photos.length;
+      withTransition(newIndex, () => {
+        current = newIndex;
+        render();
+      });
+    }
+
+    function toggleInfo(force) {
+      infoOpen = force !== undefined ? force : !infoOpen;
+      infoPanel.classList.toggle("open", infoOpen);
+    }
+
+    items.forEach((btn, i) => {
+      btn.addEventListener("click", () => open(i));
+    });
+
+    btnClose.addEventListener("click", close);
+    btnInfo.addEventListener("click", () => toggleInfo());
+    btnPrev.addEventListener("click", () => go(-1));
+    btnNext.addEventListener("click", () => go(1));
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") go(1);
+      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowUp") toggleInfo(true);
+      if (e.key === "ArrowDown") toggleInfo(false);
+    });
+
+    // Gestos táctiles: arriba = info, abajo = cerrar info / cerrar visor, izq-dcha = anterior/siguiente
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touching = false;
+
+    stage.addEventListener(
+      "touchstart",
+      (e) => {
+        touching = true;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+
+    stage.addEventListener(
+      "touchend",
+      (e) => {
+        if (!touching) return;
+        touching = false;
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        const dy = e.changedTouches[0].clientY - touchStartY;
+        const absX = Math.abs(dx);
+        const absY = Math.abs(dy);
+        const threshold = 45;
+        if (absX < threshold && absY < threshold) return;
+
+        if (absY > absX) {
+          if (dy < 0) toggleInfo(true);
+          else if (!infoOpen) close();
+          else toggleInfo(false);
+        } else {
+          if (dx < 0) go(1);
+          else go(-1);
+        }
+      },
+      { passive: true },
     );
   }
 
-  function clearNames() {
-    items.forEach((el) => (el.style.viewTransitionName = ""));
-  }
-
-  function render() {
-    const p = photos[current];
-    lbImg.src = p.src;
-    lbImg.alt = p.title;
-    lbImg.style.aspectRatio = `${p.width} / ${p.height}`;
-    lbTitle.textContent = p.title;
-    lbDesc.textContent = p.description;
-    lbTags.innerHTML = "";
-    (p.tags || []).forEach((tag) => {
-      const span = document.createElement("span");
-      span.className = "badge badge-outline badge-sm";
-      span.textContent = `#${tag}`;
-      lbTags.appendChild(span);
-    });
-    lbCounter.textContent = `${current + 1} / ${photos.length}`;
-  }
-
-  function withTransition(sourceIndex, mutate) {
-    if (canAnimate()) {
-      clearNames();
-      const sourceEl = items[sourceIndex];
-      if (sourceEl) sourceEl.style.viewTransitionName = "gallery-photo";
-      lbImg.style.viewTransitionName = "gallery-photo";
-      const transition = document.startViewTransition(mutate);
-      transition.finished.finally(() => {
-        clearNames();
-        lbImg.style.viewTransitionName = "";
-      });
-    } else {
-      mutate();
-    }
-  }
-
-  function open(index) {
-    withTransition(index, () => {
-      current = index;
-      render();
-      lightbox.classList.remove("hidden");
-      lightbox.classList.add("flex");
-      document.body.style.overflow = "hidden";
-    });
-  }
-
-  function close() {
-    infoOpen = false;
-    infoPanel.classList.remove("open");
-    withTransition(current, () => {
-      lightbox.classList.add("hidden");
-      lightbox.classList.remove("flex");
-      document.body.style.overflow = "";
-    });
-  }
-
-  function go(delta) {
-    const newIndex = (current + delta + photos.length) % photos.length;
-    withTransition(newIndex, () => {
-      current = newIndex;
-      render();
-    });
-  }
-
-  function toggleInfo(force) {
-    infoOpen = force !== undefined ? force : !infoOpen;
-    infoPanel.classList.toggle("open", infoOpen);
-  }
-
-  items.forEach((btn, i) => {
-    btn.addEventListener("click", () => open(i));
-  });
-
-  btnClose.addEventListener("click", close);
-  btnInfo.addEventListener("click", () => toggleInfo());
-  btnPrev.addEventListener("click", () => go(-1));
-  btnNext.addEventListener("click", () => go(1));
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) close();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.classList.contains("hidden")) return;
-    if (e.key === "Escape") close();
-    if (e.key === "ArrowRight") go(1);
-    if (e.key === "ArrowLeft") go(-1);
-    if (e.key === "ArrowUp") toggleInfo(true);
-    if (e.key === "ArrowDown") toggleInfo(false);
-  });
-
-  // Gestos táctiles: arriba = info, abajo = cerrar info / cerrar visor, izq-dcha = anterior/siguiente
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touching = false;
-
-  stage.addEventListener(
-    "touchstart",
-    (e) => {
-      touching = true;
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-    },
-    { passive: true },
-  );
-
-  stage.addEventListener(
-    "touchend",
-    (e) => {
-      if (!touching) return;
-      touching = false;
-      const dx = e.changedTouches[0].clientX - touchStartX;
-      const dy = e.changedTouches[0].clientY - touchStartY;
-      const absX = Math.abs(dx);
-      const absY = Math.abs(dy);
-      const threshold = 45;
-      if (absX < threshold && absY < threshold) return;
-
-      if (absY > absX) {
-        if (dy < 0) toggleInfo(true);
-        else if (!infoOpen) close();
-        else toggleInfo(false);
-      } else {
-        if (dx < 0) go(1);
-        else go(-1);
-      }
-    },
-    { passive: true },
-  );
+  document.addEventListener("astro:page-load", setupGallery);
 </script>

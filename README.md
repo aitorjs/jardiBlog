@@ -1,308 +1,249 @@
-# Astrofy | Personal Portfolio Website Template
+# aitor.info web personal
 
-![Astrofy | Personal Porfolio Website Template](public/social_img.webp)
+## Galería
 
-Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
+- Poner un placeholder o skeleton mientras carga las imagenes en el grid y en el detalle de la foto.
+- Meter fecha de foto en la info adicional.
+- AL estar encima de la imagen en el grid sacar una lupa que haga ver que se puede ampliar la foto.
+- En pc el zoom va mal. En movil en horizontal no se puede ir mas abajo de lo que se ve en la foto. Poner boton de pantalla completa en movil.
+- Precargar la siguiente/anterior foto para que el cambio sea instantáneo al hacer swipe o darle al boton de siguiente/anterior.
 
-## Demo
+- Hacer que funcionen las fotos por tags. Tag de huerta26, huerta25, h24, balcón. fraisoro, blasenea... asi algunos tags pueden ponerse en el grid desde json definiendo que tags quiero que muestre. recuerda que en grid es como una carpeta y asi podemos poner la ruta al tag y al click vaya a ella.
 
-View a live demo of [Astrofy](https://astrofy-template.netlify.app/)
+Bien, vamos a montarlo. La pieza nueva es un helper (`src/lib/gallery.ts`) que centraliza la optimización de imágenes, para no duplicar esa lógica en dos páginas.
 
-## Installation
+## 1. `src/data/albums.json`
 
-Run the following command in your terminal
-
-```bash
-pnpm install
+```json
+[
+  {
+    "id": "primavera-2026",
+    "title": "Primavera 2026",
+    "description": "Semilleros, trasplantes y primeras flores."
+  },
+  {
+    "id": "terraza",
+    "title": "Terraza",
+    "description": "El rincón de la terraza a lo largo del año."
+  }
+]
 ```
 
-Once the packages are installed you are ready to run astro. Astro comes with a built-in development server that has everything you need for project development. The astro dev command will start the local development server so that you can see your new website in action for the very first time.
+## 2. `src/data/gallery.json` (añade el campo `album`)
 
-```bash
-pnpm run dev
+```json
+[
+  {
+    "id": "semilleros-trasplantados",
+    "album": "primavera-2026",
+    "title": "Semilleros trasplantados",
+    "description": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
+    "tags": ["semillero", "plántulas", "trasplante"]
+  },
+  {
+    "id": "enfermedades-fungicas",
+    "album": "primavera-2026",
+    "title": "Chuleta de enfermedades fúngicas",
+    "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
+    "tags": ["enfermedades", "hongos", "guía"]
+  },
+  {
+    "id": "rincon-terraza",
+    "album": "terraza",
+    "title": "Rincón de la terraza",
+    "description": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
+    "tags": ["terraza", "tomates", "manzanilla"]
+  }
+]
 ```
 
-## Tech Stack
-
-- [Astro](https://astro.build)
-- [tailwindcss](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
-
-## Project Structure
-
-```php
-├── src/
-│   ├── components/
-│   │   ├── cv/
-│   │   │   ├── TimeLine
-│   │   ├── BaseHead.astro
-│   │   ├── Card.astro
-│   │   ├── Footer.astro
-│   │   ├── Header.astro
-│   │   └── HorizontalCard.astro
-│   │   └── SideBar.astro
-│   │   └── SideBarMenu.astro
-│   │   └── SideBarFooter.astro
-│   ├── content/
-│   │   ├── blog/
-│   │   │   ├── post1.md
-│   │   │   ├── post2.md
-│   │   │   └── post3.md
-│   │   ├── store/
-│   │   │   ├── item1.md
-│   │   │   ├── item2.md
-│   ├── layouts/
-│   │   └── BaseLayout.astro
-│   │   └── PostLayout.astro
-│   └── pages/
-│   │   ├── blog/
-│   │   │   ├── [...page].astro
-│   │   │   ├── [slug].astro
-│   │   └── cv.astro
-│   │   └── index.astro
-│   │   └── projects.astro
-│   │   └── rss.xml.js
-│   ├── styles/
-│   │   └── global.css
-│   └── content.config.ts
-├── public/
-│   ├── favicon.svg
-│   └── profile.webp
-│   └── social_img.webp
-├── astro.config.mjs
-├── tailwind.config.cjs
-├── package.json
-└── tsconfig.json
-```
-
-### Site config
-
-You can change global site configuration on '/src/content.config.ts' file:
-
-- **SITE_TITLE**: Default pages title.
-- **SITE_DESCRIPTION**: Default pages title.
-- **GENERATE_SLUG_FROM_TITLE**: By default Astrofy will generate the blog slug pages base on the article name. Set this var to false if you want to use the Astro file base (Compatible with Astrofy older versions).
-- **TRANSITION_API**: Enable and disable transition API
-
-### Components usage
-
-#### Layout Components
-
-The `BaseHead`, `Footer`, `Header`, and `SideBar` components are already included in the layout system. To change the website content you can edit the content of these components.
-
-##### SideBar
-
-In the Sidebar you can change your profilePicture, links to all your website pages, and your social icons.
-
-You can change your avatar shape using [mask classes](https://daisyui.com/components/mask/).
-
-The used social-icons are SVG form [BoxIcons](https://boxicons.com/) pack. You can replace the icons in the `SideBarFooter` component
-
-To add a new page in the sidebar go to the `SideBarMenu` component.
-
-```jsx
-<li><a class={`py-3 text-base ${sideBarActiveItemID === "home" ? activeClass : ""}`} href="/">Home</a></li>
-```
-
-**Note**: In order to change the sidebar menu's active item, you need to setup the prop `sideBarActiveItemID` in the `BaseLayout` component of your new page and add that id to the link in the `SideBarMenu`
-
-#### TimeLine
-
-The timeline components are used to confirm the CV.
-
-```html
-<div class="time-line-container">
-  <TimeLineElement title="Element Title" subtitle="Subtitle">
-    Content that can contain
-    <div>divs</div>
-    and <span>anything else you want</span>.
-  </TimeLineElement>
-  ...
-</div>
-```
-
-#### Card & HorizontalCard
-
-The cards are primarily used for the Project and the Blog components. They include a picture, a title, and a description. 
-
-```html
-<HorizontalCard title="Card Title" img="image_url" desc="Description" url="Link
-URL" target="Optional link target (_blank default)" badge="Optional badge"
-tags={['Array','of','tags']} />
-```
-
-#### HorizontalCard Shop Item
-
-This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
-
-```html
-<HorizontalShopItem
-  title="Item Title"
-  img="image_url"
-  desc="Item description"
-  pricing="current_price"
-  oldPricing="old_price"
-  checkoutUrl="external store checkout url"
-  badge="Optional badge"
-  url="item details url"
-  custom_link="Custom link url"
-  custom_link_label="Custom link button label"
-  target="Optional link target (_self default)"
-/>
-```
-
-#### Adding a Custom Component
-
-To add a custom component, you can create a `.astro` file in the components folder under the source folder. 
-
-Components must follow this template. The ```---``` represents the code fence and uses Javascript and can be used for imports. 
-
-The HTML component is the actual style of your new component. 
-
-```html
----
-// Component Script (JavaScript)
----
-<!-- Component Template (HTML + JS Expressions) -->
-```
-
-For more details, see the [Astro Components](https://docs.astro.build/en/core-concepts/astro-components/) documentation here. 
-
-### Layouts
-
-Include `BaseLayout` in each page you add and `PostLayout` to your post pages.
-
-The BaseLayout defines a general template for each new webpage you want to add. It imports constants SITE_TITLE and SITE_DESCRIPTION which can be modified in the ```../config``` folder. Data placed there can be imported anywhere using import. 
-
-### Content
-
-You can add a [content collection](https://docs.astro.build/en/guides/content-collections/) in `/content/` folder, you will need add it at `content.config.ts`.
-
-#### content.config.ts
-
-Where you need to define your content collections, we define our content schemas too.
-
-#### Blog
-
-Add your `.md` blog post in the `/content/blog/` folder.
-
-##### Post format
-
-Add code with this format in the top of each post file.
+**Estructura de carpetas de imágenes** (igual que antes, un nivel más):
 
 ```
----
-title: "Post Title"
-description: "Description"
-pubDate: "Post date format(Sep 10 2022)"
-heroImage: "Post Hero Image URL"
----
+src/assets/gallery/
+  primavera-2026/
+    semilleros-trasplantados.jpg
+    enfermedades-fungicas.jpg
+  terraza/
+    rincon-terraza.jpg
 ```
 
-### Pages
+## 3. `src/lib/gallery.ts` (nuevo)```ts
+// src/lib/gallery.ts
+import { getImage } from 'astro:assets';
+import galleryMeta from '../data/gallery.json';
 
-#### Blog
+// import.meta.glob resuelve rutas relativas a ESTE archivo (src/lib/gallery.ts)
+const imageFiles = import.meta.glob('../assets/gallery/*/*.{jpg,jpeg,png,webp}', { eager: true });
 
-Blog uses Astro's content collection to query post's `md`.
+export async function getPhotos() {
+  return Promise.all(
+    galleryMeta.map(async (item) => {
+      const entry = Object.entries(imageFiles).find(([path]) =>
+        path.includes(`/${item.album}/${item.id}.`)
+      );
 
-##### [page].astro
+      if (!entry) {
+        throw new Error(
+          `No se encontró la imagen para "${item.album}/${item.id}" en src/assets/gallery`
+        );
+      }
 
-The `[page].astro` is the route to work with the paginated post list. You can change there the number of items listed for each page and the pagination button labels.
+      const source = entry[1].default;
 
-##### [slug].astro
+      const full = await getImage({ src: source, width: 1600, format: 'webp', quality: 80 });
+      const thumb = await getImage({
+        src: source,
+        width: 500,
+        height: 500,
+        fit: 'cover',
+        format: 'webp',
+        quality: 70,
+      });
 
-The `[slug].astro` is the base route for every blog post, you can customize the page layout or behaviour, by default uses `content/blog` for content collection and `PostLayout` as layout.
-
-#### Shop
-
-Add your `.md` item in the `/pages/shop/` folder.
-
-##### [page].astro
-
-The `[page].astro` is the route to work with the paginated item list. You can change there the number of items listed for each page and the pagination button labels. The shop will render all `.md` files you include inside this folder.
-
-##### Item format
-
-Add code with this format at the top of each item file.
-
-```
----
-title: "Demo Item 1"
-description: "Item description"
-heroImage: "Item img url"
-details: true // show or hide details btn
-custom_link_label: "Custom btn link label"
-custom_link: "Custom btn link"
-pubDate: "Sep 15 2022"
-pricing: "$15"
-oldPricing: "$25.5"
-badge: "Featured"
-checkoutUrl: "https://checkouturl.com/"
----
-```
-
-#### Static pages
-
-The other pages included in the template are static pages. The `index` page belongs to the root page. You can add your pages directly in the `/pages` folder and then add a link to those pages in the `sidebar` component.
-
-Feel free to modify the content included in the pages that the template contains or add the ones you need.
-
-### Theming
-
-Themes are configured directly within your CSS file using the `@plugin` directive.
-
-To enable specific themes, modify your `app.css` as follows:
-
-```css
-@import "tailwindcss";
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+      return {
+        ...item,
+        src: full.src,
+        thumbSrc: thumb.src,
+        width: full.attributes.width,
+        height: full.attributes.height,
+      };
+    })
+  );
 }
 ```
 
-This configuration sets `light` as the default theme, `dark` for users with a dark mode preference, and includes `cupcake` as an additional option.
+## 4. `src/pages/gallery/index.astro` (nuevo — lista de álbumes)
 
-To apply a theme to your application, set the `data-theme` attribute on the `<html>` element:
+**Importante**: borra el `src/pages/gallery.astro` que tenías, ya que ahora la ruta `/gallery` la genera la carpeta `src/pages/gallery/` (no pueden coexistir un archivo y una carpeta con el mismo nombre de ruta).```astro
+---
+// src/pages/gallery/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import albums from '../../data/albums.json';
+import { getPhotos } from '../../lib/gallery';
 
-```html
-<html data-theme="cupcake">
+const photos = await getPhotos();
+
+const albumsWithCover = albums.map((album) => {
+  const albumPhotos = photos.filter((p) => p.album === album.id);
+  return {
+    ...album,
+    cover: albumPhotos[0]?.thumbSrc,
+    count: albumPhotos.length,
+  };
+});
+---
+
+<BaseLayout title="Galería" description="Álbumes del jardín" sideBarActiveItemID="gallery">
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold">Diario del jardín</h1>
+    <p class="text-sm opacity-70">Álbumes con fotos del huerto.</p>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+    {albumsWithCover.map((album) => (
+      
+        href={`/gallery/${album.id}`}
+        class="group block overflow-hidden rounded-xl bg-base-200 transition-shadow hover:shadow-lg"
+      >
+        <div class="aspect-square overflow-hidden">
+          {album.cover && (
+            <img
+              src={album.cover}
+              alt={album.title}
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          )}
+        </div>
+        <div class="p-3">
+          <h2 class="font-semibold">{album.title}</h2>
+          <p class="text-xs opacity-60">{album.count} fotos</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>
 ```
 
-For a complete list of available themes and customization options, refer to the daisyUI themes documentation:
-- [daisyUI Themes Documentation](https://daisyui.com/docs/themes/)
+## 5. `src/pages/gallery/[album].astro` (nuevo — grid + visor de un álbum)
 
-To create custom themes, utilize the daisyUI Theme Generator:
-- [daisyUI Theme Generator](https://daisyui.com/theme-generator/)
+Es el mismo lightbox de siempre, solo que ahora filtrado por álbum y generado como ruta estática con `getStaticPaths`.Te dejo los 5 archivos preparados para descargar:Colócalos así en tu repo:
 
-## Sitemap
+```
+albums.json            → src/data/albums.json
+gallery.json           → src/data/gallery.json  (sustituye al actual)
+gallery.ts             → src/lib/gallery.ts      (carpeta lib es nueva)
+index.astro            → src/pages/gallery/index.astro
+[album].astro          → src/pages/gallery/[album].astro
+```
 
-The Sitemap is generated automatically when you build your website in the root of the domain. Please update the `robots.txt` file in the public folder with your site name URL for the Sitemap.
+Y borra `src/pages/gallery.astro` (el archivo suelto de antes), ya que ahora esa ruta la crea la carpeta `src/pages/gallery/`.
 
-## Deploy
+Las imágenes se quedan donde están en `src/assets/gallery/`, solo tienes que organizarlas en subcarpetas por álbum (`primavera-2026/`, `terraza/`) moviendo cada `.jpg` a la que le toque.
 
-You can deploy your site on your favourite static hosting service such as Vercel, Netlify, GitHub Pages, etc.
+Pruébalo con `pnpm run dev` y me cuentas.
 
-The configuration for the deployment varies depending on the platform where you are going to do it. See the [official Astro information](https://docs.astro.build/en/guides/deploy/) to deploy your website.
 
-> **⚠️ CAUTION** </br>
-> The Blog pagination of this template is implemented using dynamic route parameters in its filename and for now this format is incompatible with SSR deploy configs, so please use the default static deploy options for your deployments.
+-----
 
-## Contributing
 
-Suggestions and pull requests are welcomed! Feel free to open a discussion or an issue for a new feature request or bug.
+Buena pregunta para parar y repasar. Sin tocar lo de álbumes, esto es lo que puliría del grid + visor tal como está:
 
-One of the best ways to contribute is to grab a [bug report or feature suggestion](https://github.com/manuelernestog/astrofy/issues) that has been marked `accepted` and dig in.
+**Rendimiento**
+- 4 Precargar la foto siguiente y anterior en cuanto se abre el visor, para que el swipe/flecha sea instantáneo en vez de esperar la descarga.
+- 5 Generar también `avif` además de `webp` (mejor compresión, y `getImage` lo soporta igual de fácil); usar `<picture>` con ambos formates y que el navegador elija.
+- 6 Cargar la primera imagen del grid con `loading="eager"` en vez de `lazy` — mejora el LCP, ya que hoy hasta la foto más visible espera al lazy-loading.
 
-Please be wary of working on issues _not_ marked as `accepted`. Just because someone has created an issue doesn't mean we'll accept a pull request for it.
+**Accesibilidad**
+- Foco atrapado dentro del visor mientras está abierto (si no, con Tab se puede "escapar" al contenido de detrás sin verlo).
+- Devolver el foco al botón de la miniatura al cerrar, no dejarlo perdido en el `<body>`.
+- `aria-live` en el contador (`3 / 12`) para que un lector de pantalla anuncie el cambio de foto.
+- Falta `role="dialog"` y `aria-modal="true"` en el lightbox.
 
-## License
+**UX**
+- 1 El swipe hoy es "todo o nada" (se decide solo al soltar el dedo). Un arrastre que siga el dedo en tiempo real (la imagen se mueve contigo, el fondo se atenúa progresivamente) se siente mucho más "vivo" — así es como lo hace Google Photos/Instagram de verdad, no solo el resultado final.
+- 2 Doble-tap o pellizco para hacer zoom en la foto grande — en un jardín, la típica fotos de una hoja con una plaga es justo donde la gente querrá acercarse.
+- Puntitos o miniaturas de posición en vez de solo el texto "3 / 12".
 
-Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
+**Robustez**
+- En iOS Safari, `overflow: hidden` en el `<body>` no siempre bloquea el scroll de fondo del todo cuando el dedo está sobre el propio visor — mejor fijar el body con `position: fixed` mientras está abierto.
+- Si `getImage()` falla para una foto (archivo mal nombrado, etc.) hoy lanza un error en build que tira toda la página — podría degradarse mejor (avisar en consola y saltarse esa foto) según cuánto te preocupe que un typo tumbe el build entero.
 
-## Contributors
+**Escala** (si algún día tienes 50+ fotos en vez de 3-6)
+- 7 Paginar o cargar el grid en tandas (hoy se genera todo de golpe, no pasa nada con pocas fotos pero con muchas el HTML inicial crecería).
 
-<a href="https://github.com/manuelernestog/astrofy/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=manuelernestog/astrofy" />
-</a>
+No haría todo esto a la vez — para una galería personal, yo priorizaría **precarga de siguiente/anterior** y el **arrastre en tiempo real** (son los que más se notan al usarlo), y dejaría accesibilidad avanzada y avif como algo opcional. 
 
-Made with [contrib.rocks](https://contrib.rocks).
+
+-----
+
+
+Con gusto. La diferencia está en **cuándo se entera el usuario de que su gesto está siendo reconocido**.
+
+**Cómo funciona ahora mismo:**
+1. `touchstart` → guarda la posición inicial.
+2. Mientras el dedo se mueve por la pantalla, no pasa nada visualmente. La foto está clavada en su sitio.
+3. `touchend` → se calcula `dx`/`dy` de golpe, se compara con el umbral (45px) y se decide: ¿fue swipe arriba, abajo, izquierda o derecha? Se ejecuta la acción entera de golpe (abre info, cierra, cambia de foto).
+
+Es "todo o nada" porque no hay ningún estado intermedio: o no pasó nada (si no llegaste al umbral) o pasó la acción completa, instantáneamente, cuando levantas el dedo. El usuario no tiene ninguna pista visual de "voy por buen camino" mientras arrastra.
+
+**Cómo lo hace Google Photos/Instagram:**
+
+1. `touchstart` → igual, guarda posición inicial.
+2. `touchmove` (aquí está la diferencia) → en cada frame, mueves la imagen con `transform: translateY(deltaY)` siguiendo literalmente el dedo. La foto "viaja" contigo en tiempo real, 1:1 con el gesto. A la vez, el fondo negro va perdiendo opacidad proporcionalmente a cuánto has arrastrado (`backdrop-opacity = 1 - dy/300`, por ejemplo) — así ves el contenido de detrás asomando poco a poco, dándote la sensación de que estás "levantando" la foto.
+3. `touchend` → aquí ya no se decide desde cero, se **resuelve** lo que ya estaba pasando visualmente:
+   - Si soltaste habiendo arrastrado poco → animación de "muelle" que devuelve la foto a su sitio original (rubber-banding), como si dijera "no ha sido suficiente, aquí me quedo".
+   - Si arrastraste más allá del umbral (o soltaste con velocidad alta, aunque no hayas llegado muy lejos) → la animación *continúa* en la misma dirección hasta completar la acción (cerrar del todo, o deslizar el panel de info hasta el final), en vez de saltar de golpe.
+
+**Por qué se siente distinto** aunque el resultado final (abrir info / cerrar) sea el mismo:
+- Es **cancelable a medio camino**: si empiezas a arrastrar y te arrepientes, puedes volver el dedo a su sitio antes de soltar y ves cómo la foto "vuelve" contigo — con el sistema actual, si no llegas al umbral simplemente no pasa nada, pero si te pasas de umbral sin querer, ya se disparó la acción sin remedio.
+- Da **feedback continuo**: sabes en todo momento cuánto te falta para que se active algo, en vez de un veredicto sorpresa al levantar el dedo.
+- Aprovecha la **velocidad del gesto**, no solo la distancia: un swipe rápido y corto puede disparar la acción igual que uno lento y largo, porque se mide también cuán rápido te movías al soltar (esto se calcula guardando un par de posiciones recientes con sus timestamps durante el `touchmove`, no solo el punto inicial y final).
+
+Técnicamente implica reemplazar el `touchend`-only por: escuchar `touchmove` para actualizar `transform` e `opacity` del fondo en vivo (usando `requestAnimationFrame` para no saturar el hilo principal), y en `touchend` decidir entre "completar con una transición corta hasta el final" o "volver con un muelle" según distancia + velocidad.
+
+Es más código y algo más delicado de afinar (resistencia del arrastre, curvas de la animación de vuelta), pero es la pieza que más "premium" hace sentir un visor de fotos. ¿Lo implemento?
+
+https://claude.ai/chat/cc0e9303-10c7-4e71-87b5-12e70124575b 
