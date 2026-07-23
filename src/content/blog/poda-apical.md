@@ -1,10 +1,9 @@
 ---
-title: "Demo Post 3"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 12 2022"
+title: "Poda apical"
+description: "La poda apical es la eliminación (corte) de la yema apical o punta del tallo principal de una planta."
+pubDate: "Jul 23 2026"
 heroImage: "../../assets/post_img.webp"
-badge: "Demo badge"
-tags: ["rust","tokio"]
+tags: ["estevia", "artemisa-annua"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

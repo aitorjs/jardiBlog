@@ -195,9 +195,9 @@ Pruébalo con `pnpm run dev` y me cuentas.
 Buena pregunta para parar y repasar. Sin tocar lo de álbumes, esto es lo que puliría del grid + visor tal como está:
 
 **Rendimiento**
-- 4 Precargar la foto siguiente y anterior en cuanto se abre el visor, para que el swipe/flecha sea instantáneo en vez de esperar la descarga.
-- 5 Generar también `avif` además de `webp` (mejor compresión, y `getImage` lo soporta igual de fácil); usar `<picture>` con ambos formates y que el navegador elija.
-- 6 Cargar la primera imagen del grid con `loading="eager"` en vez de `lazy` — mejora el LCP, ya que hoy hasta la foto más visible espera al lazy-loading.
+- X Precargar la foto siguiente y anterior en cuanto se abre el visor, para que el swipe/flecha sea instantáneo en vez de esperar la descarga.
+- X Generar también `avif` además de `webp` (mejor compresión, y `getImage` lo soporta igual de fácil); usar `<picture>` con ambos formates y que el navegador elija.
+- X Cargar la primera imagen del grid con `loading="eager"` en vez de `lazy` — mejora el LCP, ya que hoy hasta la foto más visible espera al lazy-loading.
 
 **Accesibilidad**
 - Foco atrapado dentro del visor mientras está abierto (si no, con Tab se puede "escapar" al contenido de detrás sin verlo).
@@ -206,8 +206,8 @@ Buena pregunta para parar y repasar. Sin tocar lo de álbumes, esto es lo que pu
 - Falta `role="dialog"` y `aria-modal="true"` en el lightbox.
 
 **UX**
-- 1 El swipe hoy es "todo o nada" (se decide solo al soltar el dedo). Un arrastre que siga el dedo en tiempo real (la imagen se mueve contigo, el fondo se atenúa progresivamente) se siente mucho más "vivo" — así es como lo hace Google Photos/Instagram de verdad, no solo el resultado final.
-- 2 Doble-tap o pellizco para hacer zoom en la foto grande — en un jardín, la típica fotos de una hoja con una plaga es justo donde la gente querrá acercarse.
+- X El swipe hoy es "todo o nada" (se decide solo al soltar el dedo). Un arrastre que siga el dedo en tiempo real (la imagen se mueve contigo, el fondo se atenúa progresivamente) se siente mucho más "vivo" — así es como lo hace Google Photos/Instagram de verdad, no solo el resultado final.
+- X Doble-tap o pellizco para hacer zoom en la foto grande — en un jardín, la típica fotos de una hoja con una plaga es justo donde la gente querrá acercarse.
 - Puntitos o miniaturas de posición en vez de solo el texto "3 / 12".
 
 **Robustez**

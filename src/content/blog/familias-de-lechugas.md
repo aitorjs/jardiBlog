@@ -1,8 +1,9 @@
 ---
-title: "Demo Post 2"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 11 2022"
+title: "Familias de lechugas"
+description: "Existen multiples familias de lechugas, muchas de ellas no son comerciales y solo si se cultivan, se pueden apreciar."
+pubDate: "Jul 23 2026"
 heroImage: "../../assets/post_img.webp"
+tags: ["lechuga"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna

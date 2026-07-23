@@ -1,9 +1,9 @@
 ---
-title: "Demo Post 1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
+title: "Presentación"
+description: "Explicación de la razón de la existencia de esta página web y sus diferentes páginas: cv, blog y galería."
+pubDate: "Jul 22 2026"
 heroImage: "../../assets/post_img.webp"
-tags: ["tokio"]
+badge: "BAGDE"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
