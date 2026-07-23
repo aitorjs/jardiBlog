@@ -28,6 +28,12 @@ const photos = await Promise.all(
       format: "webp",
       quality: 80,
     });
+    const fullAvif = await getImage({
+      src: source,
+      width: 1600,
+      format: "avif",
+      quality: 55,
+    });
     const thumb = await getImage({
       src: source,
       width: 500,
@@ -36,11 +42,21 @@ const photos = await Promise.all(
       format: "webp",
       quality: 70,
     });
+    const thumbAvif = await getImage({
+      src: source,
+      width: 500,
+      height: 500,
+      fit: "cover",
+      format: "avif",
+      quality: 50,
+    });
 
     return {
       ...item,
       src: full.src,
+      srcAvif: fullAvif.src,
       thumbSrc: thumb.src,
+      thumbSrcAvif: thumbAvif.src,
       width: full.attributes.width,
       height: full.attributes.height,
     };
@@ -66,13 +82,17 @@ const photos = await Promise.all(
             data-index={i}
             aria-label={`Ver foto: ${photo.title}`}
           >
-            <img
-              src={photo.thumbSrc}
-              alt={photo.title}
-              loading="lazy"
-              decoding="async"
-              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
+            <picture class="contents">
+              <source srcset={photo.thumbSrcAvif} type="image/avif" />
+              <source srcset={photo.thumbSrc} type="image/webp" />
+              <img
+                src={photo.thumbSrc}
+                alt={photo.title}
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </picture>
           </button>
         ))
       }
@@ -147,15 +167,20 @@ const photos = await Promise.all(
       </button>
 
       <!-- touch-action:pinch-zoom evita el paneo nativo (que gestionamos a mano)
-           pero deja intacto el pellizco nativo del navegador -->
-      <img
-        id="lb-img"
-        src=""
-        alt=""
-        draggable="false"
-        class="max-h-[75vh] max-w-[92vw] select-none object-contain"
-        style="touch-action:pinch-zoom"
-      />
+           pero deja intacto el pellizco nativo del navegador.
+           class="contents" hace que <picture> no afecte al centrado flex del stage. -->
+      <picture class="contents">
+        <source id="lb-source-avif" type="image/avif" />
+        <source id="lb-source-webp" type="image/webp" />
+        <img
+          id="lb-img"
+          src=""
+          alt=""
+          draggable="false"
+          class="max-h-[75vh] max-w-[92vw] select-none object-contain"
+          style="touch-action:pinch-zoom"
+        />
+      </picture>
 
       <button
         id="lb-next"
@@ -220,6 +245,8 @@ const photos = await Promise.all(
     const backdrop = document.getElementById("lb-backdrop");
     const stage = document.getElementById("lb-stage");
     const lbImg = document.getElementById("lb-img");
+    const lbSourceAvif = document.getElementById("lb-source-avif");
+    const lbSourceWebp = document.getElementById("lb-source-webp");
     const lbTitle = document.getElementById("lb-title");
     const lbDesc = document.getElementById("lb-desc");
     const lbTags = document.getElementById("lb-tags");
@@ -246,6 +273,15 @@ const photos = await Promise.all(
 
     function render() {
       const p = photos[current];
+      // Si por lo que sea no hay avif válido, quitamos el srcset del
+      // <source> en vez de dejarlo con un valor roto: así el navegador
+      // pasa directo al webp (o al img de siempre) sin quedarse "vacío".
+      if (p.srcAvif) {
+        lbSourceAvif.srcset = p.srcAvif;
+      } else {
+        lbSourceAvif.removeAttribute("srcset");
+      }
+      lbSourceWebp.srcset = p.src;
       lbImg.src = p.src;
       lbImg.alt = p.title;
       lbImg.style.aspectRatio = `${p.width} / ${p.height}`;
@@ -286,8 +322,12 @@ const photos = await Promise.all(
       const nextIndex = (index + 1) % photos.length;
       const prevIndex = (index - 1 + photos.length) % photos.length;
       [nextIndex, prevIndex].forEach((i) => {
-        const preloadImg = new Image();
-        preloadImg.src = photos[i].src;
+        const preloadWebp = new Image();
+        preloadWebp.src = photos[i].src;
+        if (photos[i].srcAvif) {
+          const preloadAvif = new Image();
+          preloadAvif.src = photos[i].srcAvif;
+        }
       });
     }
 
@@ -428,10 +468,18 @@ const photos = await Promise.all(
 
         // Decidir el eje del gesto una sola vez, tras un pequeño movimiento
         if (axis === null) {
-          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD) return;
+          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD)
+            return;
           axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
           if (axis === "y") {
-            verticalMode = dy < 0 ? (infoOpen ? null : "open-info") : infoOpen ? "close-info" : "dismiss";
+            verticalMode =
+              dy < 0
+                ? infoOpen
+                  ? null
+                  : "open-info"
+                : infoOpen
+                  ? "close-info"
+                  : "dismiss";
           }
         }
 
@@ -489,19 +537,22 @@ const photos = await Promise.all(
 
         if (verticalMode === "open-info") {
           const progress = Math.min(1, Math.max(0, -dy / OPEN_INFO_DISTANCE));
-          const commit = progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
+          const commit =
+            progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = commit;
           infoPanel.classList.toggle("open", commit);
         } else if (verticalMode === "close-info") {
           const progress = Math.min(1, Math.max(0, dy / infoPanelHeight));
-          const commit = progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
+          const commit =
+            progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = !commit;
           infoPanel.classList.toggle("open", !commit);
         } else if (verticalMode === "dismiss") {
           const clampedDy = Math.max(0, dy);
-          const commit = clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
+          const commit =
+            clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
           if (commit) {
             lbImg.style.transform = "translateY(120%)";
             backdrop.style.opacity = "0";

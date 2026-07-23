@@ -1,24 +1,72 @@
 name: Deploy to GitHub Pages
 
-permissions:
-  contents: write
-  pages: write
-
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - run: npm install
-      - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v3
+          node-version: 20
+          cache: pnpm
+
+      # Restaura la caché de imágenes optimizadas de un build anterior.
+      # La clave incluye un hash de tus fotos: si no cambia ninguna, hay
+      # coincidencia exacta y el restore es casi instantáneo. Si cambia
+      # algo, restore-keys cae a la última caché "parecida" igualmente
+      # (Astro solo reprocesará las fotos nuevas/modificadas).
+      - name: Restore Astro image cache
+        uses: actions/cache/restore@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          path: node_modules/.astro
+          key: astro-image-cache-${{ hashFiles('src/assets/gallery/**') }}
+          restore-keys: |
+            astro-image-cache-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      # Guarda el estado actual de la caché para el próximo build.
+      - name: Save Astro image cache
+        uses: actions/cache/save@v4
+        with:
+          path: node_modules/.astro
+          key: astro-image-cache-${{ hashFiles('src/assets/gallery/**') }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
