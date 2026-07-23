@@ -62,7 +62,7 @@ const photos = await Promise.all(
       {
         photos.map((photo, i) => (
           <button
-            class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-base-2                                                                                                                         00"
+            class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-base-200"
             data-index={i}
             aria-label={`Ver foto: ${photo.title}`}
           >
@@ -80,8 +80,13 @@ const photos = await Promise.all(
   </section>
 
   <!-- Visor / Lightbox -->
-  <div id="lightbox" class="fixed inset-0 z-50 hidden flex-col bg-black/95">
-    <div class="flex items-center justify-between p-3 text-white sm:p-4">
+  <div id="lightbox" class="fixed inset-0 z-50 hidden flex-col">
+    <!-- Capa de fondo independiente: se atenúa durante el arrastre sin afectar a los controles -->
+    <div id="lb-backdrop" class="absolute inset-0 z-0 bg-black"></div>
+
+    <div
+      class="relative z-10 flex items-center justify-between p-3 text-white sm:p-4"
+    >
       <span id="lb-counter" class="text-sm opacity-70"></span>
       <div class="flex items-center gap-1">
         <button
@@ -124,7 +129,7 @@ const photos = await Promise.all(
 
     <div
       id="lb-stage"
-      class="relative flex flex-1 items-center justify-center overflow-hidden"
+      class="relative z-10 flex flex-1 items-center justify-center overflow-hidden"
     >
       <button
         id="lb-prev"
@@ -141,12 +146,14 @@ const photos = await Promise.all(
         >
       </button>
 
+      <!-- touch-action:none evita que el navegador intente hacer scroll/zoom nativo mientras gestionamos el gesto a mano -->
       <img
         id="lb-img"
         src=""
         alt=""
         draggable="false"
         class="max-h-[75vh] max-w-[92vw] select-none object-contain"
+        style="touch-action:none"
       />
 
       <button
@@ -167,7 +174,7 @@ const photos = await Promise.all(
 
     <div
       id="lb-info"
-      class="absolute inset-x-0 bottom-0 max-h-[45vh] overflow-y-auto rounded-t-2xl bg-base-100 p-5 pb-8 text-base-content"
+      class="absolute inset-x-0 bottom-0 z-10 max-h-[45vh] overflow-y-auto rounded-t-2xl bg-base-100 p-5 pb-8 text-base-content"
     >
       <div class="mx-auto mb-3 h-1.5 w-10 rounded-full bg-base-300 sm:hidden">
       </div>
@@ -186,6 +193,13 @@ const photos = await Promise.all(
   #lb-info.open {
     transform: translateY(0);
   }
+  #lb-backdrop {
+    opacity: 0.95;
+    transition: opacity 0.25s ease;
+  }
+  #lb-img {
+    transition: transform 0.25s ease;
+  }
   /* El icono de info solo tiene sentido si no hay gesto táctil disponible */
   @media (pointer: coarse) {
     #lb-info-toggle {
@@ -202,6 +216,7 @@ const photos = await Promise.all(
   function setupGallery() {
     const items = Array.from(document.querySelectorAll(".gallery-item"));
     const lightbox = document.getElementById("lightbox");
+    const backdrop = document.getElementById("lb-backdrop");
     const stage = document.getElementById("lb-stage");
     const lbImg = document.getElementById("lb-img");
     const lbTitle = document.getElementById("lb-title");
@@ -261,7 +276,19 @@ const photos = await Promise.all(
       }
     }
 
+    // Deja imagen, fondo y panel de info en su estado "de reposo",
+    // por si quedó algo a medias de un arrastre anterior.
+    function resetDragStyles() {
+      lbImg.style.transition = "";
+      lbImg.style.transform = "";
+      backdrop.style.transition = "";
+      backdrop.style.opacity = "";
+      infoPanel.style.transition = "";
+      infoPanel.style.transform = "";
+    }
+
     function open(index) {
+      resetDragStyles();
       withTransition(index, () => {
         current = index;
         render();
@@ -278,6 +305,7 @@ const photos = await Promise.all(
         lightbox.classList.add("hidden");
         lightbox.classList.remove("flex");
         document.body.style.overflow = "";
+        resetDragStyles();
       });
     }
 
@@ -316,17 +344,97 @@ const photos = await Promise.all(
       if (e.key === "ArrowDown") toggleInfo(false);
     });
 
-    // Gestos táctiles: arriba = info, abajo = cerrar info / cerrar visor, izq-dcha = anterior/siguiente
+    // --- Gestos táctiles ---
+    // Horizontal (cambiar de foto): se mantiene simple, todo-o-nada al soltar.
+    // Vertical (info / cerrar): arrastre en tiempo real con muelle y velocidad,
+    // estilo Google Photos / Instagram.
+
+    const LOCK_THRESHOLD = 8; // px para decidir si el gesto es horizontal o vertical
+    const SWIPE_THRESHOLD = 45; // umbral del swipe horizontal (sin cambios respecto a antes)
+
+    const OPEN_INFO_DISTANCE = 140; // px de arrastre hacia arriba para "llenar" la revelación de info
+    const OPEN_INFO_COMMIT = 0.35; // progreso (0-1) a partir del cual se da por completado
+    const DISMISS_FADE_DISTANCE = 280; // px sobre los que se atenúa el fondo al arrastrar hacia abajo
+    const DISMISS_COMMIT_PX = 120; // px de arrastre hacia abajo para considerar "cerrar"
+    const FLING_VELOCITY = 0.55; // px/ms — un gesto rápido cuenta aunque recorra poca distancia
+
     let touchStartX = 0;
     let touchStartY = 0;
     let touching = false;
+    let axis = null; // 'x' | 'y' | null mientras no se ha decidido
+    let verticalMode = null; // 'open-info' | 'close-info' | 'dismiss'
+    let infoPanelHeight = 0;
+    let lastY = 0;
+    let lastT = 0;
+    let velocityY = 0;
+
+    function setDragTransition(on) {
+      lbImg.style.transition = on ? "" : "none";
+      backdrop.style.transition = on ? "" : "none";
+      infoPanel.style.transition = on ? "" : "none";
+    }
 
     stage.addEventListener(
       "touchstart",
       (e) => {
+        // TODO (zoom): si e.touches.length > 1, no iniciar el arrastre aquí y
+        // dejar paso al futuro gesto de pellizco.
+        if (e.touches.length > 1) return;
         touching = true;
+        axis = null;
+        verticalMode = null;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
+        lastY = touchStartY;
+        lastT = e.timeStamp;
+        velocityY = 0;
+        infoPanelHeight = infoPanel.getBoundingClientRect().height || 300;
+        setDragTransition(false);
+      },
+      { passive: true },
+    );
+
+    stage.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!touching || e.touches.length > 1) return;
+        const x = e.touches[0].clientX;
+        const y = e.touches[0].clientY;
+        const dx = x - touchStartX;
+        const dy = y - touchStartY;
+
+        // Velocidad instantánea vertical (px/ms) para detectar "flings" cortos y rápidos
+        const dt = e.timeStamp - lastT;
+        if (dt > 0) velocityY = (y - lastY) / dt;
+        lastY = y;
+        lastT = e.timeStamp;
+
+        // Decidir el eje del gesto una sola vez, tras un pequeño movimiento
+        if (axis === null) {
+          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD) return;
+          axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+          if (axis === "y") {
+            verticalMode = dy < 0 ? (infoOpen ? null : "open-info") : infoOpen ? "close-info" : "dismiss";
+          }
+        }
+
+        if (axis !== "y" || !verticalMode) return;
+
+        if (verticalMode === "open-info") {
+          // Arrastrando hacia arriba con la info cerrada: el panel sigue el dedo
+          const progress = Math.min(1, Math.max(0, -dy / OPEN_INFO_DISTANCE));
+          infoPanel.style.transform = `translateY(${(1 - progress) * 100}%)`;
+        } else if (verticalMode === "close-info") {
+          // Arrastrando hacia abajo con la info abierta: el panel vuelve a bajar
+          const progress = Math.min(1, Math.max(0, dy / infoPanelHeight));
+          infoPanel.style.transform = `translateY(${progress * 100}%)`;
+        } else if (verticalMode === "dismiss") {
+          // Arrastrando hacia abajo con la info cerrada: la foto "se despega" y el fondo se atenúa
+          const clampedDy = Math.max(0, dy);
+          lbImg.style.transform = `translateY(${clampedDy}px)`;
+          const fadeProgress = Math.min(1, clampedDy / DISMISS_FADE_DISTANCE);
+          backdrop.style.opacity = String(0.95 - fadeProgress * 0.8);
+        }
       },
       { passive: true },
     );
@@ -336,21 +444,64 @@ const photos = await Promise.all(
       (e) => {
         if (!touching) return;
         touching = false;
+
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
-        const absX = Math.abs(dx);
-        const absY = Math.abs(dy);
-        const threshold = 45;
-        if (absX < threshold && absY < threshold) return;
 
-        if (absY > absX) {
-          if (dy < 0) toggleInfo(true);
-          else if (!infoOpen) close();
-          else toggleInfo(false);
-        } else {
-          if (dx < 0) go(1);
-          else go(-1);
+        // Siempre reactivamos las transiciones al soltar, aunque el gesto
+        // se ignore (p. ej. arrastrar hacia arriba con la info ya abierta),
+        // para no dejar "transition: none" pegado de cara al siguiente uso.
+        setDragTransition(true);
+
+        // Gesto horizontal: sin cambios, decisión simple al soltar
+        if (axis === "x") {
+          if (Math.abs(dx) >= SWIPE_THRESHOLD) {
+            if (dx < 0) go(1);
+            else go(-1);
+          }
+          axis = null;
+          verticalMode = null;
+          return;
         }
+
+        if (axis !== "y" || !verticalMode) {
+          axis = null;
+          verticalMode = null;
+          return;
+        }
+
+        if (verticalMode === "open-info") {
+          const progress = Math.min(1, Math.max(0, -dy / OPEN_INFO_DISTANCE));
+          const commit = progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
+          infoPanel.style.transform = "";
+          infoOpen = commit;
+          infoPanel.classList.toggle("open", commit);
+        } else if (verticalMode === "close-info") {
+          const progress = Math.min(1, Math.max(0, dy / infoPanelHeight));
+          const commit = progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
+          infoPanel.style.transform = "";
+          infoOpen = !commit;
+          infoPanel.classList.toggle("open", !commit);
+        } else if (verticalMode === "dismiss") {
+          const clampedDy = Math.max(0, dy);
+          const commit = clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
+          if (commit) {
+            lbImg.style.transform = "translateY(120%)";
+            backdrop.style.opacity = "0";
+            window.setTimeout(() => {
+              lightbox.classList.add("hidden");
+              lightbox.classList.remove("flex");
+              document.body.style.overflow = "";
+              resetDragStyles();
+            }, 220);
+          } else {
+            lbImg.style.transform = "";
+            backdrop.style.opacity = "";
+          }
+        }
+
+        axis = null;
+        verticalMode = null;
       },
       { passive: true },
     );
