@@ -146,14 +146,15 @@ const photos = await Promise.all(
         >
       </button>
 
-      <!-- touch-action:none evita que el navegador intente hacer scroll/zoom nativo mientras gestionamos el gesto a mano -->
+      <!-- touch-action:pinch-zoom evita el paneo nativo (que gestionamos a mano)
+           pero deja intacto el pellizco nativo del navegador -->
       <img
         id="lb-img"
         src=""
         alt=""
         draggable="false"
         class="max-h-[75vh] max-w-[92vw] select-none object-contain"
-        style="touch-action:none"
+        style="touch-action:pinch-zoom"
       />
 
       <button
@@ -411,10 +412,18 @@ const photos = await Promise.all(
 
         // Decidir el eje del gesto una sola vez, tras un pequeño movimiento
         if (axis === null) {
-          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD) return;
+          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD)
+            return;
           axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
           if (axis === "y") {
-            verticalMode = dy < 0 ? (infoOpen ? null : "open-info") : infoOpen ? "close-info" : "dismiss";
+            verticalMode =
+              dy < 0
+                ? infoOpen
+                  ? null
+                  : "open-info"
+                : infoOpen
+                  ? "close-info"
+                  : "dismiss";
           }
         }
 
@@ -472,19 +481,22 @@ const photos = await Promise.all(
 
         if (verticalMode === "open-info") {
           const progress = Math.min(1, Math.max(0, -dy / OPEN_INFO_DISTANCE));
-          const commit = progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
+          const commit =
+            progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = commit;
           infoPanel.classList.toggle("open", commit);
         } else if (verticalMode === "close-info") {
           const progress = Math.min(1, Math.max(0, dy / infoPanelHeight));
-          const commit = progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
+          const commit =
+            progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = !commit;
           infoPanel.classList.toggle("open", !commit);
         } else if (verticalMode === "dismiss") {
           const clampedDy = Math.max(0, dy);
-          const commit = clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
+          const commit =
+            clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
           if (commit) {
             lbImg.style.transform = "translateY(120%)";
             backdrop.style.opacity = "0";
