@@ -277,6 +277,20 @@ const photos = await Promise.all(
       }
     }
 
+    // Precarga las dos fotos vecinas (siguiente y anterior) para que el
+    // salto al navegar sea instantáneo en vez de esperar la descarga.
+    // new Image() basta: el navegador cachea la URL y lbImg.src la
+    // reutiliza directamente cuando toque mostrarla.
+    function preloadNeighbors(index) {
+      if (photos.length <= 1) return;
+      const nextIndex = (index + 1) % photos.length;
+      const prevIndex = (index - 1 + photos.length) % photos.length;
+      [nextIndex, prevIndex].forEach((i) => {
+        const preloadImg = new Image();
+        preloadImg.src = photos[i].src;
+      });
+    }
+
     // Deja imagen, fondo y panel de info en su estado "de reposo",
     // por si quedó algo a medias de un arrastre anterior.
     function resetDragStyles() {
@@ -290,6 +304,7 @@ const photos = await Promise.all(
 
     function open(index) {
       resetDragStyles();
+      preloadNeighbors(index);
       withTransition(index, () => {
         current = index;
         render();
@@ -312,6 +327,7 @@ const photos = await Promise.all(
 
     function go(delta) {
       const newIndex = (current + delta + photos.length) % photos.length;
+      preloadNeighbors(newIndex);
       withTransition(newIndex, () => {
         current = newIndex;
         render();
@@ -412,18 +428,10 @@ const photos = await Promise.all(
 
         // Decidir el eje del gesto una sola vez, tras un pequeño movimiento
         if (axis === null) {
-          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD)
-            return;
+          if (Math.abs(dx) < LOCK_THRESHOLD && Math.abs(dy) < LOCK_THRESHOLD) return;
           axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
           if (axis === "y") {
-            verticalMode =
-              dy < 0
-                ? infoOpen
-                  ? null
-                  : "open-info"
-                : infoOpen
-                  ? "close-info"
-                  : "dismiss";
+            verticalMode = dy < 0 ? (infoOpen ? null : "open-info") : infoOpen ? "close-info" : "dismiss";
           }
         }
 
@@ -481,22 +489,19 @@ const photos = await Promise.all(
 
         if (verticalMode === "open-info") {
           const progress = Math.min(1, Math.max(0, -dy / OPEN_INFO_DISTANCE));
-          const commit =
-            progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
+          const commit = progress > OPEN_INFO_COMMIT || velocityY < -FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = commit;
           infoPanel.classList.toggle("open", commit);
         } else if (verticalMode === "close-info") {
           const progress = Math.min(1, Math.max(0, dy / infoPanelHeight));
-          const commit =
-            progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
+          const commit = progress > OPEN_INFO_COMMIT || velocityY > FLING_VELOCITY;
           infoPanel.style.transform = "";
           infoOpen = !commit;
           infoPanel.classList.toggle("open", !commit);
         } else if (verticalMode === "dismiss") {
           const clampedDy = Math.max(0, dy);
-          const commit =
-            clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
+          const commit = clampedDy > DISMISS_COMMIT_PX || velocityY > FLING_VELOCITY;
           if (commit) {
             lbImg.style.transform = "translateY(120%)";
             backdrop.style.opacity = "0";
