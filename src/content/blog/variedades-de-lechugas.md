@@ -4,6 +4,7 @@ description: "Existen multiples variedades de lechugas, muchas de ellas no son c
 pubDate: "Jul 23 2026"
 heroImage: "../../assets/post_img.webp"
 tags: ["lechuga"]
+badge: "BAGDE"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna

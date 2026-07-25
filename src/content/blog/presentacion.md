@@ -3,7 +3,6 @@ title: "Presentación"
 description: "Esta no es la primera vez que intento mantener un blog o una galería de imágenes. Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando."
 pubDate: "Jul 22 2026"
 heroImage: "../../assets/gallery/photo_2026-07-08_02-27-27.jpg"
-badge: "BAGDE"
 ---
 
 Esta no es la primera vez que intento mantener un blog o una galería de imágenes.
