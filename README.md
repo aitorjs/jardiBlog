@@ -9,7 +9,6 @@
 - Precargar la siguiente/anterior foto para que el cambio sea instantáneo al hacer swipe o darle al boton de siguiente/anterior.
 
 
-- cada vez que hago un push, pages cambia el custom, porque? que no lo cambie en cada push
 
 - Hacer que funcionen las fotos por tags. Tag de huerta26, huerta25, h24, balcón. fraisoro, blasenea... asi algunos tags pueden ponerse en el grid desde json definiendo que tags quiero que muestre. recuerda que en grid es como una carpeta y asi podemos poner la ruta al tag y al click vaya a ella.
 
