@@ -1,17 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import { timeAgo } from "../lib/timeAgo";
 
 const workingOnSince = new Date("2026-07-25");
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const last_posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 
-const last_posts = posts.slice(0, 3);
+const last_photos = (await getCollection("gallery"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -59,6 +62,21 @@ const last_posts = posts.slice(0, 3);
     <div class="text-3xl w-full font-bold mb-5 mt-10">Últimas fotos</div>
   </div>
 
+  <div class="grid mb-16">
+    {
+      last_photos.map((foto) => (
+        <figure class="item">
+          <Image
+            src={foto.data.image}
+            alt={foto.data.alt}
+            width={500}
+            height={350}
+          />
+        </figure>
+      ))
+    }
+  </div>
+
   <div
     class="relative rounded-xl border border-gray-200 p-4 sm:p-5 pr-20 sm:pr-24"
   >
@@ -72,3 +90,43 @@ const last_posts = posts.slice(0, 3);
     </p>
   </div>
 </BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .item {
+    margin: 0;
+  }
+
+  .item :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* Tablet: 2 columnas, ocultar la 3ra imagen */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .item:nth-child(3) {
+      display: none;
+    }
+  }
+
+  /* Móvil: 1 columna, ocultar la 2da y 3ra */
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .item:nth-child(2) {
+      display: none;
+    }
+  }
+</style>

@@ -13,6 +13,263 @@
 
 - Hacer que funcionen las fotos por tags. Tag de huerta26, huerta25, h24, balcón. fraisoro, blasenea... asi algunos tags pueden ponerse en el grid desde json definiendo que tags quiero que muestre. recuerda que en grid es como una carpeta y asi podemos poner la ruta al tag y al click vaya a ella.
 
+
+### Click de las 3 imagenes de la galeria
+
+Para no repetir el `<script>` y el markup del lightbox en cada página, lo mejor es sacarlo a un **componente reutilizable** que reciba las imágenes como prop. Así lo usás tanto en la sección de "últimas fotos" como en una página que liste **todas** las de la colección.
+
+## 1. Crear el componente `Lightbox.astro`
+
+```astro
+---
+// src/components/Lightbox.astro
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Foto {
+  image: ImageMetadata;
+  alt: string;
+  title: string;
+}
+
+interface Props {
+  fotos: Foto[];
+}
+
+const { fotos } = Astro.props;
+---
+
+<div class="grid">
+  {fotos.map((foto, index) => (
+    <figure class="item">
+      <button type="button" class="open-lightbox" data-index={index}>
+        <Image src={foto.image} alt={foto.alt} width={500} height={350} />
+      </button>
+      <figcaption>{foto.title}</figcaption>
+    </figure>
+  ))}
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+  <img id="lightbox-img" src="" alt="" />
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .item {
+    margin: 0;
+  }
+
+  .open-lightbox {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .item :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .lightbox-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    line-height: 1;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .lightbox-prev {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-next {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+
+<script define:vars={{ fotos: fotos.map(f => ({ src: f.image.src, alt: f.alt, title: f.title })) }}>
+  const containers = document.querySelectorAll('.grid');
+  // Nos aseguramos de tomar el lightbox más cercano si hay varios en la página
+  const lightbox = document.currentScript.previousElementSibling.previousElementSibling; // fallback simple
+</script>
+
+<script define:vars={{ fotosData: fotos.map(f => ({ src: f.image.src, alt: f.alt, title: f.title })) }}>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + fotosData.length) % fotosData.length;
+    const foto = fotosData[currentIndex];
+    lightboxImg.src = foto.src;
+    lightboxImg.alt = foto.alt;
+    lightboxCaption.textContent = foto.title;
+  }
+
+  function openLightbox(index) {
+    showImage(index);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.open-lightbox').forEach((btn) => {
+    btn.addEventListener('click', () => openLightbox(Number(btn.dataset.index)));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+  nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+  });
+</script>
+```
+
+Nota: dejé sin usar el primer bloque de `<script>` que puse por error al probar una idea — borralo, quedate solo con el segundo (el que arranca con `const lightbox = document.getElementById('lightbox')`). Te lo dejo limpio abajo del todo para copiar directo.
+
+## 2. Usarlo en la sección de "últimas 3 fotos"
+
+```astro
+---
+import { getCollection } from 'astro:content';
+import Lightbox from '../components/Lightbox.astro';
+
+const todasLasFotos = await getCollection('gallery');
+
+const ultimasTres = todasLasFotos
+  .sort((a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf())
+  .slice(0, 3)
+  .map((foto) => ({
+    image: foto.data.image,
+    alt: foto.data.alt,
+    title: foto.data.title,
+  }));
+---
+
+<h2>Últimas fotos</h2>
+<Lightbox fotos={ultimasTres} />
+```
+
+## 3. Usarlo en una página con TODA la galería
+
+```astro
+---
+// src/pages/galeria.astro
+import { getCollection } from 'astro:content';
+import Lightbox from '../components/Lightbox.astro';
+
+const todasLasFotos = await getCollection('gallery');
+
+const fotos = todasLasFotos
+  .sort((a, b) => b.data.fecha.valueOf() - a.data.fecha.valueOf())
+  .map((foto) => ({
+    image: foto.data.image,
+    alt: foto.data.alt,
+    title: foto.data.title,
+  }));
+---
+
+<h1>Galería completa</h1>
+<Lightbox fotos={fotos} />
+```
+
+## Por qué así
+
+- **Un solo componente, reutilizado con distintos props**: le pasás el array que quieras (3 últimas, todas, filtradas por categoría, etc.) y el componente arma su propio grid + lightbox + navegación.
+- **No hay conflicto entre instancias**: si en algún momento ponés el componente dos veces en la misma página, vas a necesitar IDs únicos (`id="lightbox"` se duplicaría). Por ahora, si lo usás **una sola vez por página** (como en tus dos casos), no hay problema.
+
+Si en algún momento pensás poner el componente **más de una vez en la misma página** (por ejemplo, "últimas fotos" arriba y "galería completa" abajo, ambas con su propio lightbox), avisame y lo ajusto para que cada instancia tenga IDs únicos y no se pisen entre sí.
+
+### Otro
+
 Bien, vamos a montarlo. La pieza nueva es un helper (`src/lib/gallery.ts`) que centraliza la optimización de imágenes, para no duplicar esa lógica en dos páginas.
 
 ## 1. `src/data/albums.json`
