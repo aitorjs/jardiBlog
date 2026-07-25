@@ -1,56 +1,29 @@
 ---
 title: "Presentación"
-description: "Explicación de la razón de la existencia de esta página web y sus diferentes páginas: cv, blog y galería."
+description: "Esta no es la primera vez que intento mantener un blog o una galería de imágenes. Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando."
 pubDate: "Jul 22 2026"
-heroImage: "../../assets/post_img.webp"
+heroImage: "../../assets/gallery/photo_2026-07-08_02-27-27.jpg"
 badge: "BAGDE"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+Esta no es la primera vez que intento mantener un blog o una galería de imágenes.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+Esta vez no va ser igual 🤐. Eso espero por lo menos y intentaré dar lo mejor para poder llevar a buen puerto este pequeño proyecto personal. 💪🏼💪🏼💪🏼
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Al grano. 
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+Llevo unos cuantos años practicando con las plantas, principalmente con hortizas y algún frutal y planta medicinal en mi huerta. Hago todo lo más natural posible, lo que significa que intento imitar lo máximo posible como lo hace la naturaleza (naturalmente). 
+
+El bosque es buen sitio donde poner la atención. Aprenderás algo que desconocias, seguro!
+
+Así me paso a mí, fijandome en como el bosque el mismo crea turba o tierra. Si desde las hojas con tiempo y humedad la naturaleza crea tierra, desde el orgánico se tiene que poder crear turba. Efectivamente! A probar! 🪏
+
+Con el tiempo, te enteras que existen las lombrices que mediante su digestión, cagan humus de lombriz y que además ayudan en el proceso de descomposición de la materia orgánica. 
+
+Al tiempo, descubres que puedes cultivar lombrizes para poder tener humus de lombriz.
+
+De todo lo comentado, he practicado con todo. Eso sí, a la lombricompostora, no lo he terminado de cojer la mano, to-da-via.
+
+La idea de esta página web es ir dejando por aquí mis experimientos, recetas de diferentes de extractos naturales e ideas.

@@ -1,6 +1,6 @@
 ---
-title: "Familias de lechugas"
-description: "Existen multiples familias de lechugas, muchas de ellas no son comerciales y solo si se cultivan, se pueden apreciar."
+title: "Variedades de lechugas"
+description: "Existen multiples variedades de lechugas, muchas de ellas no son comerciales y solo si se cultivan, se pueden apreciar."
 pubDate: "Jul 23 2026"
 heroImage: "../../assets/post_img.webp"
 tags: ["lechuga"]
