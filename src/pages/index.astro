@@ -66,12 +66,19 @@ const last_photos = (await getCollection("gallery"))
     {
       last_photos.map((foto) => (
         <figure class="item">
-          <Image
-            src={foto.data.image}
-            alt={foto.data.alt}
-            width={500}
-            height={350}
-          />
+          <a
+            href={foto.data.image.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full h-full"
+          >
+            <Image
+              src={foto.data.image}
+              alt={foto.data.alt}
+              width={500}
+              height={350}
+            />
+          </a>
         </figure>
       ))
     }
