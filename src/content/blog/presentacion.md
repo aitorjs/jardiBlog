@@ -9,7 +9,7 @@ Esta no es la primera vez que intento mantener un blog o una galería de imágen
 
 Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando.
 
-Esta vez no va ser igual 🤐. Eso espero por lo menos y intentaré dar lo mejor para poder llevar a buen puerto este pequeño proyecto personal. 💪🏼💪🏼💪🏼
+Esta vez no va ser igual 🤐. Eso espero por lo menos e intentaré dar lo mejor para poder llevar a buen puerto este pequeño proyecto personal. 💪🏼💪🏼💪🏼
 
 Al grano. 
 
@@ -21,7 +21,7 @@ Así me paso a mí, fijandome en como el bosque el mismo crea turba o tierra. Si
 
 Con el tiempo, te enteras que existen las lombrices que mediante su digestión, cagan humus de lombriz y que además ayudan en el proceso de descomposición de la materia orgánica. 
 
-Al tiempo, descubres que puedes cultivar lombrizes para poder tener humus de lombriz.
+Al tiempo, descubres que puedes cultivar lombrices para poder tener humus de lombriz.
 
 De todo lo comentado, he practicado con todo. Eso sí, a la lombricompostora, no lo he terminado de cojer la mano, to-da-via.
 
