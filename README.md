@@ -5,8 +5,8 @@
 - Poner un placeholder o skeleton mientras carga las imagenes en el grid y en el detalle de la foto.
 - Meter fecha de foto en la info adicional.
 - AL estar encima de la imagen en el grid sacar una lupa que haga ver que se puede ampliar la foto.
-- En pc el zoom va mal. En movil en horizontal no se puede ir mas abajo de lo que se ve en la foto. Poner boton de pantalla completa en movil.
 - Precargar la siguiente/anterior foto para que el cambio sea instantáneo al hacer swipe o darle al boton de siguiente/anterior.
+- Boton de ir para atras visible en cualquier momento
 
 
 

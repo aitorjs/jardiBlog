@@ -179,6 +179,7 @@ const photos = await Promise.all(
           draggable="false"
           class="max-h-[75vh] max-w-[92vw] select-none object-contain"
           style="touch-action:pinch-zoom"
+          transition:name="gallery-photo"
         />
       </picture>
 
@@ -298,19 +299,39 @@ const photos = await Promise.all(
     }
 
     function withTransition(sourceIndex, mutate) {
-      if (canAnimate()) {
-        clearNames();
-        const sourceEl = items[sourceIndex];
-        if (sourceEl) sourceEl.style.viewTransitionName = "gallery-photo";
-        lbImg.style.viewTransitionName = "gallery-photo";
-        const transition = document.startViewTransition(mutate);
-        transition.finished.finally(() => {
-          clearNames();
-          lbImg.style.viewTransitionName = "";
-        });
-      } else {
+      if (!canAnimate()) {
         mutate();
+        return;
       }
+
+      clearNames();
+      const sourceEl = items[sourceIndex];
+
+      // Antes de capturar el estado "viejo": el thumbnail solo puede
+      // llevar el nombre si ahora mismo es lo único visible (lightbox
+      // todavía cerrado => vamos a abrir). Si el lightbox ya está
+      // abierto (vamos a cerrar), lb-img es quien lo lleva y el
+      // thumbnail debe quedar sin nombre para no duplicarlo.
+      const wasHidden = lightbox.classList.contains("hidden");
+      if (sourceEl) {
+        sourceEl.style.viewTransitionName = wasHidden ? "gallery-photo" : "";
+      }
+
+      const transition = document.startViewTransition(() => {
+        mutate();
+        // Después de mutar, la misma regla pero con el estado nuevo:
+        // si el lightbox ha quedado abierto, el nombre es de lb-img y
+        // el thumbnail lo suelta; si ha quedado cerrado, se lo cedemos
+        // al thumbnail para que la foto "vuelva" a su sitio.
+        if (sourceEl) {
+          sourceEl.style.viewTransitionName = lightbox.classList.contains(
+            "hidden",
+          )
+            ? "gallery-photo"
+            : "";
+        }
+      });
+      transition.finished.finally(clearNames);
     }
 
     // Precarga las dos fotos vecinas (siguiente y anterior) para que el
@@ -368,10 +389,8 @@ const photos = await Promise.all(
     function go(delta) {
       const newIndex = (current + delta + photos.length) % photos.length;
       preloadNeighbors(newIndex);
-      withTransition(newIndex, () => {
-        current = newIndex;
-        render();
-      });
+      current = newIndex;
+      render();
     }
 
     function toggleInfo(force) {
