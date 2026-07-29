@@ -183,6 +183,16 @@ const photos = await Promise.all(
         />
       </picture>
 
+      <div
+        id="lb-loader"
+        class="pointer-events-none absolute inset-0 z-20 hidden items-center justify-center"
+        aria-hidden="true"
+      >
+        <span
+          class="h-9 w-9 animate-spin rounded-full border-2 border-white/25 border-t-white"
+        ></span>
+      </div>
+
       <button
         id="lb-next"
         aria-label="Siguiente"
@@ -252,6 +262,7 @@ const photos = await Promise.all(
     const lbDesc = document.getElementById("lb-desc");
     const lbTags = document.getElementById("lb-tags");
     const lbCounter = document.getElementById("lb-counter");
+    const loader = document.getElementById("lb-loader");
     const infoPanel = document.getElementById("lb-info");
     const btnClose = document.getElementById("lb-close");
     const btnInfo = document.getElementById("lb-info-toggle");
@@ -260,6 +271,41 @@ const photos = await Promise.all(
 
     let current = 0;
     let infoOpen = false;
+
+    // Cachés simples para no relanzar la misma descarga varias veces
+    // (hover + click + precarga en segundo plano pueden solaparse).
+    const preloaded = new Set();
+    function preloadPhoto(i) {
+      const p = photos[i];
+      if (!p || preloaded.has(i)) return;
+      preloaded.add(i);
+      const img = new Image();
+      img.src = p.src;
+      if (p.srcAvif) {
+        const imgAvif = new Image();
+        imgAvif.src = p.srcAvif;
+      }
+    }
+
+    // Al pasar el ratón (o el dedo, con touchstart) por una miniatura,
+    // adelantamos la descarga de su versión grande: para cuando el
+    // usuario haga clic, normalmente ya estará en caché.
+    items.forEach((btn, i) => {
+      btn.addEventListener("mouseenter", () => preloadPhoto(i));
+      btn.addEventListener("touchstart", () => preloadPhoto(i), {
+        passive: true,
+      });
+    });
+
+    // Precarga en segundo plano de TODAS las fotos, en cuanto el
+    // navegador esté libre, para que abrir cualquier foto por primera
+    // vez ya la encuentre cacheada aunque no haya habido hover previo
+    // (p. ej. en táctil, donde no siempre hay hover).
+    const schedule =
+      window.requestIdleCallback || ((cb) => window.setTimeout(cb, 200));
+    schedule(() => {
+      photos.forEach((_, i) => preloadPhoto(i));
+    });
 
     function canAnimate() {
       return (
@@ -272,8 +318,45 @@ const photos = await Promise.all(
       items.forEach((el) => (el.style.viewTransitionName = ""));
     }
 
+    let loadToken = 0;
+
+    function showLoader() {
+      loader.classList.remove("hidden");
+      loader.classList.add("flex");
+    }
+
+    function hideLoader() {
+      loader.classList.add("hidden");
+      loader.classList.remove("flex");
+    }
+
     function render() {
       const p = photos[current];
+
+      // Cada render invalida la carga anterior: si el usuario navega
+      // rápido entre fotos, el spinner o el "load" de una imagen ya
+      // descartada no deben afectar a la que se muestra ahora.
+      loadToken += 1;
+      const myToken = loadToken;
+      let ready = false;
+      hideLoader();
+
+      const onSettled = () => {
+        if (myToken !== loadToken) return;
+        ready = true;
+        hideLoader();
+      };
+      lbImg.onload = onSettled;
+      lbImg.onerror = onSettled;
+
+      // Solo mostramos el spinner si, pasado un pequeño margen, la
+      // imagen todavía no ha terminado de cargar: así evitamos que
+      // parpadee en las fotos que ya estaban en caché (que es el caso
+      // normal gracias a la precarga).
+      window.setTimeout(() => {
+        if (!ready && myToken === loadToken) showLoader();
+      }, 150);
+
       // Si por lo que sea no hay avif válido, quitamos el srcset del
       // <source> en vez de dejarlo con un valor roto: así el navegador
       // pasa directo al webp (o al img de siempre) sin quedarse "vacío".
@@ -334,22 +417,18 @@ const photos = await Promise.all(
       transition.finished.finally(clearNames);
     }
 
-    // Precarga las dos fotos vecinas (siguiente y anterior) para que el
-    // salto al navegar sea instantáneo en vez de esperar la descarga.
-    // new Image() basta: el navegador cachea la URL y lbImg.src la
-    // reutiliza directamente cuando toque mostrarla.
+    // Precarga la foto actual y las dos vecinas (siguiente y anterior)
+    // para que abrir o saltar de foto sea instantáneo en vez de esperar
+    // la descarga. En la práctica ya deberían estar cacheadas por el
+    // hover o por la precarga en segundo plano de más arriba, pero esto
+    // cubre el caso de un clic directo sin hover previo (táctil, tab).
     function preloadNeighbors(index) {
+      preloadPhoto(index);
       if (photos.length <= 1) return;
       const nextIndex = (index + 1) % photos.length;
       const prevIndex = (index - 1 + photos.length) % photos.length;
-      [nextIndex, prevIndex].forEach((i) => {
-        const preloadWebp = new Image();
-        preloadWebp.src = photos[i].src;
-        if (photos[i].srcAvif) {
-          const preloadAvif = new Image();
-          preloadAvif.src = photos[i].srcAvif;
-        }
-      });
+      preloadPhoto(nextIndex);
+      preloadPhoto(prevIndex);
     }
 
     // Deja imagen, fondo y panel de info en su estado "de reposo",
@@ -378,6 +457,7 @@ const photos = await Promise.all(
     function close() {
       infoOpen = false;
       infoPanel.classList.remove("open");
+      hideLoader();
       withTransition(current, () => {
         lightbox.classList.add("hidden");
         lightbox.classList.remove("flex");
