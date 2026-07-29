@@ -90,7 +90,7 @@ const photos = await Promise.all(
                 alt={photo.title}
                 loading={i === 0 ? "eager" : "lazy"}
                 decoding="async"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </picture>
           </button>

@@ -70,13 +70,14 @@ const last_photos = (await getCollection("gallery"))
             href={foto.data.image.src}
             target="_blank"
             rel="noopener noreferrer"
-            class="block w-full h-full"
+            class="block w-full h-full group"
           >
             <Image
               src={foto.data.image}
               alt={foto.data.alt}
               width={500}
               height={350}
+              class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
             />
           </a>
         </figure>
