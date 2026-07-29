@@ -2,9 +2,12 @@
 
 ## Galería
 
-- Poner un placeholder o skeleton mientras carga las imagenes en el grid y en el detalle de la foto.
-- Meter fecha de foto en la info adicional.
 - Boton de ir para atras visible en cualquier momento
+- Area de mas fotos con lightbox y view transitions
+
+- imagen de avatar
+- mas fotos
+- entrada de lechugas
 
 
 

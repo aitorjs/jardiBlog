@@ -21,7 +21,7 @@ const gallery = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.coerce.date(),
+    pubDate: z.number(),
     alt: z.string(),
     image: image(),
     tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {

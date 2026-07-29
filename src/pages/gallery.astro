@@ -216,6 +216,7 @@ const photos = await Promise.all(
       <div class="mx-auto mb-3 h-1.5 w-10 rounded-full bg-base-300 sm:hidden">
       </div>
       <h3 id="lb-title" class="text-lg font-bold"></h3>
+      <p id="lb-date" class="mt-0.5 text-xs opacity-60"></p>
       <p id="lb-desc" class="mt-1 text-sm opacity-80"></p>
       <div id="lb-tags" class="mt-3 flex flex-wrap gap-2"></div>
     </div>
@@ -259,6 +260,7 @@ const photos = await Promise.all(
     const lbSourceAvif = document.getElementById("lb-source-avif");
     const lbSourceWebp = document.getElementById("lb-source-webp");
     const lbTitle = document.getElementById("lb-title");
+    const lbDate = document.getElementById("lb-date");
     const lbDesc = document.getElementById("lb-desc");
     const lbTags = document.getElementById("lb-tags");
     const lbCounter = document.getElementById("lb-counter");
@@ -318,6 +320,21 @@ const photos = await Promise.all(
       items.forEach((el) => (el.style.viewTransitionName = ""));
     }
 
+    // Admite el timestamp tanto en segundos como en milisegundos (por
+    // si el JSON viene de fuentes distintas): si es "demasiado pequeño"
+    // para ser milisegundos, lo tratamos como segundos.
+    function formatDate(ts) {
+      if (ts === undefined || ts === null || ts === "") return "";
+      const ms = Number(ts) < 1e12 ? Number(ts) * 1000 : Number(ts);
+      const d = new Date(ms);
+      if (isNaN(d.getTime())) return "";
+      return new Intl.DateTimeFormat("es-ES", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }).format(d);
+    }
+
     let loadToken = 0;
 
     function showLoader() {
@@ -370,6 +387,7 @@ const photos = await Promise.all(
       lbImg.alt = p.title;
       lbImg.style.aspectRatio = `${p.width} / ${p.height}`;
       lbTitle.textContent = p.title;
+      lbDate.textContent = formatDate(p.pubDate);
       lbDesc.textContent = p.description;
       lbTags.innerHTML = "";
       (p.tags || []).forEach((tag) => {
