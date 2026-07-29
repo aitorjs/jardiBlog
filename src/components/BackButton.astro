@@ -1,0 +1,48 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+
+const isHome = Astro.url.pathname === "/";
+---
+
+{
+  !isHome && (
+    <button
+      type="button"
+      data-back-button
+      aria-label="Volver atrás"
+      class={`btn btn-ghost btn-circle ${className}`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="h-5 w-5"     
+      >
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+    </button>
+  )
+}
+
+<script>
+  function setupBackButtons() {
+    document.querySelectorAll("[data-back-button]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Si venimos de fuera del sitio (o es la primera página de la
+        // pestaña) no hay historial dentro del propio site: mejor
+        // llevar a la portada que dejar el botón sin efecto.
+        if (window.history.length > 1) {
+          history.back();
+        } else {
+          window.location.assign("/");
+        }
+      });
+    });
+  }
+  document.addEventListener("astro:page-load", setupBackButtons);
+</script>

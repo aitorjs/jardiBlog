@@ -2,7 +2,6 @@
 
 ## Galería
 
-- Boton de ir para atras visible en cualquier momento
 - Area de mas fotos con lightbox y view transitions
 
 - imagen de avatar
