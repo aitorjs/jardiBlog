@@ -3,6 +3,13 @@
 ## Galería
 
 - Area de mas fotos con lightbox y view transitions
+- Paginacion de la galeria usando un boton de cargar mas?. De los blogs esta usando paginacion con numeros?
+- Meter un matomo gratis y en la nube: GoatCounter o Umami
+- Tiene sentido hacer un linktr.ee
+
+
+Crear cuenta en goatcounter.com y obtener tu URL tipo TU-CODIGO.goatcounter.com
+Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu código.
 
 - imagen de avatar
 - mas fotos
