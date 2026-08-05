@@ -16,6 +16,14 @@ const wipFull = await getImage({
   quality: 80,
 });
 
+import wipImageSrc2 from "../assets/photo_2026-07-27_12-36-18.jpg";
+const wipFull2 = await getImage({
+  src: wipImageSrc2,
+  width: 1600,
+  format: "webp",
+  quality: 80,
+});
+
 const workingOnSince = new Date("2026-08-03");
 
 const last_posts = (await getCollection("blog"))
@@ -49,9 +57,19 @@ const wipPhotos = [
     description:
       "Preparando el huerto para plantar puerros y brócoli esta temporada.",
     pubDate: workingOnSince.valueOf(),
-    tags: ["huerto", "puerros", "brocoli"],
+    tags: ["puerros", "brocoli"],
     width: wipFull.attributes.width ?? null,
     height: wipFull.attributes.height ?? null,
+  },
+  {
+    src: wipFull2.src,
+    srcAvif: null,
+    title: "Esquejes de lavanda",
+    description: "Practicando el esquejado con lavanda.",
+    pubDate: workingOnSince.valueOf(),
+    tags: ["lavanda"],
+    width: wipFull2.attributes.width ?? null,
+    height: wipFull2.attributes.height ?? null,
   },
 ];
 ---
