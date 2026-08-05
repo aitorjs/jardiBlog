@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import { timeAgo } from "../lib/timeAgo";
+import Lightbox from "../components/Lightbox.astro";
 
 const workingOnSince = new Date("2026-08-03");
 
@@ -12,9 +13,37 @@ const last_posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-const last_photos = (await getCollection("gallery"))
+const galleryEntries = (await getCollection("gallery"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+// Array de photos con la estructura que espera el Lightbox
+const last_photos = galleryEntries.map((foto) => ({
+  src: foto.data.image.src,
+  srcAvif: null,
+  thumbSrc: foto.data.image.src,
+  title: foto.data.title ?? foto.data.alt ?? "",
+  description: foto.data.description ?? "",
+  pubDate: foto.data.pubDate?.valueOf() ?? null,
+  tags: foto.data.tags ?? [],
+  width: foto.data.image.width,
+  height: foto.data.image.height,
+}));
+
+// "Trabajando en": un solo elemento → los botones prev/next no aparecen
+const wipPhotos = [
+  {
+    src: "/src/assets/photo_2026-07-27_12-23-12.jpg", // ← cambia por tu imagen real
+    srcAvif: null,
+    title: "Layar para puerros y brócoli",
+    description:
+      "Preparando el huerto para plantar puerros y brócoli esta temporada.",
+    pubDate: workingOnSince.valueOf(),
+    tags: ["huerto", "puerros", "brocoli"],
+    width: null,
+    height: null,
+  },
+];
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -36,6 +65,7 @@ const last_photos = (await getCollection("gallery"))
     </div>
   </div>
 
+  <!-- ── Blog ─────────────────────────────────────────────────── -->
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">
       Últimas entradas de blog
@@ -58,81 +88,155 @@ const last_photos = (await getCollection("gallery"))
     ))
   }
 
+  <!-- ── Últimas fotos ─────────────────────────────────────────── -->
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Últimas fotos</div>
   </div>
 
   <div class="grid mb-16">
     {
-      last_photos.map((foto) => (
+      galleryEntries.map((foto, i) => (
         <figure class="item">
-          <a
-            href={foto.data.image.src}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block w-full h-full group"
+          {/* Botón en vez de <a>: sin view-transition-name en HTML,
+              el Lightbox lo asigna dinámicamente al clicado */}
+          <button
+            class="photo-trigger block w-full h-full group"
+            data-index={i}
+            aria-label={`Ver foto: ${foto.data.alt}`}
           >
             <Image
               src={foto.data.image}
               alt={foto.data.alt}
               width={500}
               height={350}
-              class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
+              class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105 rounded-lg"
             />
-          </a>
+          </button>
         </figure>
       ))
     }
   </div>
 
+  <!-- ── Trabajando en ─────────────────────────────────────────── -->
   <div
     class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 rounded-xl border border-gray-200 p-4"
   >
     <p class="text-lg">
-      <span class="font-bold">Trabajando en</span> layar para puerros y brokoli 🥬🫑
+      <span class="font-bold">Trabajando en</span> layar para plantar puerros y brocoli
+      🥬🧅
     </p>
-    <p class="text-gray-400 whitespace-nowrap">
-      {timeAgo(workingOnSince)}
-    </p>
+    <div class="flex items-center gap-2 whitespace-nowrap">
+      <button
+        id="wip-photo-btn"
+        class="cursor-pointer inline-flex items-center justify-center p-1.5 text-base-content transition-colors"
+        aria-label="Ver foto del progreso"
+        title="Ver imágen"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          class="h-5 w-5"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <polyline points="21 15 16 10 5 21"></polyline>
+        </svg>
+      </button>
+      <p class="text-gray-400">{timeAgo(workingOnSince)}</p>
+    </div>
+
+    <Lightbox />
   </div>
+
+  <script define:vars={{ last_photos, wipPhotos }}>
+    function setupIndexTriggers() {
+      // ── Últimas fotos: hover preload + clic con view transition ──
+      const photoButtons = Array.from(
+        document.querySelectorAll(".photo-trigger"),
+      );
+
+      photoButtons.forEach((btn, i) => {
+        // Precarga en hover (ratón) y touchstart (táctil)
+        btn.addEventListener("mouseenter", () => {
+          document.dispatchEvent(
+            new CustomEvent("lightbox:preload", {
+              detail: { photos: last_photos, index: i },
+            }),
+          );
+        });
+        btn.addEventListener(
+          "touchstart",
+          () => {
+            document.dispatchEvent(
+              new CustomEvent("lightbox:preload", {
+                detail: { photos: last_photos, index: i },
+              }),
+            );
+          },
+          { passive: true },
+        );
+
+        // Clic: pasa el botón como triggerEl para la view transition
+        btn.addEventListener("click", () => {
+          document.dispatchEvent(
+            new CustomEvent("lightbox:open", {
+              detail: { photos: last_photos, index: i, triggerEl: btn },
+            }),
+          );
+        });
+      });
+
+      // ── Trabajando en: sin view transition (no hay thumbnail visible) ──
+      const wipBtn = document.getElementById("wip-photo-btn");
+      if (wipBtn) {
+        wipBtn.addEventListener("click", () => {
+          document.dispatchEvent(
+            new CustomEvent("lightbox:open", {
+              // triggerEl omitido → Lightbox abre sin animación de transición
+              detail: { photos: wipPhotos, index: 0 },
+            }),
+          );
+        });
+      }
+    }
+
+    document.addEventListener("astro:page-load", setupIndexTriggers);
+  </script>
+
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .item {
+      margin: 0;
+    }
+    .item :global(img) {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .item:nth-child(3) {
+        display: none;
+      }
+    }
+    @media (max-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .item:nth-child(2) {
+        display: none;
+      }
+    }
+  </style>
 </BaseLayout>
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .item {
-    margin: 0;
-  }
-
-  .item :global(img) {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-  }
-
-  /* Tablet: 2 columnas, ocultar la 3ra imagen */
-  @media (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .item:nth-child(3) {
-      display: none;
-    }
-  }
-
-  /* Móvil: 1 columna, ocultar la 2da y 3ra */
-  @media (max-width: 640px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-    .item:nth-child(2) {
-      display: none;
-    }
-  }
-</style>
