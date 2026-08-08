@@ -1,0 +1,152 @@
+---
+// PhotoLightboxGrid.astro — rejilla de miniaturas que abre Lightbox.astro
+// y permite moverse entre las fotos del mismo grupo (prev/next).
+//
+// Uso:
+//   <PhotoLightboxGrid photos={[{ image: myImage, title: "..." }, ...]} />
+//
+// Requiere que <Lightbox /> esté presente una única vez en la página
+// (escucha los eventos "lightbox:open" / "lightbox:preload" que dispara
+// este componente).
+
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface PhotoInput {
+  image: ImageMetadata;
+  title?: string;
+  alt?: string;
+  description?: string;
+  tags?: string[];
+  pubDate?: string | number | Date;
+}
+
+interface Props {
+  photos: PhotoInput[];
+  columns?: 1 | 2 | 3 | 4;
+  gap?: string; // clase Tailwind, p.ej. "gap-4" o "gap-6"
+  imgHeight?: string; // clases Tailwind, p.ej. "h-56 md:h-64"
+}
+
+const {
+  photos,
+  columns = 2,
+  gap = "gap-4",
+  imgHeight = "h-56 md:h-64",
+} = Astro.props;
+
+// Lightbox.astro espera pubDate como timestamp numérico (ms o s).
+// Si llega como Date o string, lo normalizamos aquí, ANTES de
+// serializar a JSON.stringify más abajo: un objeto Date se convierte
+// automáticamente en un string ISO al pasar por JSON.stringify, y ese
+// string ISO no es un número válido para el formateador del Lightbox.
+function toEpochMs(value: string | number | Date | undefined): number | undefined {
+  if (value === undefined || value === null || value === "") return undefined;
+  const d = value instanceof Date ? value : new Date(value);
+  const ms = d.getTime();
+  return isNaN(ms) ? undefined : ms;
+}
+
+// Datos que necesita el Lightbox (src/width/height/title/etc.),
+// derivados de los ImageMetadata que llegan por props.
+const lightboxPhotos = photos.map((p) => ({
+  src: p.image.src,
+  width: p.image.width,
+  height: p.image.height,
+  title: p.title,
+  description: p.description,
+  tags: p.tags,
+  pubDate: toEpochMs(p.pubDate),
+}));
+
+const gridColsClass =
+  columns === 1
+    ? ""
+    : columns === 2
+      ? "md:grid-cols-2"
+      : columns === 3
+        ? "md:grid-cols-3"
+        : "md:grid-cols-4";
+---
+
+<div
+  class:list={["plg-grid grid grid-cols-1", gap, gridColsClass]}
+  data-plg-photos={JSON.stringify(lightboxPhotos)}
+>
+  {
+    photos.map((photo, i) => (
+      <figure>
+        <div class:list={["w-full overflow-hidden rounded-lg", imgHeight]}>
+          <button
+            type="button"
+            class="cursor-pointer plg-trigger block w-full h-full"
+            data-plg-index={i}
+            aria-label={`Ver foto: ${photo.title ?? photo.alt ?? ""}`}
+          >
+            <Image
+              src={photo.image}
+              alt={photo.alt ?? photo.title ?? ""}
+              class="w-full h-full object-cover"
+              widths={[600, 900, 1200]}
+            />
+          </button>
+        </div>
+        {photo.title && (
+          <figcaption class="mt-1 text-sm text-slate-600">
+            {photo.title}
+          </figcaption>
+        )}
+      </figure>
+    ))
+  }
+</div>
+
+<script>
+  // Nota: este script no recibe datos vía define:vars a propósito.
+  // Su contenido es idéntico en cada instancia del componente, así
+  // Astro lo deduplica automáticamente aunque uses <PhotoLightboxGrid />
+  // varias veces en la misma página (p.ej. una vez para stevia y otra
+  // para lavanda). Los datos de cada grupo se leen del atributo
+  // data-plg-photos de cada contenedor en tiempo de ejecución.
+  function setupPhotoLightboxGrids() {
+    const containers = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-plg-photos]"),
+    );
+
+    containers.forEach((container) => {
+      let photos: any[] = [];
+      try {
+        photos = JSON.parse(container.dataset.plgPhotos ?? "[]");
+      } catch {
+        photos = [];
+      }
+      if (!photos.length) return;
+
+      const triggers = Array.from(
+        container.querySelectorAll<HTMLButtonElement>(".plg-trigger"),
+      );
+
+      triggers.forEach((btn) => {
+        const index = Number(btn.dataset.plgIndex ?? 0);
+
+        const preload = () => {
+          document.dispatchEvent(
+            new CustomEvent("lightbox:preload", { detail: { photos, index } }),
+          );
+        };
+        btn.addEventListener("mouseenter", preload);
+        btn.addEventListener("touchstart", preload, { passive: true });
+
+        btn.addEventListener("click", () => {
+          document.dispatchEvent(
+            new CustomEvent("lightbox:open", {
+              detail: { photos, index, triggerEl: btn },
+            }),
+          );
+        });
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupPhotoLightboxGrids);
+</script>
