@@ -123,15 +123,15 @@
   },
   {
     "id": "photo_2025-07-25_20-17-39 (5)",
-    "title": "Judías, maíz y calabacín",
-    "description": "Babarrunas sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+    "title": "Alubias, maíz y calabacín",
+    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
     "tags": [
-      "judías",
+      "alubias",
       "maíz",
       "calabacín"
     ],
     "pubDate": 1753474659,
-    "alt": "Judías, maíz y calabacín",
+    "alt": "Alubias, maíz y calabacín",
     "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
   },
   {
@@ -144,7 +144,127 @@
       "agua"
     ],
     "pubDate": 1753474659,
-    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "alt": "Calabacines, acelgas y chupones de tomateras",
     "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (3)",
+    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
+    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+    "tags": [
+      "judías",
+      "calabacín",
+      "tomate",
+      "pimiento",
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Pimientos, gindillas, judías maiz y calabacines",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39",
+    "title": "Vista general a finales de Julio del 2025",
+    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+    "tags": [
+      "tomate",
+      "lechuga",
+      "pimiento",
+      "gindilla",
+      "calabaza",
+      "vista-general"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Vista general del bancal",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
+  },
+  {
+    "id": "IMG_20260807_205715",
+    "title": "Cosecha de tomates variados",
+    "description": "Caja llena de tomates recién cosechados en mallas rojas: mendigorria, igeldo, bosque blue, raf, cherry botella amarilla y tetón de venus.",
+    "tags": [
+      "tomates",
+      "berenjena",
+      "gindilla",
+      "cosecha"
+    ],
+    "pubDate": 1786136235,
+    "alt": "Cosecha de tomates variados",
+    "image": "../assets/gallery/IMG_20260807_205715.jpg"
+  },
+  {
+    "id": "IMG_20260806_203834",
+    "title": "Selección de la huerta del día",
+    "description": "Tomates de distintas variedades (mendigorria, rosa de xemein y cherry silvestre), una berenjena, y gindillas verdes.",
+    "tags": [
+      "tomates",
+      "berenjena",
+      "gindilla",
+      "cosecha"
+    ],
+    "pubDate": 1786048714,
+    "alt": "Selección de la huerta del día",
+    "image": "../assets/gallery/IMG_20260806_203834.jpg"
+  },
+  {
+    "id": "IMG_20260806_171652",
+    "title": "Chinche en una zarzal",
+    "description": "Chinche posada sobre una hoja de zarzas, mostrando sus largas antenas y patas.",
+    "tags": [
+      "insectos"
+    ],
+    "pubDate": 1786036612,
+    "alt": "Chinche en una zarzal",
+    "image": "../assets/gallery/IMG_20260806_171652.jpg"
+  },
+  {
+    "id": "IMG_20260806_171210",
+    "title": "Chinche en una zarzal 2",
+    "description": "Chinche caminando por un tallo espinoso, rodeado de hojas de zarza.",
+    "tags": [
+      "insectos"
+    ],
+    "pubDate": 1786036330,
+    "alt": "Chinche en una zarzal 2",
+    "image": "../assets/gallery/IMG_20260806_171210.jpg"
+  },
+  {
+    "id": "IMG_20260804_204345",
+    "title": "Transplante de puerros",
+    "description": "Fila de puerros recién transplantados con tomateras y espárragos, uno con bayas rojas.",
+    "tags": [
+      "puerros",
+      "cosecha"
+    ],
+    "pubDate": 1785876225,
+    "alt": "Transplante de puerros",
+    "image": "../assets/gallery/IMG_20260804_204345.jpg"
+  },
+  {
+    "id": "IMG_20260801_200158",
+    "title": "Montón de compost cubierto",
+    "description": "Heces de caballo compostando con lonas azules encima y una pala clavada en el montón.",
+    "tags": [
+      "compost"
+    ],
+    "pubDate": 1785614518,
+    "alt": "Montón de compost cubierto",
+    "image": "../assets/gallery/IMG_20260801_200158.jpg"
+  },
+  {
+    "id": "IMG_20260801_110338",
+    "title": "Panorámica del huerto a principios de Agosto del 2026",
+    "description": "Bancales con tomateras entutoradas, blas-cherry recien transplantado, calabacines y calabazas en flor y esparragos al fondo a la derecha.",
+    "tags": [
+      "calabacin",
+      "calabaza",
+      "tomates",
+      "esparragos",
+      "vista-general"
+    ],
+    "pubDate": 1785582218,
+    "alt": "Panorámica del huerto a principios de Agosto del 2026",
+    "image": "../assets/gallery/IMG_20260801_110338.jpg"
   }
 ]
