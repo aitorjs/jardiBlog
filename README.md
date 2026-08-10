@@ -11,7 +11,7 @@ Crear cuenta en goatcounter.com y obtener tu URL tipo TU-CODIGO.goatcounter.com
 Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu código.
 
 - 3 imagen de avatar
-- 1/2 mas fotos. poner 30 fotos en total con descripcion, titulo y metatags. Ordenado por nombre ascendente en IMG_20260801_110248.jpg como siguiente. Tenemos más de 90 fotos en el repo.   codeMeterle photo date, descripcion, titutlo y tags.
+- 1/2 mas fotos. poner 30 fotos en total con descripcion, titulo y metatags. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente. Tenemos más de 90 fotos en el repo.   codeMeterle photo date, descripcion, titutlo y tags.
 - 1/2 entrada de lechugas
 
 ## Mas tarde

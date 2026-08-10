@@ -88,7 +88,7 @@
     "title": "Coles de bruselas y lombardas recien transplantadas",
     "description": "Coles de bruselas y lombardas recién trasplantados en filas, con gránulo azul para los caracoles y babosas.",
     "tags": [
-      "col",
+      "coles",
       "lombarda",
       "abajo"
     ],
@@ -195,7 +195,7 @@
   },
   {
     "id": "IMG_20260806_203834",
-    "title": "Selección de la huerta del día",
+    "title": "Recolección de un día del huerto",
     "description": "Tomates de distintas variedades (mendigorria, rosa de xemein y cherry silvestre), una berenjena, y gindillas verdes.",
     "tags": [
       "tomates",
@@ -204,7 +204,7 @@
       "cosecha"
     ],
     "pubDate": 1786048714,
-    "alt": "Selección de la huerta del día",
+    "alt": "Recolección de un día del huerto",
     "image": "../assets/gallery/IMG_20260806_203834.jpg"
   },
   {
@@ -266,5 +266,213 @@
     "pubDate": 1785582218,
     "alt": "Panorámica del huerto a principios de Agosto del 2026",
     "image": "../assets/gallery/IMG_20260801_110338.jpg"
+  },
+  {
+    "id": "IMG_20260801_110156",
+    "title": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
+    "description": "Vista general desde la parte de arriba del huerto con calabacines en flor, tomateras entutoradas de diferentes variedades, lechugas subidas para semilla y una aloe en maceta al fondo.",
+    "tags": [
+      "calabacin",
+      "tomates",
+      "pimiento",
+      "gindilla",
+      "vista-general"
+    ],
+    "pubDate": 1785582116,
+    "alt": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
+    "image": "../assets/gallery/IMG_20260801_110156.jpg"
+  },
+  {
+    "id": "IMG_20260801_110128",
+    "title": "Fila de pimientos junto a tomateras",
+    "description": "Pimientos bien desarrollados entutorados con cañas, con tomateras a un lado y maíz y lechugas al fondo.",
+    "tags": [
+      "pimientos",
+      "tomates",
+      "lechuga"
+    ],
+    "pubDate": 1785582088,
+    "alt": "Fila de pimientos junto a tomateras",
+    "image": "../assets/gallery/IMG_20260801_110128.jpg"
+  },
+  {
+    "id": "IMG_20260801_110040",
+    "title": "Panorámica del huerto a principios de Agosto del 2026 - 2",
+    "description": "Bancales con tomateras entutoradas, calabacines y calabazas en flor y maiz al fondo.",
+    "tags": [
+      "calabacin",
+      "calabaza",
+      "tomates",
+      "maiz",
+      "vista-general"
+    ],
+    "pubDate": 1785582040,
+    "alt": "Panorámica del huerto a principios de Agosto del 2026 - 2",
+    "image": "../assets/gallery/IMG_20260801_110040.jpg"
+  },
+  {
+    "id": "IMG_20260801_105957",
+    "title": "Panorámica del huerto a principios de Agosto del 2026 - 3",
+    "description": "Bancal con berenjenas, gindillas y pimientos, lechugas subiendose junto a una aloe en maceta, con tomateras al fondo.",
+    "tags": [
+      "berenjenas",
+      "gindilla",
+      "pimiento",
+      "lechugas",
+      "aloe",
+      "arriba"
+    ],
+    "pubDate": 1785581997,
+    "alt": "Panorámica del huerto a principios de Agosto del 2026 - 3",
+    "image": "../assets/gallery/IMG_20260801_105957.jpg"
+  },
+  {
+    "id": "IMG_20260801_105902",
+    "title": "Berenjenas cargando fruto",
+    "description": "Berenjenas con los primeros frutos oscuros formándose, junto a caléndulas, calabacines y cañas entrelazadas de tutor.",
+    "tags": [
+      "berenjenas",
+      "calendulas",
+      "arriba"
+    ],
+    "pubDate": 1785581942,
+    "alt": "Berenjenas cargando fruto",
+    "image": "../assets/gallery/IMG_20260801_105902.jpg"
+  },
+  {
+    "id": "IMG_20260801_105847",
+    "title": "Coles de bruselas y lombardas",
+    "description": "Fila de plantones de col de bruselas y lombardas.",
+    "tags": [
+      "coles",
+      "lombarda",
+      "abajo"
+    ],
+    "pubDate": 1785581927,
+    "alt": "Coles recién plantadas",
+    "image": "../assets/gallery/IMG_20260801_105847.jpg"
+  },
+  {
+    "id": "IMG_20260801_105646",
+    "title": "Tomateras cargadas de fruto",
+    "description": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+    "tags": [
+      "tomates",
+      "calendula",
+      "tajete",
+      "abajo"
+    ],
+    "pubDate": 1785581806,
+    "alt": "Tomateras cargadas de fruto",
+    "image": "../assets/gallery/IMG_20260801_105646.jpg"
+  },
+  {
+    "id": "IMG_20260727_201303",
+    "title": "Coles de bruselas y lombardas",
+    "description": "Unas semanas después del transplante, las plantas siguen sanas y naturales.",
+    "tags": [
+      "coles",
+      "lombarda",
+      "abajo"
+    ],
+    "pubDate": 1785183183,
+    "alt": "Coles de bruselas y lombardas",
+    "image": "../assets/gallery/IMG_20260727_201303.jpg"
+  },
+  {
+    "id": "IMG_20260724_212707",
+    "title": "Cosecha de calabacines, gindillas, lechuga y flores de calabacín y calabaza",
+    "description": "",
+    "tags": [
+      "calabacin",
+      "lechuga",
+      "cosecha"
+    ],
+    "pubDate": 1784928427,
+    "alt": "Cosecha de calabacines, lechuga y flores de calabacín",
+    "image": "../assets/gallery/IMG_20260724_212707.jpg"
+  },
+  {
+    "id": "IMG_20260724_202834",
+    "title": "Tomateras cargadas de tomates",
+    "description": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+    "tags": [
+      "tomates",
+      "calendula",
+      "tajete",
+      "abajo"
+    ],
+    "pubDate": 1784924914,
+    "alt": "Tomateras cargadas de tomates",
+    "image": "../assets/gallery/IMG_20260724_202834.jpg"
+  },
+  {
+    "id": "IMG_20260719_184213",
+    "title": "Estado del seto antes de la operación invernadero",
+    "description": "Matorral de zarzas donde ira el futuro invernadero.",
+    "tags": [
+      "invernadero"
+    ],
+    "pubDate": 1784486533,
+    "alt": "Estado del seto antes de la operación invernadero",
+    "image": "../assets/gallery/IMG_20260719_184213.jpg"
+  },
+  {
+    "id": "IMG_20260713_171600",
+    "title": "Tomateras jóvenes",
+    "description": "Filas de tomateras en fase de crecimiento, alguna en floración incluso con algún fruto cuajado y trampas amarillas para insectos.",
+    "tags": [
+      "tomates"
+    ],
+    "pubDate": 1783962960,
+    "alt": "Tomateras jóvenes",
+    "image": "../assets/gallery/IMG_20260713_171600.jpg"
+  },
+  {
+    "id": "IMG_20260713_150133",
+    "title": "Primeros tomates formándose",
+    "description": "Tomateras entutoradas con pequeños tomates verdes cuajados entre caléndulas.",
+    "tags": [
+      "tomates"
+    ],
+    "pubDate": 1783954893,
+    "alt": "Primeros tomates formándose",
+    "image": "../assets/gallery/IMG_20260713_150133.jpg"
+  },
+  {
+    "id": "IMG_20260710_204334",
+    "title": "Tomateras",
+    "description": "Fila de tomateras jóvenes.",
+    "tags": [
+      "tomates"
+    ],
+    "pubDate": 1783716214,
+    "alt": "Tomateras",
+    "image": "../assets/gallery/IMG_20260710_204334.jpg"
+  },
+  {
+    "id": "IMG_20260707_155855",
+    "title": "Semilleros y plantones",
+    "description": "Bandejas de semilleros con brotes recién nacidos de blas-cherry y coliflor morada junto a una aloe vera y un rosal en maceta.",
+    "tags": [
+      "semilleros",
+      "aloe",
+      "coliflor"
+    ],
+    "pubDate": 1783439935,
+    "alt": "Semilleros y plantones",
+    "image": "../assets/gallery/IMG_20260707_155855.jpg"
+  },
+  {
+    "id": "IMG_20260705_212233",
+    "title": "Bancal de lechugas",
+    "description": "Lechugas bien desarrolladas junto a pimientos jóvenes.",
+    "tags": [
+      "lechugas",
+      "pimientos"
+    ],
+    "pubDate": 1783286553,
+    "alt": "Bancal de lechugas",
+    "image": "../assets/gallery/IMG_20260705_212233.jpg"
   }
 ]
