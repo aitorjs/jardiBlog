@@ -5,7 +5,9 @@ import galleryMeta from "../data/gallery.json";
 import Lightbox from "../components/Lightbox.astro";
 
 const title = "Galería";
-const description = "Fotos del jardín";
+const description = "Galería de fotos del jardín";
+
+const PHOTOS_PER_PAGE = 20;
 
 const imageFiles = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -63,6 +65,8 @@ const photos = await Promise.all(
     };
   }),
 );
+
+const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
 ---
 
 <BaseLayout
@@ -71,43 +75,131 @@ const photos = await Promise.all(
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">Galería de fotos</h1>
+    <h1 class="text-2xl font-bold">Galería de fotos del jardin</h1>
   </div>
 
-  <section>
+  <section class="gallery-section">
     <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
       {
-        photos.map((photo, i) => (
-          <button
-            class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-base-200"
-            data-index={i}
-            aria-label={`Ver foto: ${photo.title}`}
-          >
-            <picture class="contents">
-              <source srcset={photo.thumbSrcAvif} type="image/avif" />
-              <source srcset={photo.thumbSrc} type="image/webp" />
-              <img
-                src={photo.thumbSrc}
-                alt={photo.title}
-                loading={i === 0 ? "eager" : "lazy"}
-                decoding="async"
-                class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </picture>
-          </button>
-        ))
+        photos.map((photo, i) => {
+          const page = Math.floor(i / PHOTOS_PER_PAGE) + 1;
+          return (
+            <button
+              class={`gallery-item group relative aspect-square overflow-hidden rounded-xl bg-base-200 ${page === 1 ? "" : "hidden"}`}
+              data-index={i}
+              data-page={page}
+              aria-label={`Ver foto: ${photo.title}`}
+            >
+              <picture class="contents">
+                <source srcset={photo.thumbSrcAvif} type="image/avif" />
+                <source srcset={photo.thumbSrc} type="image/webp" />
+                <img
+                  src={photo.thumbSrc}
+                  alt={photo.title}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </picture>
+            </button>
+          );
+        })
       }
     </div>
+
+    {
+      /* Centinela: cuando se acerca al viewport (antes de llegar al final real)
+        se revela el siguiente lote de fotos */
+    }
+    {totalPages > 1 && <div class="scroll-sentinel h-1 w-full" />}
+
+    <p class="gallery-status sr-only" aria-live="polite"></p>
   </section>
 
   <Lightbox />
 </BaseLayout>
 
-<script define:vars={{ photos }}>
+<script define:vars={{ photos, photosPerPage: PHOTOS_PER_PAGE }}>
   function setupGallery() {
     const items = Array.from(document.querySelectorAll(".gallery-item"));
+    const sentinel = document.querySelector(".scroll-sentinel");
+    const statusEl = document.querySelector(".gallery-status");
+    const totalPages = Math.max(1, Math.ceil(photos.length / photosPerPage));
 
-    // Precarga en hover / touchstart (igual que en el original)
+    let revealedPages = 1;
+    const preloadedPages = new Set();
+
+    function getPhotosForPage(page) {
+      const start = (page - 1) * photosPerPage;
+      return photos.slice(start, start + photosPerPage);
+    }
+
+    // Descarga por adelantado las miniaturas (webp/avif) de una página,
+    // para que ya estén en caché antes de que el usuario llegue a verlas
+    function preloadPageThumbnails(page) {
+      if (page < 1 || page > totalPages || preloadedPages.has(page)) return;
+      preloadedPages.add(page);
+      getPhotosForPage(page).forEach((photo) => {
+        const webp = new Image();
+        webp.src = photo.thumbSrc;
+        const avif = new Image();
+        avif.src = photo.thumbSrcAvif;
+      });
+    }
+
+    function revealPage(page) {
+      items.forEach((item) => {
+        if (parseInt(item.dataset.page, 10) === page) {
+          item.classList.remove("hidden");
+        }
+      });
+    }
+
+    function updateStatus() {
+      if (!statusEl) return;
+      const shown = Math.min(revealedPages * photosPerPage, photos.length);
+      statusEl.textContent = `Mostrando ${shown} de ${photos.length} fotos`;
+    }
+
+    // Solo la primera página se muestra al inicio (ya viene así desde el
+    // servidor). Precargamos la segunda de inmediato para que esté lista
+    // antes de que el usuario llegue al final de la primera.
+    updateStatus();
+    preloadPageThumbnails(2);
+
+    if (sentinel && totalPages > 1) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting || revealedPages >= totalPages) return;
+
+            revealedPages += 1;
+            revealPage(revealedPages);
+            updateStatus();
+
+            // Precarga el siguiente lote por adelantado, antes de que
+            // el usuario se acerque al nuevo final de la página
+            preloadPageThumbnails(revealedPages + 1);
+
+            if (revealedPages >= totalPages) {
+              observer.disconnect();
+              sentinel.remove();
+            }
+          });
+        },
+        {
+          // Se dispara ~600px antes de que el centinela entre en pantalla,
+          // es decir, antes de que el usuario llegue al final real
+          rootMargin: "600px 0px 600px 0px",
+          threshold: 0,
+        },
+      );
+      observer.observe(sentinel);
+    } else if (sentinel) {
+      sentinel.remove();
+    }
+
+    // Precarga en hover / touchstart de la imagen en grande (igual que el original)
     items.forEach((btn, i) => {
       btn.addEventListener("mouseenter", () => {
         document.dispatchEvent(
