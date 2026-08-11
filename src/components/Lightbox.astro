@@ -202,17 +202,31 @@
     let currentTriggerEl: HTMLElement | null = null; // el botón/thumbnail clicado
 
     // ── Preload ───────────────────────────────────────────────────
+    // Detecta UNA sola vez si el navegador soporta AVIF, para precargar
+    // solo el formato que realmente se va a usar (igual que hace <picture>
+    // de forma nativa) y no descargar webp + avif de cada foto.
+    function checkAvifSupport(): Promise<boolean> {
+      return new Promise((resolve) => {
+        const testImg = new Image();
+        testImg.onload = () => resolve(testImg.width === 1);
+        testImg.onerror = () => resolve(false);
+        // Imagen AVIF de 1x1 codificada en base64, solo para el test
+        testImg.src =
+          "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB9tZGF0EgAKCBgABogQEDQgMgkQAAAAB8dSLfI=";
+      });
+    }
+
+    // Se resuelve una sola vez al cargar el script y se reutiliza siempre
+    const avifSupportedPromise = checkAvifSupport();
+
     const preloaded = new Set<number>();
-    function preloadPhoto(i: number) {
+    async function preloadPhoto(i: number) {
       const p = photos[i];
       if (!p || preloaded.has(i)) return;
       preloaded.add(i);
+      const avifSupported = await avifSupportedPromise;
       const img = new Image();
-      img.src = p.src;
-      if (p.srcAvif) {
-        const a = new Image();
-        a.src = p.srcAvif;
-      }
+      img.src = avifSupported && p.srcAvif ? p.srcAvif : p.src;
     }
     function preloadNeighbors(index: number) {
       preloadPhoto(index);

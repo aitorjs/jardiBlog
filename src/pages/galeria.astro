@@ -4,11 +4,11 @@ import { getImage } from "astro:assets";
 import galleryMeta from "../data/gallery.json";
 import Lightbox from "../components/Lightbox.astro";
 
-const title = "Galería";
-const description = "Fotos del jardín";
+const title = "Galería del jardín";
+const description = "Galería de fotos del jardín";
 
 // 👉 Cambia este número para ajustar cuántas fotos se cargan cada vez
-const PHOTOS_PER_PAGE = 12;
+const PHOTOS_PER_PAGE = 20;
 
 const imageFiles = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
   eager: true,
