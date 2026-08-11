@@ -5,9 +5,10 @@ import galleryMeta from "../data/gallery.json";
 import Lightbox from "../components/Lightbox.astro";
 
 const title = "Galería";
-const description = "Galería de fotos del jardín";
+const description = "Fotos del jardín";
 
-const PHOTOS_PER_PAGE = 20;
+// 👉 Cambia este número para ajustar cuántas fotos se cargan cada vez
+const PHOTOS_PER_PAGE = 12;
 
 const imageFiles = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
   eager: true,
@@ -75,7 +76,7 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">Galería de fotos del jardin</h1>
+    <h1 class="text-2xl font-bold">Galería de fotos</h1>
   </div>
 
   <section class="gallery-section">
@@ -134,16 +135,32 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
       return photos.slice(start, start + photosPerPage);
     }
 
-    // Descarga por adelantado las miniaturas (webp/avif) de una página,
-    // para que ya estén en caché antes de que el usuario llegue a verlas
-    function preloadPageThumbnails(page) {
+    // Detecta UNA sola vez si el navegador soporta AVIF, para precargar
+    // solo el formato que realmente se va a usar (igual que hace <picture>
+    // de forma nativa) y no descargar webp + avif de cada foto.
+    function checkAvifSupport() {
+      return new Promise((resolve) => {
+        const testImg = new Image();
+        testImg.onload = () => resolve(testImg.width === 1);
+        testImg.onerror = () => resolve(false);
+        // Imagen AVIF de 1x1 codificada en base64, solo para el test
+        testImg.src =
+          "data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAEAAAABAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAAB9tZGF0EgAKCBgABogQEDQgMgkQAAAAB8dSLfI=";
+      });
+    }
+
+    // Se resuelve una sola vez al cargar el script y se reutiliza siempre
+    const avifSupportedPromise = checkAvifSupport();
+
+    // Descarga por adelantado las miniaturas de una página, usando solo el
+    // formato que el navegador va a usar realmente (no ambos)
+    async function preloadPageThumbnails(page) {
       if (page < 1 || page > totalPages || preloadedPages.has(page)) return;
       preloadedPages.add(page);
+      const avifSupported = await avifSupportedPromise;
       getPhotosForPage(page).forEach((photo) => {
-        const webp = new Image();
-        webp.src = photo.thumbSrc;
-        const avif = new Image();
-        avif.src = photo.thumbSrcAvif;
+        const img = new Image();
+        img.src = avifSupported ? photo.thumbSrcAvif : photo.thumbSrc;
       });
     }
 
