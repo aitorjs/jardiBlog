@@ -2,7 +2,7 @@
   "name": "aitor.info",
   "description": "Constituye mi diario personal como hortelano y jardinero certificado, enfocado en el cultivo y la naturaleza. La página ofrece un blog de experiencias de huerto, un currículum profesional y una galería de imágenes.",
   "type": "module",
-  "version": "4.0.0",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -12,18 +12,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.10",
-    "@astrojs/rss": "^4.0.13",
-    "@astrojs/sitemap": "^3.6.0",
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.8",
-    "dayjs": "^1.11.19",
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^5.18.2",
+    "dayjs": "^1.11.21",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
-    "daisyui": "^5.5.5"
+    "@tailwindcss/typography": "^0.5.20",
+    "daisyui": "^5.7.16"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

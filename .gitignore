@@ -3,6 +3,7 @@ dist/
 .cache
 # dependencies
 node_modules/
+node_modulesGOOD/
 
 # logs
 npm-debug.log*
