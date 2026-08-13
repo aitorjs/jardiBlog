@@ -5,7 +5,41 @@ import Lightbox from "@components/Lightbox.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
-  const all_photos = await getCollection("gallery");
+  const gallery_photos = await getCollection("gallery");
+
+  // Fotos sueltas definidas con "export const photos = [...]" dentro de
+  // los .mdx del blog. No son entradas de content collections, así que
+  // getCollection() no las ve: hay que recogerlas a mano con import.meta.glob.
+  // Ajusta la ruta del glob si tu colección de blog vive en otra carpeta.
+  const blogModules = import.meta.glob("/src/content/blog/**/*.mdx", {
+    eager: true,
+  }) as Record<string, { photos?: any[] }>;
+
+
+  const mdx_photos = Object.values(blogModules).flatMap((mod: any) => {
+    return Object.values(mod).flatMap((v: any) => {
+      if (!Array.isArray(v)) return [];
+      return v;
+    });
+  });
+
+  // Unificamos ambas fuentes bajo la misma forma { data: {...} } para
+  // reutilizar sin cambios el resto de la lógica de esta página, que
+  // ya asume entry.data.X.
+  const all_photos = [
+    ...gallery_photos.map((entry) => ({ data: entry.data })),
+    ...mdx_photos.map((p) => ({
+      data: {
+        image: p.image,
+        title: p.title,
+        alt: p.alt,
+        description: p.description,
+        tags: p.tags ?? [],
+        pubDate: p.pubDate,
+      },
+    })),
+  ];
+
   const all_tags = all_photos.flatMap((photo) => photo.data.tags || []);
   const unique_tags = [...new Set(all_tags)];
 

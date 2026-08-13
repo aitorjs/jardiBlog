@@ -3,7 +3,7 @@ title: "Poda apical y esquejado"
 description: "Explico la diferencia entre poda apical y esquejado, y resumo lo que me ha funcionado (y lo que aún tengo que mejorar) al sacar esquejes de stevia y hacer una primera prueba con lavanda."
 pubDate: "Jul 27 2026"
 heroImage: "../../assets/photo_2026-07-27_12-36-26.jpg"
-tags: ["estevia", "lavanda", "poda-apical","esquejado"]
+tags: ["stevia", "lavanda", "poda-apical","esquejado"]
 ---
 
 import { Image } from "astro:assets";
@@ -29,7 +29,7 @@ export const photosStevia = [
     description:
       "Esqueje de stevia recién plantado, a la espera de enraizar en semi-sombra con humedad estable.",
     tags: ["stevia", "esquejado"],
-    pubDate: "Jul 27 2026"  ,
+    pubDate: "Jul 27 2026",
   },
 ];
 
@@ -51,6 +51,11 @@ export const photosLavanda = [
     pubDate: new Date("Jul 27 2026"),
   },
 ];
+
+// Necesario para que /galeria/tag/[tag] pueda recoger estas fotos:
+// esa página busca un export con este nombre exacto ("photos") en
+// cada .mdx del blog vía import.meta.glob.
+export const photos = [...photosStevia, ...photosLavanda];
 
 <Lightbox />
 
