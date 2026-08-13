@@ -16,6 +16,6 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 
 ## Mas tarde
 
-- Paginacion de la galeria usando un boton de cargar mas? Esperar ha que se genera la necesidad al subir mas fotos.
-
 - Hacer que funcionen las fotos por tags. Tag de huerta26, huerta25, h24, balcón. fraisoro, blasenea... asi algunos tags pueden ponerse en el grid desde json definiendo que tags quiero que muestre. recuerda que en grid es como una carpeta y asi podemos poner la ruta al tag y al click vaya a ella.
+
+- Actualizar a astro@7 o ultima versión.

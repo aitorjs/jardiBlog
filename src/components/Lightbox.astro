@@ -390,10 +390,12 @@
       lbTags.innerHTML = "";
       const tags = p.tags ?? [];
       tags.forEach((tag: string) => {
-        const span = document.createElement("span");
-        span.className = "badge badge-outline badge-sm";
-        span.textContent = `#${tag}`;
-        lbTags.appendChild(span);
+        const a = document.createElement("a");
+        a.className =
+          "badge badge-outline badge-sm hover:badge-primary transition-colors";
+        a.textContent = `#${tag}`;
+        a.href = `/galeria/tag/${encodeURIComponent(tag)}`;
+        lbTags.appendChild(a);
       });
       lbTags.classList.toggle("hidden", tags.length === 0);
 
