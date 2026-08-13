@@ -17,6 +17,7 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 
 ## Mas tarde
 
+- Crear los tags de las fotos de blogs. Ponerla que ocupen 50%?
 
 ## Recordatorio
 
