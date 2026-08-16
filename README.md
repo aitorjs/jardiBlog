@@ -3,7 +3,7 @@
 ## TODOs
 
 - 4 Meter un matomo gratis y en la nube: GoatCounter o Umami
-- Google console para que indexe la pagina.
+- Google console para que indexe la pagina?
 - 5 Tiene sentido hacer un linktr.ee?
 
 
@@ -17,7 +17,7 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 
 ## Mas tarde
 
-- 37 fotos con su descripcion, titulo y metatags. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente. Tenemos más de 90 fotos en el repo.
+- 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
 -En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
 
 ## Recordatorio
