@@ -1,185 +1,5 @@
 [
   {
-    "id": "semilleros-trasplantados",
-    "title": "Semilleros trasplantados",
-    "description": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
-    "tags": [
-      "semillero",
-      "plántulas",
-      "trasplante"
-    ],
-    "pubDate": 1784797914,
-    "alt": "Semilleros trasplantados",
-    "image": "../assets/gallery/semilleros-trasplantados.jpg"
-  },
-  {
-    "id": "rincon-terraza",
-    "title": "Rincón de la terraza",
-    "description": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
-    "tags": [
-      "terraza",
-      "tomates",
-      "manzanilla"
-    ],
-    "pubDate": 1784884314,
-    "alt": "Rincón de la terraza",
-    "image": "../assets/gallery/rincon-terraza.jpg"
-  },
-  {
-    "id": "enfermedades-fungicas",
-    "title": "Chuleta de enfermedades fúngicas",
-    "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
-    "tags": [
-      "enfermedades",
-      "hongos",
-      "guía"
-    ],
-    "pubDate": 1784970714,
-    "alt": "Chuleta de enfermedades fúngicas",
-    "image": "../assets/gallery/enfermedades-fungicas.jpg"
-  },
-  {
-    "id": "photo_2026-07-27_12-23-12",
-    "title": "Bancal de tomateras",
-    "description": "Bancal elevado de madera lleno de tomateras frondosas y bien desarrolladas, entutoradas con cañas, junto a una hilera de pimientos y lechugas verdes al fondo.",
-    "tags": [
-      "tomates"
-    ],
-    "pubDate": 1785154992,
-    "alt": "Bancal de tomateras",
-    "image": "../assets/gallery/photo_2026-07-27_12-23-12.jpg"
-  },
-  {
-    "id": "photo_2026-07-08_02-27-27",
-    "title": "Bancal removido con algún plantón",
-    "description": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
-    "tags": [
-      "gindilla",
-      "arriba"
-    ],
-    "pubDate": 1774808592,
-    "alt": "Arriate floral junto a fachada",
-    "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
-  },
-  {
-    "id": "photo_2026-07-08_01-59-19",
-    "title": "Parterre de esquejes sobre malla antihierbas",
-    "description": "Parterre cubierto con tela geotextil negra donde crecen jóvenes esquejes desde varetas marcados con etiquetas verdes.",
-    "tags": [
-      "fraisoro"
-    ],
-    "pubDate": 1780057452,
-    "alt": "Parterre de esquejes sobre malla antihierbas",
-    "image": "../assets/gallery/photo_2026-07-08_01-59-19.jpg"
-  },
-  {
-    "id": "photo_2026-07-08_01-42-45",
-    "title": "Arriate floral junto a fachada",
-    "description": "Parterre colorido pegado a la pared de un edificio, con flores rojas, naranjas y blancas, enredaderas sobre celosía de madera y follaje variado.",
-    "tags": [
-      "fraisoro"
-    ],
-    "pubDate": 1782902652,
-    "alt": "Arriate floral junto a fachada",
-    "image": "../assets/gallery/photo_2026-07-08_01-42-45.jpg"
-  },
-  {
-    "id": "photo_2026-07-08_01-42-19",
-    "title": "Coles de bruselas y lombardas recien transplantadas",
-    "description": "Coles de bruselas y lombardas recién trasplantados en filas, con gránulo azul para los caracoles y babosas.",
-    "tags": [
-      "coles",
-      "lombarda",
-      "abajo"
-    ],
-    "pubDate": 1783114752,
-    "alt": "Coles de bruselas y lombardas recien transplantadas",
-    "image": "../assets/gallery/photo_2026-07-08_01-42-19.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40 (2)",
-    "title": "Vista general del huerto en Julio del 2025",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-    "tags": [
-      "vista-general",
-      "tomate"
-    ],
-    "pubDate": 1753474660,
-    "alt": "Vista general del huerto en Julio del 2025",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40",
-    "title": "Bancal con calabacines, acelgas y chupones de tomateras",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-    "tags": [
-      "calabacin",
-      "acelga",
-      "tomtate"
-    ],
-    "pubDate": 1753474660,
-    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (5)",
-    "title": "Alubias, maíz y calabacín",
-    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
-    "tags": [
-      "alubias",
-      "maíz",
-      "calabacín"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Alubias, maíz y calabacín",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (4)",
-    "title": "Calabaza, fresas y bidones de agua",
-    "description": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
-    "tags": [
-      "calabaza",
-      "fresa",
-      "agua"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Calabacines, acelgas y chupones de tomateras",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (3)",
-    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
-    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
-    "tags": [
-      "judías",
-      "calabacín",
-      "tomate",
-      "pimiento",
-      "gindilla",
-      "arriba"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Pimientos, gindillas, judías maiz y calabacines",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39",
-    "title": "Vista general a finales de Julio del 2025",
-    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
-    "tags": [
-      "tomate",
-      "lechuga",
-      "pimiento",
-      "gindilla",
-      "calabaza",
-      "vista-general"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Vista general del bancal",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
-  },
-  {
     "id": "IMG_20260807_205715",
     "title": "Cosecha de tomates variados",
     "description": "Caja llena de tomates recién cosechados en mallas rojas: mendigorria, igeldo, bosque blue, raf, cherry botella amarilla y tetón de venus.",
@@ -380,6 +200,30 @@
     "image": "../assets/gallery/IMG_20260727_201303.jpg"
   },
   {
+    "id": "photo_2026-07-27_12-23-12",
+    "title": "Bancal de tomateras",
+    "description": "Bancal elevado de madera lleno de tomateras frondosas y bien desarrolladas, entutoradas con cañas, junto a una hilera de pimientos y lechugas verdes al fondo.",
+    "tags": [
+      "tomates"
+    ],
+    "pubDate": 1785154992,
+    "alt": "Bancal de tomateras",
+    "image": "../assets/gallery/photo_2026-07-27_12-23-12.jpg"
+  },
+  {
+    "id": "enfermedades-fungicas",
+    "title": "Chuleta de enfermedades fúngicas",
+    "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
+    "tags": [
+      "enfermedades",
+      "hongos",
+      "guía"
+    ],
+    "pubDate": 1784970714,
+    "alt": "Chuleta de enfermedades fúngicas",
+    "image": "../assets/gallery/enfermedades-fungicas.jpg"
+  },
+  {
     "id": "IMG_20260724_212707",
     "title": "Cosecha de calabacines, gindillas, lechuga y flores de calabacín y calabaza",
     "description": "",
@@ -405,6 +249,32 @@
     "pubDate": 1784924914,
     "alt": "Tomateras cargadas de tomates",
     "image": "../assets/gallery/IMG_20260724_202834.jpg"
+  },
+  {
+    "id": "rincon-terraza",
+    "title": "Rincón de la terraza",
+    "description": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
+    "tags": [
+      "terraza",
+      "tomates",
+      "manzanilla"
+    ],
+    "pubDate": 1784884314,
+    "alt": "Rincón de la terraza",
+    "image": "../assets/gallery/rincon-terraza.jpg"
+  },
+  {
+    "id": "semilleros-trasplantados",
+    "title": "Semilleros trasplantados",
+    "description": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
+    "tags": [
+      "semillero",
+      "plántulas",
+      "trasplante"
+    ],
+    "pubDate": 1784797914,
+    "alt": "Semilleros trasplantados",
+    "image": "../assets/gallery/semilleros-trasplantados.jpg"
   },
   {
     "id": "IMG_20260719_184213",
@@ -474,5 +344,135 @@
     "pubDate": 1783286553,
     "alt": "Bancal de lechugas",
     "image": "../assets/gallery/IMG_20260705_212233.jpg"
+  },
+  {
+    "id": "photo_2026-07-08_01-42-19",
+    "title": "Coles de bruselas y lombardas recien transplantadas",
+    "description": "Coles de bruselas y lombardas recién trasplantados en filas, con gránulo azul para los caracoles y babosas.",
+    "tags": [
+      "coles",
+      "lombarda",
+      "abajo"
+    ],
+    "pubDate": 1783114752,
+    "alt": "Coles de bruselas y lombardas recien transplantadas",
+    "image": "../assets/gallery/photo_2026-07-08_01-42-19.jpg"
+  },
+  {
+    "id": "photo_2026-07-08_01-42-45",
+    "title": "Arriate floral junto a fachada",
+    "description": "Parterre colorido pegado a la pared de un edificio, con flores rojas, naranjas y blancas, enredaderas sobre celosía de madera y follaje variado.",
+    "tags": [
+      "fraisoro"
+    ],
+    "pubDate": 1782902652,
+    "alt": "Arriate floral junto a fachada",
+    "image": "../assets/gallery/photo_2026-07-08_01-42-45.jpg"
+  },
+  {
+    "id": "photo_2026-07-08_01-59-19",
+    "title": "Parterre de esquejes sobre malla antihierbas",
+    "description": "Parterre cubierto con tela geotextil negra donde crecen jóvenes esquejes desde varetas marcados con etiquetas verdes.",
+    "tags": [
+      "fraisoro"
+    ],
+    "pubDate": 1780057452,
+    "alt": "Parterre de esquejes sobre malla antihierbas",
+    "image": "../assets/gallery/photo_2026-07-08_01-59-19.jpg"
+  },
+  {
+    "id": "photo_2026-07-08_02-27-27",
+    "title": "Bancal removido con algún plantón",
+    "description": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
+    "tags": [
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1774808592,
+    "alt": "Arriate floral junto a fachada",
+    "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-40 (2)",
+    "title": "Vista general del huerto en Julio del 2025",
+    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "tags": [
+      "vista-general",
+      "tomate"
+    ],
+    "pubDate": 1753474660,
+    "alt": "Vista general del huerto en Julio del 2025",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-40",
+    "title": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "tags": [
+      "calabacin",
+      "acelga",
+      "tomtate"
+    ],
+    "pubDate": 1753474660,
+    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (5)",
+    "title": "Alubias, maíz y calabacín",
+    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+    "tags": [
+      "alubias",
+      "maíz",
+      "calabacín"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Alubias, maíz y calabacín",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (4)",
+    "title": "Calabaza, fresas y bidones de agua",
+    "description": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
+    "tags": [
+      "calabaza",
+      "fresa",
+      "agua"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Calabacines, acelgas y chupones de tomateras",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (3)",
+    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
+    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+    "tags": [
+      "judías",
+      "calabacín",
+      "tomate",
+      "pimiento",
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Pimientos, gindillas, judías maiz y calabacines",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39",
+    "title": "Vista general a finales de Julio del 2025",
+    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+    "tags": [
+      "tomate",
+      "lechuga",
+      "pimiento",
+      "gindilla",
+      "calabaza",
+      "vista-general"
+    ],
+    "pubDate": 1753474659,
+    "alt": "Vista general del bancal",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
   }
 ]
