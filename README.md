@@ -3,17 +3,21 @@
 ## TODOs
 
 - 4 Meter un matomo gratis y en la nube: GoatCounter o Umami
-- Google console para que indexe la pagina?
+- Google search console para que indexe la pagina
 - 5 Tiene sentido hacer un linktr.ee?
 
 
 Crear cuenta en goatcounter.com y obtener tu URL tipo TU-CODIGO.goatcounter.com
 Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu código.
 
-- 3 imagen de avatar
-- 2 entrada de lechugas
+- 4 imagen de avatar
+- 3 entrada de lechugas
 - 1 CV euskaraz. Cuando el cv en pdf este en euskara meterla en cv-eu.
 
+- 2 meter seo con https://github.com/arthelokyo/astrolib/tree/main/packages/seo
+- Armar buen README para title y meta description
+
+- Actualizar linkedin e infojobs antes de publicitar la pagina. en lanbide meter enlace a la pagina   
 
 ## Mas tarde
 
