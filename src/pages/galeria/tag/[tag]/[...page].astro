@@ -15,7 +15,6 @@ export async function getStaticPaths({ paginate }) {
     eager: true,
   }) as Record<string, { photos?: any[] }>;
 
-
   const mdx_photos = Object.values(blogModules).flatMap((mod: any) => {
     return Object.values(mod).flatMap((v: any) => {
       if (!Array.isArray(v)) return [];
@@ -68,7 +67,7 @@ const photos = page.data.map((entry) => ({
 ---
 
 <BaseLayout
-  title={"Galería - " + params.tag}
+  title={"Galería en la etiqueta - " + params.tag + "| aitor ibáñez"}
   description={"Fotos con la etiqueta " + params.tag}
   sideBarActiveItemID="gallery"
 >
