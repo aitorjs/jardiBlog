@@ -13,7 +13,7 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 - 4 imagen de avatar
 - 3 entrada de lechugas
 
-- 2 meter seo con https://github.com/arthelokyo/astrolib/tree/main/packages/seo
+- 2 meter seo con https://github.com/arthelokyo/astrolib/tree/main/packages/seo. Titulos de paginas mas o menos etan. Descripcion de index y blog. faltan las demas. imagen por defecto de og metido. No preocuparse por eso.
 - Armar buen README para title y meta description
 
 - Actualizar linkedin e infojobs antes de publicitar la pagina. en lanbide meter enlace a la pagina   

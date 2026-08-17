@@ -24,7 +24,7 @@ const wipFull2 = await getImage({
   quality: 80,
 });
 
-const workingOnSince = new Date("2026-08-03");
+const workingOnSince = new Date("2026-08-17");
 
 const last_posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -154,11 +154,11 @@ const wipPhotos = [
     class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 rounded-xl border border-gray-200 p-4"
   >
     <p class="text-lg">
-      <span class="font-bold">Trabajando en</span> layar para plantar puerros y brocoli
-      🥬🧅
+      <span class="font-bold">Trabajando en</span> podar los limites de la huerta
+      ✂️
     </p>
     <div class="flex items-center gap-2 whitespace-nowrap">
-      <button
+      <!-- <button
         id="wip-photo-btn"
         class="cursor-pointer inline-flex items-center justify-center rounded-lg p-1.5 text-base-content hover:bg-primary hover:text-primary-content transition-colors"
         aria-label="Ver foto del progreso"
@@ -175,7 +175,7 @@ const wipPhotos = [
           <circle cx="8.5" cy="8.5" r="1.5"></circle>
           <polyline points="21 15 16 10 5 21"></polyline>
         </svg>
-      </button>
+      </button> -->
       <p class="text-gray-400">{timeAgo(workingOnSince)}</p>
     </div>
   </div>
