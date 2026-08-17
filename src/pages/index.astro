@@ -24,6 +24,17 @@ const wipFull2 = await getImage({
   quality: 80,
 });
 
+import wipGeo from "../assets/gallery/IMG_20260801_110331.jpg";
+const ogImage = await getImage({
+  src: wipGeo,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+  position: "center",
+  format: "webp",
+  quality: 80,
+});
+
 const workingOnSince = new Date("2026-08-03");
 
 const last_posts = (await getCollection("blog"))
@@ -78,6 +89,7 @@ const wipPhotos = [
   sideBarActiveItemID="home"
   title="Diario de horticultura y jardinería | aitor ibáñez"
   description="Notas, fotos y aprendizajes de mi día a día como operario en horticultura y jardinería. Sígueme en el blog y la galería de fotos."
+  image={ogImage.src}
 >
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Kaixo 👋</div>

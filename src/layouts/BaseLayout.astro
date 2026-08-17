@@ -10,6 +10,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
 const {
   image,
+  imageWidth,
+  imageHeight,
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   includeSidebar = true,
@@ -19,12 +21,14 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="lofi">
+<html lang="es" data-theme="lofi">
   <head>
     <BaseHead
       title={title}
       description={description}
       image={image}
+      imageWidth={imageWidth}
+      imageHeight={imageHeight}
       ogType={ogType}
     />
     {TRANSITION_API && <ClientRouter />}
