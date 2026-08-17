@@ -12,7 +12,6 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 
 - 4 imagen de avatar
 - 3 entrada de lechugas
-- 1 CV euskaraz. Cuando el cv en pdf este en euskara meterla en cv-eu.
 
 - 2 meter seo con https://github.com/arthelokyo/astrolib/tree/main/packages/seo
 - Armar buen README para title y meta description
