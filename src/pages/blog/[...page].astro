@@ -13,7 +13,11 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="Blog" sideBarActiveItemID="blog">
+<BaseLayout
+  title="Blog de horticultura y jardinería | aitor ibáñez"
+  description="Artículos sobre cultivo, huerto y jardinería: pruebas, técnicas y aprendizajes documentados a medida que voy plantando, cuidando y cosechando."
+  sideBarActiveItemID="blog"
+>
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Blog</div>
   </div>
