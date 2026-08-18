@@ -20,7 +20,8 @@ Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu códi
 ## Mas tarde
 
 - 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
--En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
+- En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
+- Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
 
 ## Recordatorio
 
