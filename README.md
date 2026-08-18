@@ -2,21 +2,20 @@
 
 ## TODOs
 
-- 5 Meter un matomo gratis y en la nube: GoatCounter o Umami
-- 6 Google search console para que indexe la pagina
-- 7? Tiene sentido hacer un linktr.ee?
+- 4 Meter un matomo gratis y en la nube: GoatCounter o Umami
+- 5 Google search console para que indexe la pagina
+- 6? Tiene sentido hacer un linktr.ee?
 
 
 Crear cuenta en goatcounter.com y obtener tu URL tipo TU-CODIGO.goatcounter.com
 Poner este tag en tu sitio (por ejemplo en un layout/base de Astro) con tu código.
 
-- 4 imagen de avatar
-- 2 entrada de lechugas
+- 3 imagen de avatar
+- 1 entrada de lechugas
 
-- 1 meter seo con https://github.com/arthelokyo/astrolib/tree/main/packages/seo. Titulos de paginas mas o menos etan. Descripcion de index y blog. faltan las demas. imagen por defecto de og metido. No preocuparse por eso.
-- 3 Armar buen README para title y meta description
+- 2 Armar buen README para title y meta description
 
-- 8 Actualizar linkedin e infojobs antes de publicitar la pagina. en lanbide meter enlace a la pagina   
+- 7 Actualizar linkedin e infojobs antes de publicitar la pagina. en lanbide meter enlace a la pagina   
 
 ## Mas tarde
 
