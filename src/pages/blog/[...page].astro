@@ -14,12 +14,12 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout
-  title="Blog de horticultura y jardinería | aitor ibáñez"
+  title="Blog de horticultura y jardinería"
   description="Artículos sobre cultivo, huerto y jardinería: pruebas, técnicas y aprendizajes documentados a medida que voy plantando, cuidando y cosechando."
   sideBarActiveItemID="blog"
 >
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Blog</div>
+    <h1 class="text-3xl w-full font-bold">Blog de horticultura y jardinería</h1>
   </div>
 
   {
@@ -36,6 +36,7 @@ const { page } = Astro.props;
               title={post.data.title}
               img={post.data.heroImage}
               desc={post.data.description}
+              alt={post.data.title}
               url={"/blog/" + createSlug(post.data.title, post.id)}
               target="_self"
               badge={post.data.badge}
