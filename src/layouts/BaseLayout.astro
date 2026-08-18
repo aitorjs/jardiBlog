@@ -32,6 +32,36 @@ const {
       ogType={ogType}
     />
     {TRANSITION_API && <ClientRouter />}
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Aitor Ibañez",
+        url: "https://aitor.info",
+        jobTitle: "Operario de Horticultura y Jardinería",
+        description: "Operario especializado en horticultura y jardinería.",
+        knowsAbout: [
+          "Horticultura",
+          "Jardinería",
+          "Huerta",
+          "Mantenimiento de jardines",
+        ],
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Operario de Horticultura y Jardinería",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "San Sebastian",
+          addressRegion: "País Vasco",
+          addressCountry: "ES",
+        },
+        image: "https://aitor.info/profile.webp",
+        // email: "aitor@aitor.info",
+      })}
+    />
   </head>
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">
