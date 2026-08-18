@@ -67,12 +67,14 @@ const photos = page.data.map((entry) => ({
 ---
 
 <BaseLayout
-  title={"Galería en la etiqueta - " + params.tag + "| aitor ibáñez"}
-  description={"Fotos con la etiqueta " + params.tag}
+  title=`Galería en la etiqueta - ${params.tag}`
+  description=`Galería de imágenes sobre ${params.tag} en el diario de horticultura y jardinería.`
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">Galería - {params.tag}</h1>
+    <h1 class="text-2xl font-bold">
+      Galería de horticultura y jardinería sobre {params.tag}
+    </h1>
   </div>
 
   <section class="gallery-section">

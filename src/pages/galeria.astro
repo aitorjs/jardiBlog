@@ -5,9 +5,8 @@ import galleryMeta from "../data/gallery.json";
 import Lightbox from "../components/Lightbox.astro";
 
 const title = "Galería de horticultura y jardinería";
-const description = "Galería de fotos del jardín";
-
-// 👉 Cambia este número para ajustar cuántas fotos se cargan cada vez
+const description =
+  "Galería de fotos del huerto: cosechas, cultivos y seguimiento del jardín a lo largo del tiempo, desde los semilleros hasta la recolección.";
 const PHOTOS_PER_PAGE = 20;
 
 const imageFiles = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
@@ -76,7 +75,9 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">Galería de fotos</h1>
+    <h1 class="text-2xl font-bold">
+      Galería de fotos de horticultura y jardinería
+    </h1>
   </div>
 
   <section class="gallery-section">
@@ -97,6 +98,8 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
                 <img
                   src={photo.thumbSrc}
                   alt={photo.title}
+                  width="500"
+                  height="500"
                   loading={i === 0 ? "eager" : "lazy"}
                   decoding="async"
                   class="h-full w-full cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105"
