@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
 import BackButton from "../components/BackButton.astro";
+import Analytics from "../components/Analytics.astro";
 import { ClientRouter } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -79,5 +80,6 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
-  </body><!-- <script data-goatcounter="https://johnd.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>  -->
+    <!-- <Analytics /> -->
+  </body>
 </html>

@@ -58,11 +58,15 @@ pnpm install
 - **Entradas de blog**: escritas con un tono cercano y práctico, en primera persona, con conceptos clave en negrita, algo de humor y un cierre a modo de "Aprendizajes".
 - **Galería**: fotos ordenadas por fecha de publicación (descendente) y clasificadas mediante etiquetas, que permiten navegar por tema (por ejemplo, todas las fotos relacionadas con la lechuga).
 
-## Roadmap / TODOs
+## Analíticas
 
-El propio repositorio recoge algunas tareas pendientes, entre ellas:
+- La primera vez que visitas el sitio con ?no-track (por ejemplo https://aitor.info/?no-track), se guarda una cookie no-track=1 durante un año.
+- En cada carga de página, el script comprueba si esa cookie existe antes de inyectar el <script> de GoatCounter. Si existe, no lo carga y por tanto esa visita no se contabiliza.
+- Si en algún momento quieres reactivar el tracking, basta con visitar ?track para borrar la cookie.
 
-- Añadir imagen de avatar
+## TODOs
+
+- Añadir imagen de avatar, actualizar en cv, web, linkedin y infojobs
 - Actualizar linkedin e infojobs antes de publicitar la página  
 - Meter GoatCounter. Con descomentarlo basta. Antes meter una forma de que misvisitas no cuenten con el uso de una cookie y una parametro en la url.
 
@@ -73,6 +77,7 @@ El propio repositorio recoge algunas tareas pendientes, entre ellas:
 - En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
 - Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
 - Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
+- Crear un formulario de contacto que me mande email
 
 ## Recordatorio
 

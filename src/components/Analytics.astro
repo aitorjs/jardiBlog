@@ -1,0 +1,35 @@
+---
+const isDev = import.meta.env.DEV;
+---
+
+{!isDev && (
+  <script is:inline>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const COOKIE_NAME = "no-track";
+      const ONE_YEAR = 60 * 60 * 24 * 365;
+
+      // Permite desactivar el tracking visitando ?no-track
+      if (params.has("no-track")) {
+        document.cookie = `${COOKIE_NAME}=1; path=/; max-age=${ONE_YEAR}`;
+      }
+
+      // Permite reactivarlo visitando ?track (borra la cookie)
+      if (params.has("track")) {
+        document.cookie = `${COOKIE_NAME}=; path=/; max-age=0`;
+      }
+
+      const hasNoTrackCookie = document.cookie
+        .split("; ")
+        .some((c) => c.startsWith(`${COOKIE_NAME}=`));
+
+      if (hasNoTrackCookie) return;
+
+      const script = document.createElement("script");
+      script.dataset.goatcounter = "https://johnd.goatcounter.com/count";
+      script.async = true;
+      script.src = "//gc.zgo.at/count.js";
+      document.head.appendChild(script);
+    })();
+  </script>
+)}
