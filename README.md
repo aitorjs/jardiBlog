@@ -66,20 +66,6 @@ pnpm install
 
 ## TODOs
 
-- Meter GoatCounter. Con descomentarlo basta.
-- Publicar en linkedin:
-🌱 Os presento aitor.info, un proyecto personal donde comparto el día a día de mi huerta: siembras, cosechas y aprendizajes, junto con una galería de fotos organizada por temporadas y cultivos.
-
-Aprovecho también para comentar que estoy buscando trabajo como operario de horticultura y jardinería. Cuento con experiencia práctica en siembra, cultivo, recolección y mantenimiento de espacios verdes, y muchas ganas de seguir formándome y aportar en un equipo.
-
-Adjunto mi CV por si encaja con alguna oportunidad que tengáis o conozcáis. Si conocéis a alguien que pueda estar interesado, agradezco muchísimo que lo compartáis. 🙌
-
-👉 aitor.info
-
-#Horticultura #Jardinería #BúsquedaDeEmpleo #OperarioAgrícola
-
-(adjuntar cv)
-
 ## Mas tarde
 
 - 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
