@@ -84,12 +84,11 @@ Adjunto mi CV por si encaja con alguna oportunidad que tengáis o conozcáis. Si
 
 ## Mas tarde
 
-- Si añades una foto a una entrada de blog que ya esta en la galeria, en sus tags aparecera publicada. Por ejemplo en https://aitor.info/galeria/tag/lechuga meter los imagenes que solo estan en las entradas a blog su ruta dentro de un array. 
 - 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
-- En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
 - Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
-- Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
-- Crear un formulario de contacto que me mande email
+- 1 Crear un formulario de contacto que me mande email
+- 2 En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
+- 3 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
 
 ## Recordatorio
 
