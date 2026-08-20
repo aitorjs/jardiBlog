@@ -67,8 +67,20 @@ pnpm install
 ## TODOs
 
 - Añadir imagen de avatar, actualizar en cv, web, linkedin y infojobs
-- Actualizar linkedin e infojobs antes de publicitar la página  
-- Meter GoatCounter. Con descomentarlo basta. Antes meter una forma de que misvisitas no cuenten con el uso de una cookie y una parametro en la url.
+- Actualizar linkedin e infojobs antes de publicitar la página. con cambiar avatar esta. 
+- Meter GoatCounter. Con descomentarlo basta.
+- Publicar en linkedin:
+🌱 Os presento aitor.info, un proyecto personal donde comparto el día a día de mi huerta: siembras, cosechas y aprendizajes, junto con una galería de fotos organizada por temporadas y cultivos.
+
+Aprovecho también para comentar que estoy buscando trabajo como operario de horticultura y jardinería. Cuento con experiencia práctica en siembra, cultivo, recolección y mantenimiento de espacios verdes, y muchas ganas de seguir formándome y aportar en un equipo.
+
+Adjunto mi CV por si encaja con alguna oportunidad que tengáis o conozcáis. Si conocéis a alguien que pueda estar interesado, agradezco muchísimo que lo compartáis. 🙌
+
+👉 aitor.info
+
+#Horticultura #Jardinería #BúsquedaDeEmpleo #OperarioAgrícola
+
+(adjuntar cv)
 
 ## Mas tarde
 

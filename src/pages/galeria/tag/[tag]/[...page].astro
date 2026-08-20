@@ -25,7 +25,7 @@ export async function getStaticPaths({ paginate }) {
   // Unificamos ambas fuentes bajo la misma forma { data: {...} } para
   // reutilizar sin cambios el resto de la lógica de esta página, que
   // ya asume entry.data.X.
-  const all_photos = [
+  const raw_photos = [
     ...gallery_photos.map((entry) => ({ data: entry.data })),
     ...mdx_photos.map((p) => ({
       data: {
@@ -38,6 +38,20 @@ export async function getStaticPaths({ paginate }) {
       },
     })),
   ];
+
+  // Deduplicamos por la ruta de la imagen, que identifica de forma
+  // única a cada foto (tanto si viene de gallery como de un .mdx).
+  const all_photos = Array.from(
+    new Map(
+      raw_photos.map((photo) => {
+        const key =
+          typeof photo.data.image === "string"
+            ? photo.data.image
+            : photo.data.image?.src;
+        return [key, photo];
+      }),
+    ).values(),
+  );
 
   const all_tags = all_photos.flatMap((photo) => photo.data.tags || []);
   const unique_tags = [...new Set(all_tags)];
