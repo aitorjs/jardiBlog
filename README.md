@@ -71,9 +71,8 @@ pnpm install
 - 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
 - Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
 
-- 1 Crear un formulario de contacto que me mande email
-- 2 En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
-- 3 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
+- 1 En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
+- 2 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
 
 ## Recordatorio
 

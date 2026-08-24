@@ -30,10 +30,8 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
   </li>
   <li>
     <a
-      class="py-3 text-base"
-      href="mailto:aitori@ni.eus"
-      target="_blank"
-      referrerpolicy="no-referrer-when-downgrade">Contacto</a
+      class={`py-3 text-base ${sideBarActiveItemID === "contacto" ? activeClass : ""}`}
+      href="/contacto">Contacto</a
     >
   </li>
 </ul>
