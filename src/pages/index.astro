@@ -24,7 +24,7 @@ const wipFull2 = await getImage({
   quality: 80,
 });
 
-const workingOnSince = new Date("2026-08-17");
+const workingOnSince = new Date("2026-08-24");
 
 const last_posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -156,8 +156,8 @@ const wipPhotos = [
     class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 rounded-xl border border-gray-200 p-4"
   >
     <p class="text-lg">
-      <span class="font-bold">Trabajando en</span> podar los limites de la huerta
-      ✂️
+      <span class="font-bold">Trabajando en</span> operación invernadero - fase 1:
+      Desbrozar ✂️
     </p>
     <div class="flex items-center gap-2 whitespace-nowrap">
       <!-- <button

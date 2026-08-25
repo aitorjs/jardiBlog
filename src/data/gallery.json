@@ -211,6 +211,89 @@
     "image": "../assets/gallery/photo_2026-07-27_12-23-12.jpg"
   },
   {
+    "id": "photo_2025-07-25_20-17-40 (2)",
+    "title": "Vista general del huerto en Julio del 2025",
+    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "tags": [
+      "vista-general",
+      "tomate"
+    ],
+    "pubDate": 1785010660,
+    "alt": "Vista general del huerto en Julio del 2025",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-40",
+    "title": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "tags": [
+      "calabacin",
+      "acelga",
+      "tomtate"
+    ],
+    "pubDate": 1785010660,
+    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (5)",
+    "title": "Alubias, maíz y calabacín",
+    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+    "tags": [
+      "alubias",
+      "maíz",
+      "calabacín"
+    ],
+    "pubDate": 1785010659,
+    "alt": "Alubias, maíz y calabacín",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (4)",
+    "title": "Calabaza, fresas y bidones de agua",
+    "description": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
+    "tags": [
+      "calabaza",
+      "fresa",
+      "agua"
+    ],
+    "pubDate": 1785010659,
+    "alt": "Calabacines, acelgas y chupones de tomateras",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (3)",
+    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
+    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+    "tags": [
+      "judías",
+      "calabacín",
+      "tomate",
+      "pimiento",
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1785010659,
+    "alt": "Pimientos, gindillas, judías maiz y calabacines",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39",
+    "title": "Vista general a finales de Julio del 2025",
+    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+    "tags": [
+      "tomate",
+      "lechuga",
+      "pimiento",
+      "gindilla",
+      "calabaza",
+      "vista-general"
+    ],
+    "pubDate": 1785010659,
+    "alt": "Vista general del bancal",
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
+  },
+  {
     "id": "enfermedades-fungicas",
     "title": "Chuleta de enfermedades fúngicas",
     "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
@@ -321,6 +404,18 @@
     "image": "../assets/gallery/IMG_20260710_204334.jpg"
   },
   {
+    "id": "photo_2026-07-08_02-27-27",
+    "title": "Bancal removido con algún plantón",
+    "description": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
+    "tags": [
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1783477653,
+    "alt": "Arriate floral junto a fachada",
+    "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
+  },
+  {
     "id": "IMG_20260707_155855",
     "title": "Semilleros y plantones",
     "description": "Bandejas de semilleros con brotes recién nacidos de blas-cherry y coliflor morada junto a una aloe vera y un rosal en maceta.",
@@ -381,98 +476,14 @@
     "image": "../assets/gallery/photo_2026-07-08_01-59-19.jpg"
   },
   {
-    "id": "photo_2026-07-08_02-27-27",
-    "title": "Bancal removido con algún plantón",
-    "description": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
+    "id": "photo_2026-05-17_18-12-33",
+    "title": "Horca de tres puntas o laya con destronadora",
+    "description": "Herramienta principal que uso para airear un poquito la tierra de forma comoda.",
     "tags": [
-      "gindilla",
-      "arriba"
+      "herramienta"
     ],
-    "pubDate": 1774808592,
-    "alt": "Arriate floral junto a fachada",
-    "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40 (2)",
-    "title": "Vista general del huerto en Julio del 2025",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-    "tags": [
-      "vista-general",
-      "tomate"
-    ],
-    "pubDate": 1753474660,
-    "alt": "Vista general del huerto en Julio del 2025",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40",
-    "title": "Bancal con calabacines, acelgas y chupones de tomateras",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-    "tags": [
-      "calabacin",
-      "acelga",
-      "tomtate"
-    ],
-    "pubDate": 1753474660,
-    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (5)",
-    "title": "Alubias, maíz y calabacín",
-    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
-    "tags": [
-      "alubias",
-      "maíz",
-      "calabacín"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Alubias, maíz y calabacín",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (4)",
-    "title": "Calabaza, fresas y bidones de agua",
-    "description": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
-    "tags": [
-      "calabaza",
-      "fresa",
-      "agua"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Calabacines, acelgas y chupones de tomateras",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (3)",
-    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
-    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
-    "tags": [
-      "judías",
-      "calabacín",
-      "tomate",
-      "pimiento",
-      "gindilla",
-      "arriba"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Pimientos, gindillas, judías maiz y calabacines",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39",
-    "title": "Vista general a finales de Julio del 2025",
-    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
-    "tags": [
-      "tomate",
-      "lechuga",
-      "pimiento",
-      "gindilla",
-      "calabaza",
-      "vista-general"
-    ],
-    "pubDate": 1753474659,
-    "alt": "Vista general del bancal",
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
+    "pubDate": 1779042153,
+    "alt": "Horca de tres puntas o laya con destronadora ",
+    "image": "../assets/gallery/photo_2026-05-17_18-12-33.jpg"
   }
 ]

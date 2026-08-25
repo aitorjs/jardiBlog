@@ -1,0 +1,90 @@
+---
+title: "Experiencia con patata (2026)"
+description: "Un repaso por las variedades de lechuga (y algunas primas suyas) que voy probando en la huerta: romana, escarola, iceberg, hoja de roble entre otras."
+pubDate: "Aug 25 2026"
+heroImage: "../../assets/gallery/photo_2026-05-09_10-27-32.jpg"
+tags: ["patata", "experiencia"] 
+---
+
+import { Image } from "astro:assets";
+import Lightbox from "../../components/Lightbox.astro";
+import PhotoLightboxGrid from "../../components/PhotoLightboxGrid.astro";
+import photoPotato1 from "../../assets/gallery/photo_2026-05-09_10-27-32.jpg";
+import photoPotato2 from "../../assets/gallery/photo_2026-05-09_10-27-33.jpg";
+import photoPotato3 from "../../assets/gallery/photo_2026-05-18_20-17-33.jpg";
+import photoPotato4 from "../../assets/gallery/photo_2026-05-29_21-13-33.jpg";
+
+
+export const photosPotato = [
+  {
+    image: photoPotato1,
+    title: "Varias lechugas romanas",
+    description:
+      "Lechuga romana a punto de poder ser recolectada despues de haber consumido varias tandas de hojas.",
+    tags: ["patata"],
+    pubDate: "May 9 2026",
+  },
+   {
+    image: photoPotato2,
+    title: "Varias lechugas romanas",
+    description:
+      "Lechuga romana a punto de poder ser recolectada despues de haber consumido varias tandas de hojas.",
+    tags: ["patata"],
+    pubDate: "May 9 2026",
+  },
+  {
+    image: photoPotato3,
+    title: "Varias lechugas romanas",
+    description:
+      "Lechuga romana a punto de poder ser recolectada despues de haber consumido varias tandas de hojas.",
+    tags: ["patata"],
+    pubDate: "May 18 2026",
+  },
+   {
+    image: photoPotato4,
+    title: "Varias lechugas romanas",
+    description:
+      "Lechuga romana a punto de poder ser recolectada despues de haber consumido varias tandas de hojas.",
+    tags: ["patata"],
+    pubDate: "May 29 2026",
+  }
+];
+
+
+export const photos = [...photosPotato];
+
+<Lightbox />
+
+Esta temporada he plantado patatas: 8,5 kg de patata <a href="https://patatasmelendez.com/que-es-la-patata-agria/" target="_blank" rel="noopener noreferrer">agria</a> y 1,5 kg de patata <a href="https://www.jardineriaon.com/patata-kennebec.html" target="_blank" rel="noopener noreferrer">kennebec</a> (patata roja).
+ 
+## Siembra y germinación
+ 
+La patata agria tardó un mes en germinar del todo, bastante más de lo habitual. La kennebec, en cambio, tuvo un tiempo de germinación más típico: entre 15 y 20 días.
+ 
+Como trabajo previo en la huerta, layé el terreno donde iba a sembrar, aboné con heces de caballo bien descompuestas y volví a layar para integrar el abono y que no se moviera de sitio.
+ 
+## Cambio respecto al año pasado
+  
+Esta temporada he probado una cosa distinta a lo que venía haciendo:
+- **No he aporcado**, al contrario que en años anteriores.
+
+👉 Como el año pasado, **no he regado en ningún momento**, ni en la siembra ni durante todo el proceso.
+
+<PhotoLightboxGrid photos={photosPotato} gap="gap-6" columns={4} />
+
+## Cosecha
+ 
+A finales de junio la kennebec ya había completado todo su ciclo: alrededor de 10 kg cultivados. ¡Nada mal!
+ 
+A principios de julio le tocó el turno a la patata agria, con unos 50 kg recogidos. La idea era llegar a los 70-80 kg, así que me quedé algo corto. Mi sensación es que el no haber aporcado pasó factura: seguramente habrían salido patatas más grandes y menos "patatinas" pequeñas.
+ 
+## El topillo
+ 
+El topillo ha comido bien este año y se ha comido unas cuantas patatas. Aun así, no creo que llegue al 10% de la cosecha, así que lo doy por aceptable: al fin y al cabo, él estaba antes que la huerta. 🐭
+ 
+## Aprendizajes
+ 
+- No aporcar parece afectar al **tamaño final del tubérculo**: salen patatas más pequeñas.
+- La **patata agria** tuvo esta temporada una germinación más lenta (un mes) que la **kennebec** (15-20 días) que es la habitual.
+- Una pérdida por fauna silvestre (topillo) por debajo del 10% es asumible y no justifica intervenir.
+
