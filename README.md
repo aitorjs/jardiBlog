@@ -66,12 +66,60 @@ pnpm install
 
 ## TODOs
 
+GitHub Pages es solo hosting estático, así que no soporta `_redirects` (eso es específico de Netlify) ni redirecciones HTTP reales del lado del servidor. No pasa nada, hay una forma de conseguir el mismo efecto sin loader.
+
+Lo que probablemente viste antes era la página de redirección que genera Astro por defecto, que incluye un mensaje visible tipo "Redirecting..." antes del `meta refresh`. La solución es sustituir esa página por una tuya, minimalista, que redirija de forma instantánea sin mostrar nada:
+
+```js
+// astro.config.mjs
+i18n: {
+  defaultLocale: "es",
+  locales: ["es", "eu"],
+  routing: {
+    prefixDefaultLocale: true,
+    redirectToDefaultLocale: false, // desactivamos la redirección automática de Astro
+  },
+}
+```
+
+Y creas tu propia página raíz:
+
+```astro
+---
+// src/pages/index.astro
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/es/" />
+    <link rel="canonical" href="/es/" />
+    <script>location.replace("/es/");</script>
+  </head>
+  <body></body>
+</html>
+```
+
+Puntos clave por qué esto no muestra loader:
+
+- **`<script>` en el `<head>`, sin body**: se ejecuta antes de que el navegador tenga nada que pintar, así que la redirección ocurre en microsegundos, sin flash visible de contenido.
+- **Sin mensaje de "Redirigiendo..."**: al no tener texto ni estilos en el body, no hay nada que parpadee en pantalla.
+- **`meta http-equiv="refresh"` como respaldo**: solo entra en juego si JS está desactivado; con JS activado (el 99% de los casos) el `location.replace` gana y actúa primero.
+- **`location.replace` en vez de `location.href`**: no deja la página de redirección en el historial, así que el botón "atrás" no vuelve a pasar por ella.
+
+Con esto, `domain.com/` salta a `domain.com/es/` de forma prácticamente instantánea y sin ningún indicador de carga visible.
+
+-- Conclusión
+- i18n con prefixDefaultLocale: true → /es/ y /eu/, con redirectToDefaultLocale: false y tu propio index.astro con location.replace para evitar el loader en GitHub Pages.
+- Blog → monolingüe, solo en /es/blog/, sin equivalente en /eu/. En euskera, aviso o enlace directo a la versión en castellano.
+- Galería y resto del sitio → traducidos, con title/description/alt como objetos { es, eu } dentro del mismo  JSON, y páginas duplicadas en src/pages/es/ y src/pages/eu/.
+
 ## Mas tarde
 
-- 37 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
+- 46 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
 - Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
 
-- 1 En el cv poner un link o links en las practicas y huerta que lleven a su tag de fotos.
+- 1 i18n. Todo en euskara menos la parte de blog
 - 2 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
 
 ## Recordatorio

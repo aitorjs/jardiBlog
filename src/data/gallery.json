@@ -412,7 +412,7 @@
       "arriba"
     ],
     "pubDate": 1783477653,
-    "alt": "Arriate floral junto a fachada",
+    "alt": "Bancal removido con algún plantón",
     "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
   },
   {
@@ -455,25 +455,93 @@
   },
   {
     "id": "photo_2026-07-08_01-42-45",
-    "title": "Arriate floral junto a fachada",
-    "description": "Parterre colorido pegado a la pared de un edificio, con flores rojas, naranjas y blancas, enredaderas sobre celosía de madera y follaje variado.",
+    "title": "Parterre floral realizado en el certificado profesional",
+    "description": "Parterre construido durante el certificado profesional, delimitado con bordillo de piedra, con celosías de madera para trepadoras, cannas, rosales, impatiens y otras flores en plena floración. Antes de plantar se escardó y oxigenó la tierra, se abonó y se instaló riego automático.",
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1782902652,
-    "alt": "Arriate floral junto a fachada",
+    "alt": "Parterre floral realizado en el certificado profesional",
     "image": "../assets/gallery/photo_2026-07-08_01-42-45.jpg"
   },
   {
-    "id": "photo_2026-07-08_01-59-19",
-    "title": "Parterre de esquejes sobre malla antihierbas",
-    "description": "Parterre cubierto con tela geotextil negra donde crecen jóvenes esquejes desde varetas marcados con etiquetas verdes.",
+    "id": "photo_2026-06-26_10-53-55",
+    "title": "Bancal liberado tras podar el seto",
+    "description": "Bancal de la izquierda ya limpio tras cortar en línea recta el seto verde que invadía el espacio.",
+    "tags": [
+      "blasenea"
+    ],
+    "pubDate": 1782471235,
+    "alt": "Bancal liberado tras podar el seto",
+    "image": "../assets/gallery/photo_2026-06-26_10-53-55.jpg"
+  },
+  {
+    "id": "photo_2026-06-26_10-53-54",
+    "title": "Montando una tarrina de acedera roja",
+    "description": "Tarrina de plástico aún sin terminar de llenar con hojas de acedera roja recién cosechadas por mi.",
+    "tags": [
+      "blasenea",
+      "acedera"
+    ],
+    "pubDate": 1782471234,
+    "alt": "Montando una tarrina de acedera roja",
+    "image": "../assets/gallery/photo_2026-06-26_10-53-54.jpg"
+  },
+  {
+    "id": "photo_2026-06-19_14-35-01",
+    "title": "Semilleros sacudidos y ordenados",
+    "description": "Pilas de bandejas de semillero ya limpias y apiladas ordenadamente tras sacudirlas, una de las tareas que tocó realizar ese día.",
+    "tags": [
+      "blasenea"
+    ],
+    "pubDate": 1781879701,
+    "alt": "Semilleros sacudidos y ordenados",
+    "image": "../assets/gallery/photo_2026-06-19_14-35-01.jpg"
+  },
+  {
+    "id": "photo_2026-06-18_14-17-27",
+    "title": "Maceteros de ajo africano en flor",
+    "description": "Fila de macetas con ajo africano en flor que me toco regar con una manguera varias veces.",
+    "tags": [
+      "blasenea"
+    ],
+    "pubDate": 1781792247,
+    "alt": "Maceteros de ajo africano en flor",
+    "image": "../assets/gallery/photo_2026-06-18_14-17-27.jpg"
+  },
+  {
+    "id": "photo_2026-06-18_11-47-45",
+    "title": "Retirando hojas con oídio de las dalias",
+    "description": "Bancal de dalias blancas al que le quitaron las hojas afectadas por oídio para frenar su propagación y dejar que las flores a punto de abrir lo hagan.",
+    "tags": [
+      "blasenea",
+      "dalias"
+    ],
+    "pubDate": 1781783265,
+    "alt": "Retirando hojas con oídio de las dalias",
+    "image": "../assets/gallery/photo_2026-06-18_11-47-45.jpg"
+  },
+  {
+    "id": "photo_2026-05-29_12-24-30",
+    "title": "Esquejes escarificados sobre malla antihierbas",
+    "description": "Fila de esquejes ya escarificados plantados sobre tela geotextil, tras oxigenar la tierra y pasar la rotavator, marcados con etiquetas verdes.",
     "tags": [
       "fraisoro"
     ],
-    "pubDate": 1780057452,
-    "alt": "Parterre de esquejes sobre malla antihierbas",
-    "image": "../assets/gallery/photo_2026-07-08_01-59-19.jpg"
+    "pubDate": 1780057470,
+    "alt": "Esquejes escarificados sobre malla antihierbas",
+    "image": "../assets/gallery/photo_2026-05-29_12-24-30.jpg"
+  },
+  {
+    "id": "photo_2026-05-28_12-45-01",
+    "title": "Estanque ovalado de Lurgarden",
+    "description": "Visitamos Lurgarden en el certificado profesional donde estuvimos en el famoso estanque ovalado rodeado de césped, con sauce llorón, plataneras y un arriate de flores en primer plano.",
+    "tags": [
+      "fraisoro"
+    ],
+    "pubDate": 1779972301,
+    "alt": "Estanque ovalado de Lurgarden",
+    "image": "../assets/gallery/photo_2026-05-28_12-45-01.jpg"
   },
   {
     "id": "photo_2026-05-17_18-12-33",
@@ -485,5 +553,27 @@
     "pubDate": 1779042153,
     "alt": "Horca de tres puntas o laya con destronadora ",
     "image": "../assets/gallery/photo_2026-05-17_18-12-33.jpg"
+  },
+  {
+    "id": "photo_2026-05-15_13-41-31",
+    "title": "Jardín formal a medio escardar",
+    "description": "Vista aérea del jardín con setos de boj, bancos y estatuas, mostrando la escarda del césped a medio hacer antes de aplicar herbicida.",
+    "tags": [
+      "fraisoro"
+    ],
+    "pubDate": 1778852491,
+    "alt": "Jardín formal a medio escardar",
+    "image": "../assets/gallery/photo_2026-05-15_13-41-31.jpg"
+  },
+  {
+    "id": "photo_2026-04-24_10-59-39",
+    "title": "Parterre junto a la caseta antigua",
+    "description": "Parterre realizado en el certificado profesional donde sembramos amaranto y tabaco delimitados con cañas.",
+    "tags": [
+      "fraisoro"
+    ],
+    "pubDate": 1777028379,
+    "alt": "Parterre junto a la caseta antigua",
+    "image": "../assets/gallery/photo_2026-04-24_10-59-39.jpg"
   }
 ]
