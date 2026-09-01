@@ -1,0 +1,36 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+
+interface Props {
+  id?: string;
+  class?: string;
+  alternates?: Partial<Record<string, string>>; // lang -> ruta completa, si difiere del patrón genérico
+}
+const { id, class: className, alternates } = Astro.props;
+
+const currentLang = getLangFromUrl(Astro.url);
+const pathname = Astro.url.pathname;
+
+// Si nos pasan una ruta específica para el idioma destino (p.ej. desde una
+// entrada de blog con slug distinto por idioma), la usamos tal cual.
+// Si no, aplicamos el comportamiento genérico de sustituir el prefijo.
+function getLocalizedPath(targetLang: string) {
+  if (alternates?.[targetLang]) {
+    return alternates[targetLang]!;
+  }
+  const path = pathname.replace(`/${currentLang}`, "") || "/";
+  return `/${targetLang}${path}`;
+}
+
+const otherLang = currentLang === "es" ? "eu" : "es";
+---
+<ul id={id} class={`flex items-center gap-2 ${className}`}>
+  <li>
+    <a
+      href={getLocalizedPath(otherLang)}
+      class="px-4 py-0.5 text-xs font-bold border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition uppercase"
+    >
+      {otherLang}
+    </a>
+  </li>
+</ul>

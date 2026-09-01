@@ -2,64 +2,80 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import HorizontalCard from "@components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../../../../lib/createSlug";
+import slugify from "../../../../../lib/slugify";
+import { languages } from "../../../../../i18n/ui";
+import { useTranslations } from "../../../../../i18n/utils";
 
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
-  const all_tags = all_posts.flatMap((post) => {
-    return post.data.tags || [];
+  const locales = Object.keys(languages);
+
+  // Todos los tags únicos usados en cualquier post (los tags son iguales por idioma)
+  const all_tags = new Set();
+  all_posts.forEach((post) => {
+    (post.data.tags || []).forEach((tag) => all_tags.add(tag));
   });
 
-  return all_tags.flatMap((tag) => {
-    const filtered_posts = all_posts.filter((post) => {
-      return post.data.tags?.includes(tag);
-    });
-    return paginate(filtered_posts, {
-      params: { tag },
-      pageSize: 10,
+  return locales.flatMap((lang) => {
+    return [...all_tags].flatMap((tag) => {
+      const filtered_posts = all_posts.filter((post) =>
+        post.data.tags?.includes(tag),
+      );
+
+      return paginate(filtered_posts, {
+        params: { lang, tag },
+        pageSize: 10,
+        props: { lang },
+      });
     });
   });
 }
 
 const { page } = Astro.props;
 const params = Astro.params;
+const lang = params.lang;
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
-  title=`Blog de horticultura y jardinería sobre ${params.tag}`
-  description=`Artículos sobre ${params.tag} en el diario de horticultura y jardinería. Descubre consejos y novedades sobre ${params.tag}.`
+  title={t("blog.title")}
+  description={t("blog.description")}
   sideBarActiveItemID="blog"
 >
   <div class="mb-5">
     <h1 class="text-3xl w-full font-bold">
-      Blog de horticultura y jardinería sobre {params.tag}
+      {t("blog.tag", params.tag)}
     </h1>
   </div>
   {
     page.data.length === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Lo siento</p>
+        <p class="font-bold">{t("blog.pre.noBlogs")}</p>
         <p>
-          Por el momento no hay entradas de blog disponibles. ¡Vuelve a
-          intentarlo más tarde!
+          {t("blog.noBlogs")}
         </p>
       </div>
     ) : (
       <ul>
-        {page.data.map((post) => (
-          <>
-            <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.title, post.id)}
-              target="_self"
-              badge={post.data.badge}
-              tags={post.data.tags}
-            />
-            <div class="divider my-0" />
-          </>
-        ))}
+        {page.data.map((post) => {
+          const staticSlug = post.data.staticSlug?.[lang] ?? post.id;
+          const slug = slugify(post.data.title[lang], staticSlug);
+
+          return (
+            <>
+              <HorizontalCard
+                title={post.data.title[lang]}
+                img={post.data.heroImage}
+                desc={post.data.description[lang]}
+                url={`/${lang}/blog/${slug}`}
+                target="_self"
+                badge={post.data.badge}
+                tags={post.data.tags}
+              />
+              <div class="divider my-0" />
+            </>
+          );
+        })}
       </ul>
     )
   }
@@ -78,7 +94,7 @@ const params = Astro.params;
           >
             <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
           </svg>{" "}
-          Entradas recientes
+          {t("blog.prev")}
         </a>
       ) : (
         <div />
@@ -87,7 +103,7 @@ const params = Astro.params;
     {
       page.url.next ? (
         <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-          Entradas antiguas{" "}
+          {t("blog.next")}{" "}
           <svg
             class="h-6 w-6 fill-current md:h-8 md:w-8"
             xmlns="http://www.w3.org/2000/svg"

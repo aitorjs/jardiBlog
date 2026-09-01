@@ -66,53 +66,23 @@ pnpm install
 
 ## TODOs
 
-GitHub Pages es solo hosting estático, así que no soporta `_redirects` (eso es específico de Netlify) ni redirecciones HTTP reales del lado del servidor. No pasa nada, hay una forma de conseguir el mismo efecto sin loader.
+- i18n:
+   - [x] quitar carpeta es y eu y meterlo todo en [lang] para no tener paginas duplicadas por idioma. segun se va traduciendo
+   - [x] rss por idioma
+   - [ ] Traducción a euskara
+      - [x] menu
+      - [x] index
+      - [ ] galeria -> en las ultimas imagenes. si estas en eu, pasaste a es y vuelves a eu y salen en eu. los pasos previos bien + date en lightbox en i18n
+      - [x] cv
+      - [x] 404
+      - [x] contacto
+      - [x] blog (la contenido de la entrada en castellano. titulo y descripcion en i18n) 
+        - [x] tener en cuenta el language switcher (la url depende del titulo pero el language switcher entiende que la url de la entrada por idioma y por lo tanto el titulo siempre es el mismo)
+        - [x] tener la entrada una unica vez, no una por idioma
+        - [x] al entrar en una entrada de blog en euskara que salga un mensaje de "ez dago itzulia" o algo del estilo => https://docs.astro.build/es/recipes/i18n/
 
-Lo que probablemente viste antes era la página de redirección que genera Astro por defecto, que incluye un mensaje visible tipo "Redirecting..." antes del `meta refresh`. La solución es sustituir esa página por una tuya, minimalista, que redirija de forma instantánea sin mostrar nada:
-
-```js
-// astro.config.mjs
-i18n: {
-  defaultLocale: "es",
-  locales: ["es", "eu"],
-  routing: {
-    prefixDefaultLocale: true,
-    redirectToDefaultLocale: false, // desactivamos la redirección automática de Astro
-  },
-}
-```
-
-Y creas tu propia página raíz:
-
-```astro
----
-// src/pages/index.astro
----
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=/es/" />
-    <link rel="canonical" href="/es/" />
-    <script>location.replace("/es/");</script>
-  </head>
-  <body></body>
-</html>
-```
-
-Puntos clave por qué esto no muestra loader:
-
-- **`<script>` en el `<head>`, sin body**: se ejecuta antes de que el navegador tenga nada que pintar, así que la redirección ocurre en microsegundos, sin flash visible de contenido.
-- **Sin mensaje de "Redirigiendo..."**: al no tener texto ni estilos en el body, no hay nada que parpadee en pantalla.
-- **`meta http-equiv="refresh"` como respaldo**: solo entra en juego si JS está desactivado; con JS activado (el 99% de los casos) el `location.replace` gana y actúa primero.
-- **`location.replace` en vez de `location.href`**: no deja la página de redirección en el historial, así que el botón "atrás" no vuelve a pasar por ella.
-
-Con esto, `domain.com/` salta a `domain.com/es/` de forma prácticamente instantánea y sin ningún indicador de carga visible.
-
--- Conclusión
-- i18n con prefixDefaultLocale: true → /es/ y /eu/, con redirectToDefaultLocale: false y tu propio index.astro con location.replace para evitar el loader en GitHub Pages.
-- Blog → monolingüe, solo en /es/blog/, sin equivalente en /eu/. En euskera, aviso o enlace directo a la versión en castellano.
-- Galería y resto del sitio → traducidos, con title/description/alt como objetos { es, eu } dentro del mismo  JSON, y páginas duplicadas en src/pages/es/ y src/pages/eu/.
+    - [x] cambiar de un idioma a otro estando de una entrada de blog.
+    - [x] src/lib/timeAgo.ts i18n.
 
 ## Mas tarde
 
@@ -121,6 +91,12 @@ Con esto, `domain.com/` salta a `domain.com/es/` de forma prácticamente instant
 
 - 1 i18n. Todo en euskara menos la parte de blog
 - 2 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
+
+## Por qué oidio y no mildiu
+
+Aquí está la clave que mucha gente desconoce: el mildiu necesita agua líquida sobre la hoja para que sus esporas germinen (por eso se dispara con lluvia, rocío persistente o riego que moja el follaje). El oidio, en cambio, es casi lo contrario: sus esporas germinan mejor con humedad ambiental alta pero hoja seca. No necesita que llueva ni que la hoja esté mojada; le basta con aire húmedo y temperaturas suaves-cálidas (20-28°C aprox.), especialmente con oscilación entre días calurosos y noches algo más frescas.
+
+Así que la combinación que describes —más calor de lo habitual + algo más de humedad ambiental, pero sin encharcar hoja porque riegas con regadera a ras de pie— es prácticamente el escenario ideal para oidio y bastante desfavorable para mildiu. No es casualidad, es justo la firma climática de cada enfermedad.
 
 ## Recordatorio
 

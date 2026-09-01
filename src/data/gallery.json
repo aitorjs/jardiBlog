@@ -1,8 +1,14 @@
 [
   {
     "id": "IMG_20260807_205715",
-    "title": "Cosecha de tomates variados",
-    "description": "Caja llena de tomates recién cosechados en mallas rojas: mendigorria, igeldo, bosque blue, raf, cherry botella amarilla y tetón de venus.",
+    "title": {
+      "es": "Cosecha de tomates variados",
+      "eu": "Tomate ezberdinen uzta"
+    },
+    "description": {
+      "es": "Caja llena de tomates recién cosechados en mallas rojas: mendigorria, igeldo, bosque blue, raf, cherry botella amarilla y tetón de venus.",
+      "eu": "Sare gorrietan bildu berri diren tomatez betetako kaxa: mendigorria, igeldo, bosque blue, raf, cherry botila horia eta venus tetoia."
+    },
     "tags": [
       "tomates",
       "berenjena",
@@ -10,13 +16,22 @@
       "cosecha"
     ],
     "pubDate": 1786136235,
-    "alt": "Cosecha de tomates variados",
+    "alt": {
+      "es": "Cosecha de tomates variados",
+      "eu": "Tomate ezberdinen uzta"
+    },
     "image": "../assets/gallery/IMG_20260807_205715.jpg"
   },
   {
     "id": "IMG_20260806_203834",
-    "title": "Recolección de un día del huerto",
-    "description": "Tomates de distintas variedades (mendigorria, rosa de xemein y cherry silvestre), una berenjena, y gindillas verdes.",
+    "title": {
+      "es": "Recolección de un día del huerto",
+      "eu": "Baratzeko egun bateko bilketa"
+    },
+    "description": {
+      "es": "Tomates de distintas variedades (mendigorria, rosa de xemein y cherry silvestre), una berenjena, y gindillas verdes.",
+      "eu": "Askotariko tomateak (mendigorria, xemein arrosa eta basako cherry-a), alberjinia bat eta gindilla berdeak."
+    },
     "tags": [
       "tomates",
       "berenjena",
@@ -24,58 +39,103 @@
       "cosecha"
     ],
     "pubDate": 1786048714,
-    "alt": "Recolección de un día del huerto",
+    "alt": {
+      "es": "Recolección de un día del huerto",
+      "eu": "Baratzeko egun bateko bilketa"
+    },
     "image": "../assets/gallery/IMG_20260806_203834.jpg"
   },
   {
     "id": "IMG_20260806_171652",
-    "title": "Chinche en una zarzal",
-    "description": "Chinche posada sobre una hoja de zarzas, mostrando sus largas antenas y patas.",
+    "title": {
+      "es": "Chinche en una zarzal",
+      "eu": "Zomorroa sasi artean"
+    },
+    "description": {
+      "es": "Chinche posada sobre una hoja de zarzas, mostrando sus largas antenas y patas.",
+      "eu": "Zomorroa sasi hosto baten gainean pausatuta, antena eta hanka luzeak erakutsiz."
+    },
     "tags": [
       "insectos"
     ],
     "pubDate": 1786036612,
-    "alt": "Chinche en una zarzal",
+    "alt": {
+      "es": "Chinche en una zarzal",
+      "eu": "Zomorroa sasi artean"
+    },
     "image": "../assets/gallery/IMG_20260806_171652.jpg"
   },
   {
     "id": "IMG_20260806_171210",
-    "title": "Chinche en una zarzal 2",
-    "description": "Chinche caminando por un tallo espinoso, rodeado de hojas de zarza.",
+    "title": {
+      "es": "Chinche en una zarzal 2",
+      "eu": "Zomorroa sasi artean 2"
+    },
+    "description": {
+      "es": "Chinche caminando por un tallo espinoso, rodeado de hojas de zarza.",
+      "eu": "Zomorroa arantzadun zurtoin batean zehar oinez, sasi hostoz inguratuta."
+    },
     "tags": [
       "insectos"
     ],
     "pubDate": 1786036330,
-    "alt": "Chinche en una zarzal 2",
+    "alt": {
+      "es": "Chinche en una zarzal 2",
+      "eu": "Zomorroa sasi artean 2"
+    },
     "image": "../assets/gallery/IMG_20260806_171210.jpg"
   },
   {
     "id": "IMG_20260804_204345",
-    "title": "Transplante de puerros",
-    "description": "Fila de puerros recién transplantados con tomateras y espárragos, uno con bayas rojas.",
+    "title": {
+      "es": "Transplante de puerros",
+      "eu": "Porruen birlandaketa"
+    },
+    "description": {
+      "es": "Fila de puerros recién transplantados con tomateras y espárragos, uno con bayas rojas.",
+      "eu": "Berriki birlandatutako porru-ilara tomate-landareekin eta zainzuriekin, bat baia gorriekin."
+    },
     "tags": [
       "puerros",
       "cosecha"
     ],
     "pubDate": 1785876225,
-    "alt": "Transplante de puerros",
+    "alt": {
+      "es": "Transplante de puerros",
+      "eu": "Porruen birlandaketa"
+    },
     "image": "../assets/gallery/IMG_20260804_204345.jpg"
   },
   {
     "id": "IMG_20260801_200158",
-    "title": "Montón de compost cubierto",
-    "description": "Heces de caballo compostando con lonas azules encima y una pala clavada en el montón.",
+    "title": {
+      "es": "Montón de compost cubierto",
+      "eu": "Estalitako konpost pila"
+    },
+    "description": {
+      "es": "Heces de caballo compostando con lonas azules encima y una pala clavada en el montón.",
+      "eu": "Zaldi-gorotza konpostatzen, gainean olana urdinak dituela eta pala bat pilan sartuta."
+    },
     "tags": [
       "compost"
     ],
     "pubDate": 1785614518,
-    "alt": "Montón de compost cubierto",
+    "alt": {
+      "es": "Montón de compost cubierto",
+      "eu": "Estalitako konpost pila"
+    },
     "image": "../assets/gallery/IMG_20260801_200158.jpg"
   },
   {
     "id": "IMG_20260801_110338",
-    "title": "Panorámica del huerto a principios de Agosto del 2026",
-    "description": "Bancales con tomateras entutoradas, blas-cherry recien transplantado, calabacines y calabazas en flor y esparragos al fondo a la derecha.",
+    "title": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran"
+    },
+    "description": {
+      "es": "Bancales con tomateras entutoradas, blas-cherry recien transplantado, calabacines y calabazas en flor y esparragos al fondo a la derecha.",
+      "eu": "Euskarridun tomate-landareak dituzten bankalak, birlandatu berri den blas-cherry-a, loretan dauden kuiatxoak eta kalabazak, eta hondoan eskuinean zainzuriak."
+    },
     "tags": [
       "calabacin",
       "calabaza",
@@ -84,13 +144,22 @@
       "vista-general"
     ],
     "pubDate": 1785582218,
-    "alt": "Panorámica del huerto a principios de Agosto del 2026",
+    "alt": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran"
+    },
     "image": "../assets/gallery/IMG_20260801_110338.jpg"
   },
   {
     "id": "IMG_20260801_110156",
-    "title": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
-    "description": "Vista general desde la parte de arriba del huerto con calabacines en flor, tomateras entutoradas de diferentes variedades, lechugas subidas para semilla y una aloe en maceta al fondo.",
+    "title": {
+      "es": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
+      "eu": "Kalabazinak, hainbat cherry motatako tomate-landareak, piperrak eta gindillak"
+    },
+    "description": {
+      "es": "Vista general desde la parte de arriba del huerto con calabacines en flor, tomateras entutoradas de diferentes variedades, lechugas subidas para semilla y una aloe en maceta al fondo.",
+      "eu": "Baratzearen goiko aldetik ikuspegi orokorra: loretan dauden kuiatxoak, barietate desberdinetako euskarridun tomate-landareak, hazitarako igotako letxugak eta loreontzi batean aloe bat hondoan."
+    },
     "tags": [
       "calabacin",
       "tomates",
@@ -99,26 +168,44 @@
       "vista-general"
     ],
     "pubDate": 1785582116,
-    "alt": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
+    "alt": {
+      "es": "Calabacines, tomateras de diferentes cherrys, pimientos y gindillas",
+      "eu": "Kalabazinak, hainbat cherry motatako tomate-landareak, piperrak eta gindillak"
+    },
     "image": "../assets/gallery/IMG_20260801_110156.jpg"
   },
   {
     "id": "IMG_20260801_110128",
-    "title": "Fila de pimientos junto a tomateras",
-    "description": "Pimientos bien desarrollados entutorados con cañas, con tomateras a un lado y maíz y lechugas al fondo.",
+    "title": {
+      "es": "Fila de pimientos junto a tomateras",
+      "eu": "Piper-ilara tomate-landareen ondoan"
+    },
+    "description": {
+      "es": "Pimientos bien desarrollados entutorados con cañas, con tomateras a un lado y maíz y lechugas al fondo.",
+      "eu": "Ondo garatutako piperrak kanaberekin euskarrituta, alde batean tomate-landareak eta hondoan artoa eta letxugak."
+    },
     "tags": [
       "pimientos",
       "tomates",
       "lechuga"
     ],
     "pubDate": 1785582088,
-    "alt": "Fila de pimientos junto a tomateras",
+    "alt": {
+      "es": "Fila de pimientos junto a tomateras",
+      "eu": "Piper-ilara tomate-landareen ondoan"
+    },
     "image": "../assets/gallery/IMG_20260801_110128.jpg"
   },
   {
     "id": "IMG_20260801_110040",
-    "title": "Panorámica del huerto a principios de Agosto del 2026 - 2",
-    "description": "Bancales con tomateras entutoradas, calabacines y calabazas en flor y maiz al fondo.",
+    "title": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026 - 2",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran - 2"
+    },
+    "description": {
+      "es": "Bancales con tomateras entutoradas, calabacines y calabazas en flor y maiz al fondo.",
+      "eu": "Euskarridun tomate-landareak dituzten bankalak, loretan dauden kuiatxoak eta kalabazak, eta artoa hondoan."
+    },
     "tags": [
       "calabacin",
       "calabaza",
@@ -127,13 +214,22 @@
       "vista-general"
     ],
     "pubDate": 1785582040,
-    "alt": "Panorámica del huerto a principios de Agosto del 2026 - 2",
+    "alt": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026 - 2",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran - 2"
+    },
     "image": "../assets/gallery/IMG_20260801_110040.jpg"
   },
   {
     "id": "IMG_20260801_105957",
-    "title": "Panorámica del huerto a principios de Agosto del 2026 - 3",
-    "description": "Bancal con berenjenas, gindillas y pimientos, lechugas subiendose junto a una aloe en maceta, con tomateras al fondo.",
+    "title": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026 - 3",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran - 3"
+    },
+    "description": {
+      "es": "Bancal con berenjenas, gindillas y pimientos, lechugas subiendose junto a una aloe en maceta, con tomateras al fondo.",
+      "eu": "Alberjinia, gindilla eta piperrak dituen bankala, hazitarako igotzen ari diren letxugak loreontzi bateko aloe baten ondoan, eta tomate-landareak hondoan."
+    },
     "tags": [
       "berenjenas",
       "gindilla",
@@ -143,39 +239,66 @@
       "arriba"
     ],
     "pubDate": 1785581997,
-    "alt": "Panorámica del huerto a principios de Agosto del 2026 - 3",
+    "alt": {
+      "es": "Panorámica del huerto a principios de Agosto del 2026 - 3",
+      "eu": "Baratzearen panoramika 2026ko abuztu hasieran - 3"
+    },
     "image": "../assets/gallery/IMG_20260801_105957.jpg"
   },
   {
     "id": "IMG_20260801_105902",
-    "title": "Berenjenas cargando fruto",
-    "description": "Berenjenas con los primeros frutos oscuros formándose, junto a caléndulas, calabacines y cañas entrelazadas de tutor.",
+    "title": {
+      "es": "Berenjenas cargando fruto",
+      "eu": "Alberjiniak fruitua ematen"
+    },
+    "description": {
+      "es": "Berenjenas con los primeros frutos oscuros formándose, junto a caléndulas, calabacines y cañas entrelazadas de tutor.",
+      "eu": "Lehen fruitu ilunak sortzen ari diren alberjiniak, kalendulen, kuiatxoen eta euskarri gisa elkarri lotutako kanaberen ondoan."
+    },
     "tags": [
       "berenjenas",
       "calendulas",
       "arriba"
     ],
     "pubDate": 1785581942,
-    "alt": "Berenjenas cargando fruto",
+    "alt": {
+      "es": "Berenjenas cargando fruto",
+      "eu": "Alberjiniak fruitua ematen"
+    },
     "image": "../assets/gallery/IMG_20260801_105902.jpg"
   },
   {
     "id": "IMG_20260801_105847",
-    "title": "Coles de bruselas y lombardas",
-    "description": "Fila de plantones de col de bruselas y lombardas.",
+    "title": {
+      "es": "Coles de bruselas y lombardas",
+      "eu": "Bruselako aza eta aza gorriak"
+    },
+    "description": {
+      "es": "Fila de plantones de col de bruselas y lombardas.",
+      "eu": "Bruselako azaren eta aza gorriaren landare-ilara."
+    },
     "tags": [
       "coles",
       "lombarda",
       "abajo"
     ],
     "pubDate": 1785581927,
-    "alt": "Coles recién plantadas",
+    "alt": {
+      "es": "Coles recién plantadas",
+      "eu": "Berriki landatutako azak"
+    },
     "image": "../assets/gallery/IMG_20260801_105847.jpg"
   },
   {
     "id": "IMG_20260801_105646",
-    "title": "Tomateras cargadas de fruto",
-    "description": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+    "title": {
+      "es": "Tomateras cargadas de fruto",
+      "eu": "Fruituz beteriko tomate-landareak"
+    },
+    "description": {
+      "es": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+      "eu": "Euskarridun tomate-landareak tomate berde eta gorri batzuez beteta, kalendula, tajete eta albahaka batzuekin nahastuta."
+    },
     "tags": [
       "tomates",
       "calendula",
@@ -183,88 +306,151 @@
       "abajo"
     ],
     "pubDate": 1785581806,
-    "alt": "Tomateras cargadas de fruto",
+    "alt": {
+      "es": "Tomateras cargadas de fruto",
+      "eu": "Fruituz beteriko tomate-landareak"
+    },
     "image": "../assets/gallery/IMG_20260801_105646.jpg"
   },
   {
     "id": "IMG_20260727_201303",
-    "title": "Coles de bruselas y lombardas",
-    "description": "Unas semanas después del transplante, las plantas siguen sanas y naturales.",
+    "title": {
+      "es": "Coles de bruselas y lombardas",
+      "eu": "Bruselako aza eta aza gorriak"
+    },
+    "description": {
+      "es": "Unas semanas después del transplante, las plantas siguen sanas y naturales.",
+      "eu": "Birlandaketaren ondoren aste batzuetara, landareak osasuntsu eta naturalak jarraitzen dute."
+    },
     "tags": [
       "coles",
       "lombarda",
       "abajo"
     ],
     "pubDate": 1785183183,
-    "alt": "Coles de bruselas y lombardas",
+    "alt": {
+      "es": "Coles de bruselas y lombardas",
+      "eu": "Bruselako aza eta aza gorriak"
+    },
     "image": "../assets/gallery/IMG_20260727_201303.jpg"
   },
   {
     "id": "photo_2026-07-27_12-23-12",
-    "title": "Bancal de tomateras",
-    "description": "Bancal elevado de madera lleno de tomateras frondosas y bien desarrolladas, entutoradas con cañas, junto a una hilera de pimientos y lechugas verdes al fondo.",
+    "title": {
+      "es": "Bancal de tomateras",
+      "eu": "Tomate-landareen bankala"
+    },
+    "description": {
+      "es": "Bancal elevado de madera lleno de tomateras frondosas y bien desarrolladas, entutoradas con cañas, junto a una hilera de pimientos y lechugas verdes al fondo.",
+      "eu": "Zurezko bankal altxatua, hosto ugariko eta ondo garatutako tomate-landarez betea, kanaberekin euskarrituta, hondoan piper eta letxuga berdeen ilara batekin."
+    },
     "tags": [
       "tomates"
     ],
     "pubDate": 1785154992,
-    "alt": "Bancal de tomateras",
+    "alt": {
+      "es": "Bancal de tomateras",
+      "eu": "Tomate-landareen bankala"
+    },
     "image": "../assets/gallery/photo_2026-07-27_12-23-12.jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-40 (2)",
-    "title": "Vista general del huerto en Julio del 2025",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "title": {
+      "es": "Vista general del huerto en Julio del 2025",
+      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
+    },
+    "description": {
+      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
+    },
     "tags": [
       "vista-general",
       "tomate"
     ],
     "pubDate": 1785010660,
-    "alt": "Vista general del huerto en Julio del 2025",
+    "alt": {
+      "es": "Vista general del huerto en Julio del 2025",
+      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-40",
-    "title": "Bancal con calabacines, acelgas y chupones de tomateras",
-    "description": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+    "title": {
+      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
+      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
+    },
+    "description": {
+      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
+    },
     "tags": [
       "calabacin",
       "acelga",
       "tomtate"
     ],
     "pubDate": 1785010660,
-    "alt": "Bancal con calabacines, acelgas y chupones de tomateras",
+    "alt": {
+      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
+      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-39 (5)",
-    "title": "Alubias, maíz y calabacín",
-    "description": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+    "title": {
+      "es": "Alubias, maíz y calabacín",
+      "eu": "Baba-ilarrak, artoa eta kalabazina"
+    },
+    "description": {
+      "es": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+      "eu": "Baba-ilarrak kanabera altuen gainean, artoa hondoan eta loretan dauden kalabazinak aurreko planoan."
+    },
     "tags": [
       "alubias",
       "maíz",
       "calabacín"
     ],
     "pubDate": 1785010659,
-    "alt": "Alubias, maíz y calabacín",
+    "alt": {
+      "es": "Alubias, maíz y calabacín",
+      "eu": "Baba-ilarrak, artoa eta kalabazina"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-39 (4)",
-    "title": "Calabaza, fresas y bidones de agua",
-    "description": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
+    "title": {
+      "es": "Calabaza, fresas y bidones de agua",
+      "eu": "Kalabaza, marrubiak eta ur bidoiak"
+    },
+    "description": {
+      "es": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
+      "eu": "Kalabaza-hosto handiak dituen eremua, ur bidoi urdinak, loreontzitako landareak dituen mahai bat marrubien artean, eta zaldi-gorotza estaltzen duen olana urdin bat."
+    },
     "tags": [
       "calabaza",
       "fresa",
       "agua"
     ],
     "pubDate": 1785010659,
-    "alt": "Calabacines, acelgas y chupones de tomateras",
+    "alt": {
+      "es": "Calabacines, acelgas y chupones de tomateras",
+      "eu": "Kalabazinak, zerbak eta tomate-landareen kimuak"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-39 (3)",
-    "title": "Pimientos, gindillas, alubias, maiz y calabacines",
-    "description": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+    "title": {
+      "es": "Pimientos, gindillas, alubias, maiz y calabacines",
+      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
+    },
+    "description": {
+      "es": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+      "eu": "Baba-ilarrak kanaberekin, artoa hondoan eta kalabazin hostoak aurreko planoan, piper eta gindillekin."
+    },
     "tags": [
       "judías",
       "calabacín",
@@ -274,13 +460,22 @@
       "arriba"
     ],
     "pubDate": 1785010659,
-    "alt": "Pimientos, gindillas, judías maiz y calabacines",
+    "alt": {
+      "es": "Pimientos, gindillas, judías maiz y calabacines",
+      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
   },
   {
     "id": "photo_2025-07-25_20-17-39",
-    "title": "Vista general a finales de Julio del 2025",
-    "description": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+    "title": {
+      "es": "Vista general a finales de Julio del 2025",
+      "eu": "Ikuspegi orokorra 2025eko uztail bukaeran"
+    },
+    "description": {
+      "es": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+      "eu": "Tomate-landareentzako kanabera-ilarak, hondoan letxuga-ilara bat piper eta gindillekin. Kalabazak aurreko planoan."
+    },
     "tags": [
       "tomate",
       "lechuga",
@@ -290,39 +485,66 @@
       "vista-general"
     ],
     "pubDate": 1785010659,
-    "alt": "Vista general del bancal",
+    "alt": {
+      "es": "Vista general del bancal",
+      "eu": "Bankalaren ikuspegi orokorra"
+    },
     "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
   },
   {
     "id": "enfermedades-fungicas",
-    "title": "Chuleta de enfermedades fúngicas",
-    "description": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
+    "title": {
+      "es": "Chuleta de enfermedades fúngicas",
+      "eu": "Onddo-gaixotasunen txuleta"
+    },
+    "description": {
+      "es": "Guía rápida para identificar oídio, mildiu, botrytis, roya, alternaria y chancro.",
+      "eu": "Oidioa, mildiua, botritisa, herdoila, alternaria eta txankroa identifikatzeko gida azkarra."
+    },
     "tags": [
       "enfermedades",
       "hongos",
       "guía"
     ],
     "pubDate": 1784970714,
-    "alt": "Chuleta de enfermedades fúngicas",
+    "alt": {
+      "es": "Chuleta de enfermedades fúngicas",
+      "eu": "Onddo-gaixotasunen txuleta"
+    },
     "image": "../assets/gallery/enfermedades-fungicas.jpg"
   },
   {
     "id": "IMG_20260724_212707",
-    "title": "Cosecha de calabacines, gindillas, lechuga y flores de calabacín y calabaza",
-    "description": "",
+    "title": {
+      "es": "Cosecha de calabacines, gindillas, lechuga y flores de calabacín y calabaza",
+      "eu": "Kalabazina, gindilla, letxuga eta kalabazina zein kalabaza loreen uzta"
+    },
+    "description": {
+      "es": "",
+      "eu": ""
+    },
     "tags": [
       "calabacin",
       "lechuga",
       "cosecha"
     ],
     "pubDate": 1784928427,
-    "alt": "Cosecha de calabacines, lechuga y flores de calabacín",
+    "alt": {
+      "es": "Cosecha de calabacines, lechuga y flores de calabacín",
+      "eu": "Kalabazina, letxuga eta kalabazina loreen uzta"
+    },
     "image": "../assets/gallery/IMG_20260724_212707.jpg"
   },
   {
     "id": "IMG_20260724_202834",
-    "title": "Tomateras cargadas de tomates",
-    "description": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+    "title": {
+      "es": "Tomateras cargadas de tomates",
+      "eu": "Tomatez beteriko tomate-landareak"
+    },
+    "description": {
+      "es": "Tomateras entutoradas repletas de tomates verdes y algunos ya rojos, entrelazadas con caléndulas, tajetes y alguna albahaca.",
+      "eu": "Euskarridun tomate-landareak tomate berde eta gorri batzuez beteta, kalendula, tajete eta albahaka batzuekin nahastuta."
+    },
     "tags": [
       "tomates",
       "calendula",
@@ -330,250 +552,442 @@
       "abajo"
     ],
     "pubDate": 1784924914,
-    "alt": "Tomateras cargadas de tomates",
+    "alt": {
+      "es": "Tomateras cargadas de tomates",
+      "eu": "Tomatez beteriko tomate-landareak"
+    },
     "image": "../assets/gallery/IMG_20260724_202834.jpg"
   },
   {
     "id": "rincon-terraza",
-    "title": "Rincón de la terraza",
-    "description": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
+    "title": {
+      "es": "Rincón de la terraza",
+      "eu": "Terrazako txokoa"
+    },
+    "description": {
+      "es": "Manzanilla y tomates ganando altura, apoyados en cañas y una cesta reciclada como tutor.",
+      "eu": "Kamamila eta tomateak altuera irabazten, kanaberetan eta birziklatutako saski batean euskarritua."
+    },
     "tags": [
       "terraza",
       "tomates",
       "manzanilla"
     ],
     "pubDate": 1784884314,
-    "alt": "Rincón de la terraza",
+    "alt": {
+      "es": "Rincón de la terraza",
+      "eu": "Terrazako txokoa"
+    },
     "image": "../assets/gallery/rincon-terraza.jpg"
   },
   {
     "id": "semilleros-trasplantados",
-    "title": "Semilleros trasplantados",
-    "description": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
+    "title": {
+      "es": "Semilleros trasplantados",
+      "eu": "Birlandatutako haztegiak"
+    },
+    "description": {
+      "es": "Plántulas recién repicadas a macetas individuales, esperando turno para salir al bancal.",
+      "eu": "Loreontzi indibidualetara berriki aldatutako landare-txikiak, bankalera ateratzeko txanda itxaroten."
+    },
     "tags": [
       "semillero",
       "plántulas",
       "trasplante"
     ],
     "pubDate": 1784797914,
-    "alt": "Semilleros trasplantados",
+    "alt": {
+      "es": "Semilleros trasplantados",
+      "eu": "Birlandatutako haztegiak"
+    },
     "image": "../assets/gallery/semilleros-trasplantados.jpg"
   },
   {
     "id": "IMG_20260719_184213",
-    "title": "Estado del seto antes de la operación invernadero",
-    "description": "Matorral de zarzas donde ira el futuro invernadero.",
+    "title": {
+      "es": "Estado del seto antes de la operación invernadero",
+      "eu": "Hesiaren egoera negutegiaren obraren aurretik"
+    },
+    "description": {
+      "es": "Matorral de zarzas donde ira el futuro invernadero.",
+      "eu": "Etorkizuneko negutegia egongo den sasi-sastraka."
+    },
     "tags": [
       "invernadero"
     ],
     "pubDate": 1784486533,
-    "alt": "Estado del seto antes de la operación invernadero",
+    "alt": {
+      "es": "Estado del seto antes de la operación invernadero",
+      "eu": "Hesiaren egoera negutegiaren obraren aurretik"
+    },
     "image": "../assets/gallery/IMG_20260719_184213.jpg"
   },
   {
     "id": "IMG_20260713_171600",
-    "title": "Tomateras jóvenes",
-    "description": "Filas de tomateras en fase de crecimiento, alguna en floración incluso con algún fruto cuajado y trampas amarillas para insectos.",
+    "title": {
+      "es": "Tomateras jóvenes",
+      "eu": "Tomate-landare gazteak"
+    },
+    "description": {
+      "es": "Filas de tomateras en fase de crecimiento, alguna en floración incluso con algún fruto cuajado y trampas amarillas para insectos.",
+      "eu": "Hazkuntza-fasean dauden tomate-landare ilarak, batzuk loretan eta baita fruitu txikirekin ere, eta intsektuentzako tranpa horiak."
+    },
     "tags": [
       "tomates"
     ],
     "pubDate": 1783962960,
-    "alt": "Tomateras jóvenes",
+    "alt": {
+      "es": "Tomateras jóvenes",
+      "eu": "Tomate-landare gazteak"
+    },
     "image": "../assets/gallery/IMG_20260713_171600.jpg"
   },
   {
     "id": "IMG_20260713_150133",
-    "title": "Primeros tomates formándose",
-    "description": "Tomateras entutoradas con pequeños tomates verdes cuajados entre caléndulas.",
+    "title": {
+      "es": "Primeros tomates formándose",
+      "eu": "Lehen tomateak sortzen"
+    },
+    "description": {
+      "es": "Tomateras entutoradas con pequeños tomates verdes cuajados entre caléndulas.",
+      "eu": "Euskarridun tomate-landareak, kalendulen artean tomate berde txikiak dituztela."
+    },
     "tags": [
       "tomates"
     ],
     "pubDate": 1783954893,
-    "alt": "Primeros tomates formándose",
+    "alt": {
+      "es": "Primeros tomates formándose",
+      "eu": "Lehen tomateak sortzen"
+    },
     "image": "../assets/gallery/IMG_20260713_150133.jpg"
   },
   {
     "id": "IMG_20260710_204334",
-    "title": "Tomateras",
-    "description": "Fila de tomateras jóvenes.",
+    "title": {
+      "es": "Tomateras",
+      "eu": "Tomate-landareak"
+    },
+    "description": {
+      "es": "Fila de tomateras jóvenes.",
+      "eu": "Tomate-landare gazteen ilara."
+    },
     "tags": [
       "tomates"
     ],
     "pubDate": 1783716214,
-    "alt": "Tomateras",
+    "alt": {
+      "es": "Tomateras",
+      "eu": "Tomate-landareak"
+    },
     "image": "../assets/gallery/IMG_20260710_204334.jpg"
   },
   {
     "id": "photo_2026-07-08_02-27-27",
-    "title": "Bancal removido con algún plantón",
-    "description": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
+    "title": {
+      "es": "Bancal removido con algún plantón",
+      "eu": "Bankal mugitua landaretxo batzuekin"
+    },
+    "description": {
+      "es": "Tierra recién trabajada y mullida, delimitada con cañas de bambú, con pequeños plantones asomando entre túneles de cultivo cubiertos con plástico blanco al fondo.  ",
+      "eu": "Berriki landutako eta arindutako lurra, bambuzko kanaberekin mugatua, landaretxo txikiak agertzen direla plastiko zuriz estalitako laborantza-tunelen artean, hondoan."
+    },
     "tags": [
       "gindilla",
       "arriba"
     ],
     "pubDate": 1783477653,
-    "alt": "Bancal removido con algún plantón",
+    "alt": {
+      "es": "Bancal removido con algún plantón",
+      "eu": "Bankal mugitua landaretxo batzuekin"
+    },
     "image": "../assets/gallery/photo_2026-07-08_02-27-27.jpg"
   },
   {
     "id": "IMG_20260707_155855",
-    "title": "Semilleros y plantones",
-    "description": "Bandejas de semilleros con brotes recién nacidos de blas-cherry y coliflor morada junto a una aloe vera y un rosal en maceta.",
+    "title": {
+      "es": "Semilleros y plantones",
+      "eu": "Haztegiak eta landaretxoak"
+    },
+    "description": {
+      "es": "Bandejas de semilleros con brotes recién nacidos de blas-cherry y coliflor morada junto a una aloe vera y un rosal en maceta.",
+      "eu": "Blas-cherry eta azalore more jaio berrien kimuak dituzten haztegi-erretiluak, loreontzi bateko aloe vera eta larrosondo baten ondoan."
+    },
     "tags": [
       "semilleros",
       "aloe",
       "coliflor"
     ],
     "pubDate": 1783439935,
-    "alt": "Semilleros y plantones",
+    "alt": {
+      "es": "Semilleros y plantones",
+      "eu": "Haztegiak eta landaretxoak"
+    },
     "image": "../assets/gallery/IMG_20260707_155855.jpg"
   },
   {
     "id": "IMG_20260705_212233",
-    "title": "Bancal de lechugas",
-    "description": "Lechugas bien desarrolladas junto a pimientos jóvenes.",
+    "title": {
+      "es": "Bancal de lechugas",
+      "eu": "Letxugen bankala"
+    },
+    "description": {
+      "es": "Lechugas bien desarrolladas junto a pimientos jóvenes.",
+      "eu": "Ondo garatutako letxugak piper gazteen ondoan."
+    },
     "tags": [
       "lechugas",
       "pimientos"
     ],
     "pubDate": 1783286553,
-    "alt": "Bancal de lechugas",
+    "alt": {
+      "es": "Bancal de lechugas",
+      "eu": "Letxugen bankala"
+    },
     "image": "../assets/gallery/IMG_20260705_212233.jpg"
   },
   {
     "id": "photo_2026-07-08_01-42-19",
-    "title": "Coles de bruselas y lombardas recien transplantadas",
-    "description": "Coles de bruselas y lombardas recién trasplantados en filas, con gránulo azul para los caracoles y babosas.",
+    "title": {
+      "es": "Coles de bruselas y lombardas recien transplantadas",
+      "eu": "Berriki birlandatutako Bruselako azak eta aza gorriak"
+    },
+    "description": {
+      "es": "Coles de bruselas y lombardas recién trasplantados en filas, con gránulo azul para los caracoles y babosas.",
+      "eu": "Ilaratan berriki birlandatutako Bruselako azak eta aza gorriak, barraskiloentzako eta bareentzako pikor urdinarekin."
+    },
     "tags": [
       "coles",
       "lombarda",
       "abajo"
     ],
     "pubDate": 1783114752,
-    "alt": "Coles de bruselas y lombardas recien transplantadas",
+    "alt": {
+      "es": "Coles de bruselas y lombardas recien transplantadas",
+      "eu": "Berriki birlandatutako Bruselako azak eta aza gorriak"
+    },
     "image": "../assets/gallery/photo_2026-07-08_01-42-19.jpg"
   },
   {
     "id": "photo_2026-07-08_01-42-45",
-    "title": "Parterre floral realizado en el certificado profesional",
-    "description": "Parterre construido durante el certificado profesional, delimitado con bordillo de piedra, con celosías de madera para trepadoras, cannas, rosales, impatiens y otras flores en plena floración. Antes de plantar se escardó y oxigenó la tierra, se abonó y se instaló riego automático.",
+    "title": {
+      "es": "Parterre floral realizado en el certificado profesional",
+      "eu": "Ziurtagiri profesionalean egindako lore-parterrea"
+    },
+    "description": {
+      "es": "Parterre construido durante el certificado profesional, delimitado con bordillo de piedra, con celosías de madera para trepadoras, cannas, rosales, impatiens y otras flores en plena floración. Antes de plantar se escardó y oxigenó la tierra, se abonó y se instaló riego automático.",
+      "eu": "Ziurtagiri profesionalean eraikitako parterrea, harrizko ertzez mugatua, igokarientzako zurezko saretarekin, cannak, larrosondoak, impatiens eta beste lore batzuk lore betean dituela. Landatu aurretik lurra eskardatu eta oxigenatu zen, ongarritu zen eta ureztatze automatikoa jarri zen."
+    },
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1782902652,
-    "alt": "Parterre floral realizado en el certificado profesional",
+    "alt": {
+      "es": "Parterre floral realizado en el certificado profesional",
+      "eu": "Ziurtagiri profesionalean egindako lore-parterrea"
+    },
     "image": "../assets/gallery/photo_2026-07-08_01-42-45.jpg"
   },
   {
     "id": "photo_2026-06-26_10-53-55",
-    "title": "Bancal liberado tras podar el seto",
-    "description": "Bancal de la izquierda ya limpio tras cortar en línea recta el seto verde que invadía el espacio.",
+    "title": {
+      "es": "Bancal liberado tras podar el seto",
+      "eu": "Hesia moztu ondoren askatutako bankala"
+    },
+    "description": {
+      "es": "Bancal de la izquierda ya limpio tras cortar en línea recta el seto verde que invadía el espacio.",
+      "eu": "Ezkerreko bankala, espazioa inbaditzen zuen hesi berdea lerro zuzenean moztu ondoren garbi."
+    },
     "tags": [
       "blasenea"
     ],
     "pubDate": 1782471235,
-    "alt": "Bancal liberado tras podar el seto",
+    "alt": {
+      "es": "Bancal liberado tras podar el seto",
+      "eu": "Hesia moztu ondoren askatutako bankala"
+    },
     "image": "../assets/gallery/photo_2026-06-26_10-53-55.jpg"
   },
   {
     "id": "photo_2026-06-26_10-53-54",
-    "title": "Montando una tarrina de acedera roja",
-    "description": "Tarrina de plástico aún sin terminar de llenar con hojas de acedera roja recién cosechadas por mi.",
+    "title": {
+      "es": "Montando una tarrina de acedera roja",
+      "eu": "Mihilu gorriaren tarrina bat prestatzen"
+    },
+    "description": {
+      "es": "Tarrina de plástico aún sin terminar de llenar con hojas de acedera roja recién cosechadas por mi.",
+      "eu": "Nik neuk berriki bildutako mihilu gorriaren hostoekin oraindik erabat bete gabeko plastikozko tarrina."
+    },
     "tags": [
       "blasenea",
       "acedera"
     ],
     "pubDate": 1782471234,
-    "alt": "Montando una tarrina de acedera roja",
+    "alt": {
+      "es": "Montando una tarrina de acedera roja",
+      "eu": "Mihilu gorriaren tarrina bat prestatzen"
+    },
     "image": "../assets/gallery/photo_2026-06-26_10-53-54.jpg"
   },
   {
     "id": "photo_2026-06-19_14-35-01",
-    "title": "Semilleros sacudidos y ordenados",
-    "description": "Pilas de bandejas de semillero ya limpias y apiladas ordenadamente tras sacudirlas, una de las tareas que tocó realizar ese día.",
+    "title": {
+      "es": "Semilleros sacudidos y ordenados",
+      "eu": "Astindutako eta ordenatutako haztegiak"
+    },
+    "description": {
+      "es": "Pilas de bandejas de semillero ya limpias y apiladas ordenadamente tras sacudirlas, una de las tareas que tocó realizar ese día.",
+      "eu": "Astindu ondoren garbi eta ordenatuta pilatutako haztegi-erretilu pilak, egun hartan egin behar izan ziren lanetako bat."
+    },
     "tags": [
       "blasenea"
     ],
     "pubDate": 1781879701,
-    "alt": "Semilleros sacudidos y ordenados",
+    "alt": {
+      "es": "Semilleros sacudidos y ordenados",
+      "eu": "Astindutako eta ordenatutako haztegiak"
+    },
     "image": "../assets/gallery/photo_2026-06-19_14-35-01.jpg"
   },
   {
     "id": "photo_2026-06-18_14-17-27",
-    "title": "Maceteros de ajo africano en flor",
-    "description": "Fila de macetas con ajo africano en flor que me toco regar con una manguera varias veces.",
+    "title": {
+      "es": "Maceteros de ajo africano en flor",
+      "eu": "Baratxuri afrikarraren loreontziak loretan"
+    },
+    "description": {
+      "es": "Fila de macetas con ajo africano en flor que me toco regar con una manguera varias veces.",
+      "eu": "Loretan dagoen baratxuri afrikarraren loreontzi-ilara, mahuka batekin hainbat aldiz ureztatu behar izan nuena."
+    },
     "tags": [
       "blasenea"
     ],
     "pubDate": 1781792247,
-    "alt": "Maceteros de ajo africano en flor",
+    "alt": {
+      "es": "Maceteros de ajo africano en flor",
+      "eu": "Baratxuri afrikarraren loreontziak loretan"
+    },
     "image": "../assets/gallery/photo_2026-06-18_14-17-27.jpg"
   },
   {
     "id": "photo_2026-06-18_11-47-45",
-    "title": "Retirando hojas con oídio de las dalias",
-    "description": "Bancal de dalias blancas al que le quitaron las hojas afectadas por oídio para frenar su propagación y dejar que las flores a punto de abrir lo hagan.",
+    "title": {
+      "es": "Retirando hojas con oídio de las dalias",
+      "eu": "Dalien oidiodun hostoak kentzen"
+    },
+    "description": {
+      "es": "Bancal de dalias blancas al que le quitaron las hojas afectadas por oídio para frenar su propagación y dejar que las flores a punto de abrir lo hagan.",
+      "eu": "Dalia zurien bankala, zeinari oidioak eragindako hostoak kendu zaizkion hedapena geldiarazteko eta irekitzear dauden loreek irekitzen jarraitzeko."
+    },
     "tags": [
       "blasenea",
       "dalias"
     ],
     "pubDate": 1781783265,
-    "alt": "Retirando hojas con oídio de las dalias",
+    "alt": {
+      "es": "Retirando hojas con oídio de las dalias",
+      "eu": "Dalien oidiodun hostoak kentzen"
+    },
     "image": "../assets/gallery/photo_2026-06-18_11-47-45.jpg"
   },
   {
     "id": "photo_2026-05-29_12-24-30",
-    "title": "Esquejes escarificados sobre malla antihierbas",
-    "description": "Fila de esquejes ya escarificados plantados sobre tela geotextil, tras oxigenar la tierra y pasar la rotavator, marcados con etiquetas verdes.",
+    "title": {
+      "es": "Esquejes escarificados sobre malla antihierbas",
+      "eu": "Eskarifikatutako estakak belar aurkako sarearen gainean"
+    },
+    "description": {
+      "es": "Fila de esquejes ya escarificados plantados sobre tela geotextil, tras oxigenar la tierra y pasar la rotavator, marcados con etiquetas verdes.",
+      "eu": "Jada eskarifikatutako estaken ilara, oihal geotextilaren gainean landatuak, lurra oxigenatu eta rotabatorra pasa ondoren, etiketa berdez markatuak."
+    },
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1780057470,
-    "alt": "Esquejes escarificados sobre malla antihierbas",
+    "alt": {
+      "es": "Esquejes escarificados sobre malla antihierbas",
+      "eu": "Eskarifikatutako estakak belar aurkako sarearen gainean"
+    },
     "image": "../assets/gallery/photo_2026-05-29_12-24-30.jpg"
   },
   {
     "id": "photo_2026-05-28_12-45-01",
-    "title": "Estanque ovalado de Lurgarden",
-    "description": "Visitamos Lurgarden en el certificado profesional donde estuvimos en el famoso estanque ovalado rodeado de césped, con sauce llorón, plataneras y un arriate de flores en primer plano.",
+    "title": {
+      "es": "Estanque ovalado de Lurgarden",
+      "eu": "Lurgardeneko urmael obalatua"
+    },
+    "description": {
+      "es": "Visitamos Lurgarden en el certificado profesional donde estuvimos en el famoso estanque ovalado rodeado de césped, con sauce llorón, plataneras y un arriate de flores en primer plano.",
+      "eu": "Ziurtagiri profesionalean Lurgarden bisitatu genuen, non belardiz inguratutako urmael obalatu ospetsuan egon ginen, sahats negartia, platanondoak eta lore-arriate bat aurreko planoan zituela."
+    },
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1779972301,
-    "alt": "Estanque ovalado de Lurgarden",
+    "alt": {
+      "es": "Estanque ovalado de Lurgarden",
+      "eu": "Lurgardeneko urmael obalatua"
+    },
     "image": "../assets/gallery/photo_2026-05-28_12-45-01.jpg"
   },
   {
     "id": "photo_2026-05-17_18-12-33",
-    "title": "Horca de tres puntas o laya con destronadora",
-    "description": "Herramienta principal que uso para airear un poquito la tierra de forma comoda.",
+    "title": {
+      "es": "Horca de tres puntas o laya con destronadora",
+      "eu": "Hiru puntako sardea edo laia destronadorearekin"
+    },
+    "description": {
+      "es": "Herramienta principal que uso para airear un poquito la tierra de forma comoda.",
+      "eu": "Lurra erosotasunez pixka bat aireztatzeko erabiltzen dudan tresna nagusia."
+    },
     "tags": [
       "herramienta"
     ],
     "pubDate": 1779042153,
-    "alt": "Horca de tres puntas o laya con destronadora ",
+    "alt": {
+      "es": "Horca de tres puntas o laya con destronadora ",
+      "eu": "Hiru puntako sardea edo laia destronadorearekin"
+    },
     "image": "../assets/gallery/photo_2026-05-17_18-12-33.jpg"
   },
   {
     "id": "photo_2026-05-15_13-41-31",
-    "title": "Jardín formal a medio escardar",
-    "description": "Vista aérea del jardín con setos de boj, bancos y estatuas, mostrando la escarda del césped a medio hacer antes de aplicar herbicida.",
+    "title": {
+      "es": "Jardín formal a medio escardar",
+      "eu": "Erdi eskardatutako lorategia"
+    },
+    "description": {
+      "es": "Vista aérea del jardín con setos de boj, bancos y estatuas, mostrando la escarda del césped a medio hacer antes de aplicar herbicida.",
+      "eu": "Lorategiaren aire ikuspegia, ezpel-hesiak, bankuak eta estatuak dituela, belardiaren eskarda erdi eginda erakusten duena, herbizida aplikatu aurretik."
+    },
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1778852491,
-    "alt": "Jardín formal a medio escardar",
+    "alt": {
+      "es": "Jardín formal a medio escardar",
+      "eu": "Erdi eskardatutako lorategia"
+    },
     "image": "../assets/gallery/photo_2026-05-15_13-41-31.jpg"
   },
   {
     "id": "photo_2026-04-24_10-59-39",
-    "title": "Parterre junto a la caseta antigua",
-    "description": "Parterre realizado en el certificado profesional donde sembramos amaranto y tabaco delimitados con cañas.",
+    "title": {
+      "es": "Parterre junto a la caseta antigua",
+      "eu": "Parterrea etxola zaharraren ondoan"
+    },
+    "description": {
+      "es": "Parterre realizado en el certificado profesional donde sembramos amaranto y tabaco delimitados con cañas.",
+      "eu": "Ziurtagiri profesionalean egindako parterrea, non amarantoa eta tabakoa erein genituen kanaberekin mugatuta."
+    },
     "tags": [
       "fraisoro"
     ],
     "pubDate": 1777028379,
-    "alt": "Parterre junto a la caseta antigua",
+    "alt": {
+      "es": "Parterre junto a la caseta antigua",
+      "eu": "Parterrea etxola zaharraren ondoan"
+    },
     "image": "../assets/gallery/photo_2026-04-24_10-59-39.jpg"
   }
 ]

@@ -3,6 +3,22 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import PhotoLightboxGrid from "@components/PhotoLightboxGrid.astro";
 import Lightbox from "@components/Lightbox.astro";
 import { getCollection } from "astro:content";
+import {
+  locales,
+  getLangFromUrl,
+  useTranslations,
+} from "../../../../../i18n/utils";
+
+// Resuelve un campo que puede venir como string plano (fotos de blog,
+// siempre en español) o como objeto localizado {es, eu} (fotos de la
+// colección "gallery"). Con fallback a "es" si falta el idioma pedido.
+function resolveField(field: unknown, lang: string) {
+  if (field && typeof field === "object" && !Array.isArray(field)) {
+    const localized = field as Record<string, string>;
+    return localized[lang] ?? localized.es;
+  }
+  return field as string | undefined;
+}
 
 export async function getStaticPaths({ paginate }) {
   const gallery_photos = await getCollection("gallery");
@@ -24,7 +40,9 @@ export async function getStaticPaths({ paginate }) {
 
   // Unificamos ambas fuentes bajo la misma forma { data: {...} } para
   // reutilizar sin cambios el resto de la lógica de esta página, que
-  // ya asume entry.data.X.
+  // ya asume entry.data.X. title/description/alt se dejan SIN resolver
+  // aquí (pueden ser string u objeto {es,eu}); se resuelven más abajo,
+  // ya con el "lang" de la ruta concreta.
   const raw_photos = [
     ...gallery_photos.map((entry) => ({ data: entry.data })),
     ...mdx_photos.map((p) => ({
@@ -53,41 +71,51 @@ export async function getStaticPaths({ paginate }) {
     ).values(),
   );
 
+  // Los tags son iguales en todos los idiomas (nunca se traducen), así
+  // que esto no depende de "lang".
   const all_tags = all_photos.flatMap((photo) => photo.data.tags || []);
   const unique_tags = [...new Set(all_tags)];
 
-  return unique_tags.flatMap((tag) => {
-    const filtered_photos = all_photos.filter((photo) => {
-      return photo.data.tags?.includes(tag);
-    });
-    return paginate(filtered_photos, {
-      params: { tag },
-      pageSize: 20,
-    });
-  });
+  // Las fotos son las mismas para ambos idiomas: generamos cada tag
+  // paginado una vez por idioma soportado (producto cartesiano).
+  return locales.flatMap((lang) =>
+    unique_tags.flatMap((tag) => {
+      const filtered_photos = all_photos.filter((photo) => {
+        return photo.data.tags?.includes(tag);
+      });
+      return paginate(filtered_photos, {
+        params: { lang, tag },
+        pageSize: 20,
+        props: { lang },
+      });
+    }),
+  );
 }
 
 const { page } = Astro.props;
 const params = Astro.params;
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const photos = page.data.map((entry) => ({
   image: entry.data.image,
-  title: entry.data.title,
-  alt: entry.data.alt,
-  description: entry.data.description,
+  title: resolveField(entry.data.title, lang),
+  alt: resolveField(entry.data.alt, lang),
+  description: resolveField(entry.data.description, lang),
   tags: entry.data.tags,
   pubDate: entry.data.pubDate,
 }));
 ---
 
 <BaseLayout
-  title=`Galería en la etiqueta - ${params.tag}`
-  description=`Galería de imágenes sobre ${params.tag} en el diario de horticultura y jardinería.`
+  title={t("gallery.tag", params.tag)}
+  description={t("gallery.tag.description", params.tag)}
   sideBarActiveItemID="gallery"
 >
   <div class="mb-6">
     <h1 class="text-2xl font-bold">
-      Galería de horticultura y jardinería sobre {params.tag}
+      {t("gallery.tag.long", params.tag)}
     </h1>
   </div>
 
@@ -95,8 +123,8 @@ const photos = page.data.map((entry) => ({
     {
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-          <p class="font-bold">¡Vaya!</p>
-          <p>No hay fotos con esta etiqueta por ahora.</p>
+          <p class="font-bold">{t("gallery.pre.noPhotos")}</p>
+          <p>{t("gallery.noPhotos")}</p>
         </div>
       ) : (
         <PhotoLightboxGrid photos={photos} />
@@ -118,7 +146,7 @@ const photos = page.data.map((entry) => ({
           >
             <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
           </svg>{" "}
-          Fotos recientes
+          {t("gallery.prev")}
         </a>
       ) : (
         <div />
@@ -127,7 +155,7 @@ const photos = page.data.map((entry) => ({
     {
       page.url.next ? (
         <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-          Fotos anteriores{" "}
+          {t("gallery.next")}{" "}
           <svg
             class="h-6 w-6 fill-current md:h-8 md:w-8"
             xmlns="http://www.w3.org/2000/svg"

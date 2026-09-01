@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const { sideBarActiveItemID } = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 ---
@@ -7,31 +12,31 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
   <li>
     <a
       class={`py-3 text-base ${sideBarActiveItemID === "home" ? activeClass : ""}`}
-      href="/">Inicio</a
+      href={`/${lang}`}>{t("sidebar.home")}</a
     >
   </li>
   <li>
     <a
       class={`py-3 text-base ${sideBarActiveItemID === "blog" ? activeClass : ""}`}
-      href="/blog">Blog</a
+      href={`/${lang}/blog/`}>{t("sidebar.blog")}</a
     >
   </li>
   <li>
     <a
       class={`py-3 text-base ${sideBarActiveItemID === "gallery" ? activeClass : ""}`}
-      href="/galeria">Galería</a
+      href={`/${lang}/galeria/`}>{t("sidebar.gallery")}</a
     >
   </li>
   <li>
     <a
       class={`py-3 text-base ${sideBarActiveItemID === "cv" ? activeClass : ""}`}
-      href="/cv">CV</a
+      href={`/${lang}/cv/`}>{t("sidebar.cv")}</a
     >
   </li>
   <li>
     <a
       class={`py-3 text-base ${sideBarActiveItemID === "contacto" ? activeClass : ""}`}
-      href="/contacto">Contacto</a
+      href={`/${lang}/contacto/`}>{t("sidebar.contact")}</a
     >
   </li>
 </ul>

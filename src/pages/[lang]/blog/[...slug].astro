@@ -1,0 +1,33 @@
+---
+import { getCollection, render } from "astro:content";
+import PostLayout from "@layouts/PostLayout.astro";
+import { languages } from '../../../i18n/ui';
+import slugify from '../../../lib/slugify';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const langs = Object.keys(languages);
+
+  const paths = allPosts.flatMap((post) => {
+    return langs.map((lang) => {
+      const title = post.data.title[lang];
+      const staticSlug = post.data.staticSlug?.[lang] ?? post.id;
+      const slug = slugify(title, staticSlug);
+
+      return {
+        params: { lang, slug },
+        props: { post, lang },
+      };
+    });
+  });
+
+  return paths;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<PostLayout post={post}>
+  <Content />
+</PostLayout>

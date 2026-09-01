@@ -7,6 +7,14 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: 'https://aitor.info',
   base: '/',
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "eu"],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false, // desactivamos la redirección automática de Astro
+    },
+  },
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
