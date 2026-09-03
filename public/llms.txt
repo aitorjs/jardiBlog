@@ -1,0 +1,21 @@
+# aitor.info
+
+> Diario personal de aitor ibañez, operario en horticultura y jardinería. Notas, fotos y aprendizajes del día a día en la huerta y el jardín.
+
+## Blog
+- [Blog (índice)](https://aitor.info/es/blog): listado completo de entradas sobre cultivo, poda, plagas y experiencias en la huerta.
+- [Experiencia con patata (2026)](https://aitor.info/es/blog/experiencia-con-patata-2026): resultados de cultivar patata agria y kennebec sin aporcar ni regar durante la temporada 2026.
+- [Variedades de lechuga](https://aitor.info/es/blog/variedades-de-lechuga): repaso de variedades de lechuga probadas en la huerta (romana, escarola, iceberg, hoja de roble, etc.).
+- [Poda apical y esquejado](https://aitor.info/es/blog/poda-apical-y-esquejado): diferencias entre poda apical y esquejado, con pruebas sobre stevia y lavanda.
+
+## Galería
+- [Galería de fotos](https://aitor.info/galeria): fotos de la huerta y el jardín organizadas por etiquetas (por ejemplo, tipo de cultivo o temporada).
+
+## Sobre mí
+- [CV](https://aitor.info/es/cv): currículum vitae de aitor como operario en horticultura y jardinería.
+- [Contacto](https://aitor.info/es/contacto): formulario/vías de contacto.
+
+## Optional
+- [RSS](https://aitor.info/rss.xml): feed de las últimas entradas del blog.
+- [GitHub del proyecto](https://github.com/aitorjs/jardiBlog): código fuente del sitio (Astro + tema Astrofy).
+- [LinkedIn](https://www.linkedin.com/in/aitorjs/): perfil profesional de aitor.

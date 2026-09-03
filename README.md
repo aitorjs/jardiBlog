@@ -72,7 +72,7 @@ pnpm install
    - [ ] Traducción a euskara
       - [x] menu
       - [x] index
-      - [ ] galeria -> en las ultimas imagenes. si estas en eu, pasaste a es y vuelves a eu y salen en eu. los pasos previos bien + date en lightbox en i18n
+      - [ ] galeria -> en las ultimas imagenes. si estas en eu, pasaste a es y vuelves a eu y salen en eu. los pasos previos bien
       - [x] cv
       - [x] 404
       - [x] contacto
