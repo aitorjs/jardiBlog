@@ -1,25 +1,60 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { Image } from "astro:assets";
-import "dayjs/locale/es";
+import { getLangFromUrl } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+import slugify from "../lib/slugify";
+
+const lang = getLangFromUrl(Astro.url);
+await import(`dayjs/locale/${lang}.js`);
+dayjs.extend(localizedFormat);
+dayjs.locale(lang);
 
 const { post } = Astro.props;
-dayjs.extend(localizedFormat);
-dayjs.locale("es");
 const displayDate = dayjs(post.data.pubDate).format("LL");
+
+const isContentTranslated = lang === "es";
+
+const alternates = Object.fromEntries(
+  Object.keys(languages).map((l) => {
+    const staticSlug = post.data.staticSlug?.[l] ?? post.id;
+    const slug = slugify(post.data.title[l], staticSlug);
+    return [l, `/${l}/blog/${slug}`];
+  }),
+);
 ---
 
 <BaseLayout
   sideBarActiveItemID="blog"
-  title={post.data.title}
-  description={post.data.description}
+  title={post.data.title[lang]}
+  description={post.data.description[lang]}
   image={post.data.heroImage ? post.data.heroImage.src : ""}
   ogType="article"
+  langAlternates={alternates}
 >
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+      {
+        !isContentTranslated && (
+          <div class="flex items-center align-center pr-2 not-prose rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800 mb-4">
+            <svg
+              aria-hidden="true"
+              class=""
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              style="--sl-icon-color: var(--sl-color-orange-high);--sl-icon-size: 1.5em;"
+            >
+              <path d="M12 16a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm10.67 1.47-8.05-14a3 3 0 0 0-5.24 0l-8 14A3 3 0 0 0 3.94 22h16.12a3 3 0 0 0 2.61-4.53Zm-1.73 2a1 1 0 0 1-.88.51H3.94a1 1 0 0 1-.88-.51 1 1 0 0 1 0-1l8-14a1 1 0 0 1 1.78 0l8.05 14a1 1 0 0 1 .05 1.02v-.02ZM12 8a1 1 0 0 0-1 1v4a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1Z" />
+            </svg>
+            &nbsp; Zoritxarrez, eduki hau euskaraz ez dago eskurragarri. Edukia
+            gaztelaniaz.
+          </div>
+        )
+      }
       {
         post.data.heroImage && (
           <Image
@@ -33,10 +68,10 @@ const displayDate = dayjs(post.data.pubDate).format("LL");
         )
       }
       <h1
-        transition:name=`title-${post.data.title}`
+        transition:name={`title-${post.data.title}`}
         class="title my-2! text-4xl font-bold"
       >
-        {post.data.title}
+        {post.data.title[lang]}
       </h1>
       {post.data.pubDate && <time>{displayDate}</time>}
       <br />
@@ -49,7 +84,7 @@ const displayDate = dayjs(post.data.pubDate).format("LL");
         post.data.tags &&
           post.data.tags.map((tag) => (
             <a
-              href={`/blog/tag/${tag}`}
+              href={`/${lang}/blog/tag/${tag}`}
               class="badge border-current ml-2 no-underline"
             >
               {tag}

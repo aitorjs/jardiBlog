@@ -1,10 +1,11 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import SideBar from "../components/SideBar.astro";
-import BackButton from "../components/BackButton.astro";
-import Analytics from "../components/Analytics.astro";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import SideBar from "@components/SideBar.astro";
+import BackButton from "@components/BackButton.astro";
+import Analytics from "@components/Analytics.astro";
+import { getLangFromUrl } from "../i18n/utils";
 import { ClientRouter } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -18,11 +19,14 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
+  langAlternates,
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="es" data-theme="lofi">
+<html lang={lang} data-theme="lofi">
   <head>
     <BaseHead
       title={title}
@@ -78,8 +82,24 @@ const {
         </div>
         <Footer />
       </div>
-      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+      {
+        includeSidebar && (
+          <SideBar
+            sideBarActiveItemID={sideBarActiveItemID}
+            langAlternates={langAlternates}
+          />
+        )
+      }
     </div>
     <Analytics />
+
+    <script>
+      function setupScrollHide() {
+        const picker = document.getElementById("language-picker");
+        if (!picker) return;
+      }
+
+      document.addEventListener("astro:page-load", setupScrollHide);
+    </script>
   </body>
 </html>

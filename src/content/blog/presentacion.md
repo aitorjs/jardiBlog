@@ -1,10 +1,13 @@
 ---
-title: "Presentación"
-description: "Esta no es la primera vez que intento mantener un blog o una galería de imágenes. Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando."
+title:
+  es: "Presentación"
+  eu: "Aurkezpena"
+description:
+  es: "Esta no es la primera vez que intento mantener un blog o una galería de imágenes. Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando."
+  eu: "Hau ez da blog bat edo irudi galeria bat mantentzen saiatzen naizen lehen aldia. Aurreko aldietan, blogeko sarreraren bat idatzi eta argazkiren bat igo ondoren, arrazoi desberdinengatik, utzi egin dut."
 pubDate: "Jul 22 2026"
 heroImage: "../../assets/gallery/photo_2026-07-08_02-27-27.jpg"
 ---
-
 Esta no es la primera vez que intento mantener un blog o una galería de imágenes.
 
 Las veces anteriores, después de escribir alguna entrada de blog y subir alguna foto, por diferentes razones, lo he terminado dejando.

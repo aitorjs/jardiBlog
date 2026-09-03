@@ -1,43 +1,56 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import HorizontalCard from "../../components/HorizontalCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import HorizontalCard from "@components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../../lib/createSlug";
+import createSlug from "../../../lib/createSlug";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { languages } from "../../../i18n/ui";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
+  const locales = Object.keys(languages);
+
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  return paginate(posts, { pageSize: 10 });
+
+  return locales.flatMap((lang) => {
+    return paginate(posts, {
+      params: { lang },
+      pageSize: 10,
+      props: { lang },
+    });
+  });
 }
 
 const { page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <BaseLayout
-  title="Blog de horticultura y jardinería"
-  description="Artículos sobre cultivo, huerto y jardinería: pruebas, técnicas y aprendizajes documentados a medida que voy plantando, cuidando y cosechando."
+  title={t("blog.title")}
+  description={t("blog.description")}
   sideBarActiveItemID="blog"
 >
   <div class="mb-5">
-    <h1 class="text-3xl w-full font-bold">Blog de horticultura y jardinería</h1>
+    <h1 class="text-3xl w-full font-bold">{t("blog.title")}</h1>
   </div>
 
   {
     page.data.length === 0 ? (
       <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
+        <p class="font-bold">{t("blog.pre.noBlogs")}</p>
+        <p>{t("blog.noBlogs")}</p>
       </div>
     ) : (
       <ul>
         {page.data.map((post) => (
           <>
             <HorizontalCard
-              title={post.data.title}
+              title={post.data.title[lang]}
               img={post.data.heroImage}
-              desc={post.data.description}
+              desc={post.data.description[lang]}
               alt={post.data.title}
-              url={"/blog/" + createSlug(post.data.title, post.id)}
+              url={`/${lang}/blog/${createSlug(post.data.title[lang], post.id)}`}
               target="_self"
               badge={post.data.badge}
               tags={post.data.tags}
@@ -63,7 +76,7 @@ const { page } = Astro.props;
           >
             <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
           </svg>{" "}
-          Recent posts
+          {t("blog.prev")}
         </a>
       ) : (
         <div />
@@ -72,7 +85,7 @@ const { page } = Astro.props;
     {
       page.url.next ? (
         <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-          Older Posts{" "}
+          {t("blog.next")}{" "}
           <svg
             class="h-6 w-6 fill-current md:h-8 md:w-8"
             xmlns="http://www.w3.org/2000/svg"

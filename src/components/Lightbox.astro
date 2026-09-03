@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl } from "../i18n/utils"; // ajusta la ruta según dónde esté este componente
+
+const lang = getLangFromUrl(Astro.url);
+
 // Lightbox.astro — componente reutilizable con View Transitions.
 //
 // Se abre disparando un CustomEvent desde cualquier parte de la página:
@@ -201,6 +205,15 @@
     let infoOpen = false;
     let currentTriggerEl: HTMLElement | null = null; // el botón/thumbnail clicado
 
+    // Se recalcula en cada uso (render, links de tags) en vez de fijarse
+    // una sola vez al montar, ya que con transition:persist este script
+    // solo se ejecuta una vez para toda la vida de la SPA/ClientRouter,
+    // y el idioma cambia con cada navegación entre /es y /eu.
+    function getLangFromPath(): string {
+      const segment = window.location.pathname.split("/")[1];
+      return segment === "eu" ? "eu" : "es";
+    }
+
     // ── Preload ───────────────────────────────────────────────────
     // Detecta UNA sola vez si el navegador soporta AVIF, para precargar
     // solo el formato que realmente se va a usar (igual que hace <picture>
@@ -389,12 +402,13 @@
 
       lbTags.innerHTML = "";
       const tags = p.tags ?? [];
+      const lang = getLangFromPath(); // recalculado en cada render, sigue la URL actual
       tags.forEach((tag: string) => {
         const a = document.createElement("a");
         a.className =
           "badge badge-outline badge-sm hover:badge-primary transition-colors";
         a.textContent = `#${tag}`;
-        a.href = `/galeria/tag/${encodeURIComponent(tag)}`;
+        a.href = `/${lang}/galeria/tag/${encodeURIComponent(tag)}`;
         lbTags.appendChild(a);
       });
       lbTags.classList.toggle("hidden", tags.length === 0);
@@ -403,11 +417,38 @@
         photos.length > 1 ? `${current + 1} / ${photos.length}` : "";
     }
 
+    // Nombres de mes en euskera para formatear la fecha a mano. No usamos
+    // Intl.DateTimeFormat("eu", ...) porque algunos navegadores (Chromium
+    // con "small ICU") no incluyen los datos de localización para euskera
+    // y caen silenciosamente al locale por defecto del sistema en vez de
+    // dar error, mostrando la fecha en español sin que el código lo pida.
+    const EU_MONTHS = [
+      "urtarrilaren",
+      "otsailaren",
+      "martxoaren",
+      "apirilaren",
+      "maiatzaren",
+      "ekainaren",
+      "uztailaren",
+      "abuztuaren",
+      "irailaren",
+      "urriaren",
+      "azaroaren",
+      "abenduaren",
+    ];
+
     function formatDate(ts: any) {
       if (ts === undefined || ts === null || ts === "") return "";
       const ms = Number(ts) < 1e12 ? Number(ts) * 1000 : Number(ts);
       const d = new Date(ms);
       if (isNaN(d.getTime())) return "";
+      const lang = getLangFromPath();
+      if (lang === "eu") {
+        const day = d.getDate();
+        const month = EU_MONTHS[d.getMonth()];
+        const year = d.getFullYear();
+        return `${year}ko ${month} ${day}a`;
+      }
       return new Intl.DateTimeFormat("es-ES", {
         day: "numeric",
         month: "long",
@@ -669,6 +710,12 @@
     );
   }
 
+  // { once: true }: con transition:persist, este script solo se ejecuta
+  // una vez para toda la vida de la navegación por ClientRouter. Sin esto,
+  // cada "astro:page-load" volvería a llamar a setupLightbox() y registraría
+  // listeners duplicados sobre "lightbox:open"/"lightbox:preload", lo que
+  // producía comportamientos erráticos (datos de una navegación anterior
+  // "ganando" a los de la actual).
   document.addEventListener("astro:page-load", setupLightbox);
 
   // Este listener vive FUERA de setupLightbox para que se registre

@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 export interface Props {
   title: string;
@@ -20,12 +21,21 @@ const {
   imageHeight = 630,
   ogType = "website",
 } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <meta charset="utf-8" />
 <!-- Global Metadata -->
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#e5e5e5" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={t("home.title")}
+  href={`/${lang}/rss.xml`}
+/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -1,15 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import { getImage } from "astro:assets";
-import galleryMeta from "../data/gallery.json";
-import Lightbox from "../components/Lightbox.astro";
+import galleryMeta from "../../data/gallery.json";
+import Lightbox from "@components/Lightbox.astro";
+import { getLangFromUrl, useTranslations, locales } from "../../i18n/utils";
 
-const title = "Galería de horticultura y jardinería";
-const description =
-  "Galería de fotos del huerto: cosechas, cultivos y seguimiento del jardín a lo largo del tiempo, desde los semilleros hasta la recolección.";
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const title = t("gallery.title");
+const description = t("gallery.title");
 const PHOTOS_PER_PAGE = 20;
 
-const imageFiles = import.meta.glob("../assets/gallery/*.{jpg,jpeg,png,webp}", {
+const imageFiles = import.meta.glob("../../assets/gallery/*.{jpg,jpeg,png,webp}", {
   eager: true,
 });
 
@@ -19,43 +26,20 @@ const photos = await Promise.all(
       path.includes(`/${item.id}.`),
     );
     if (!entry) {
-      throw new Error(
-        `No se encontró la imagen para "${item.id}" en src/assets/gallery`,
-      );
+      throw new Error(t("gallery.not.found", item.id));
     }
     const source = entry[1].default;
 
-    const full = await getImage({
-      src: source,
-      width: 1600,
-      format: "webp",
-      quality: 80,
-    });
-    const fullAvif = await getImage({
-      src: source,
-      width: 1600,
-      format: "avif",
-      quality: 55,
-    });
-    const thumb = await getImage({
-      src: source,
-      width: 500,
-      height: 500,
-      fit: "cover",
-      format: "webp",
-      quality: 70,
-    });
-    const thumbAvif = await getImage({
-      src: source,
-      width: 500,
-      height: 500,
-      fit: "cover",
-      format: "avif",
-      quality: 50,
-    });
+    const full = await getImage({ src: source, width: 1600, format: "webp", quality: 80 });
+    const fullAvif = await getImage({ src: source, width: 1600, format: "avif", quality: 55 });
+    const thumb = await getImage({ src: source, width: 500, height: 500, fit: "cover", format: "webp", quality: 70 });
+    const thumbAvif = await getImage({ src: source, width: 500, height: 500, fit: "cover", format: "avif", quality: 50 });
 
     return {
       ...item,
+      title: item.title[lang],
+      description: item.description[lang],
+      alt: item.alt[lang],
       src: full.src,
       srcAvif: fullAvif.src,
       thumbSrc: thumb.src,
@@ -69,15 +53,9 @@ const photos = await Promise.all(
 const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  sideBarActiveItemID="gallery"
->
+<BaseLayout title={title} description={description} sideBarActiveItemID="gallery">
   <div class="mb-6">
-    <h1 class="text-2xl font-bold">
-      Galería de fotos de horticultura y jardinería
-    </h1>
+    <h1 class="text-2xl font-bold">{t("gallery.title")}</h1>
   </div>
 
   <section class="gallery-section">
@@ -97,7 +75,7 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
                 <source srcset={photo.thumbSrc} type="image/webp" />
                 <img
                   src={photo.thumbSrc}
-                  alt={photo.title}
+                  alt={photo.alt}
                   width="500"
                   height="500"
                   loading={i === 0 ? "eager" : "lazy"}
@@ -111,12 +89,7 @@ const totalPages = Math.max(1, Math.ceil(photos.length / PHOTOS_PER_PAGE));
       }
     </div>
 
-    {
-      /* Centinela: cuando se acerca al viewport (antes de llegar al final real)
-        se revela el siguiente lote de fotos */
-    }
     {totalPages > 1 && <div class="scroll-sentinel h-1 w-full" />}
-
     <p class="gallery-status sr-only" aria-live="polite"></p>
   </section>
 

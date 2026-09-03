@@ -1,0 +1,187 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import TimeLineElement from "@components/cv/TimeLine.astro";
+import { getLangFromUrl, useTranslations, locales } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const otherLang = lang === "es" ? "eu" : "es";
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+---
+
+<BaseLayout
+  title={t("cv.title")}
+  description={t("cv.description")}
+  sideBarActiveItemID="cv"
+>
+  <div class="mb-5 flex">
+    <h1 class="hidden md:block w-full">{t("cv.title.h1")}</h1>
+    <div class="ml-auto flex items-center gap-3">
+      <a
+        href={`/cv-aitoribanez-${lang}.pdf`}
+        class="flex items-center gap-2 text-primary hover:opacity-80 transition w-max"
+        title={t("cv.pdf.title")}
+      >
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          ></path>
+        </svg>
+        {t("cv.pdf.download")}
+      </a>
+
+      <span class="h-5 w-px bg-base-300"></span>
+
+      <a
+        href={`/${otherLang}/cv`}
+        class="px-2 py-0.5 text-xs font-bold border border-primary text-primary rounded-full hover:bg-primary hover:text-white transition uppercase"
+      >
+        {otherLang}
+      </a>
+    </div>
+  </div>
+
+  <div class="my-4 text-center">
+    <p class="text-4xl font-bold">{t("cv.hero.name")}</p>
+    <p class="text-3xl font-light">{t("cv.hero.title")}</p>
+    <p class="mt-2">
+      <a href="tel:0034635713404">
+        <span class="text-[10px] text-green-500!" style="vertical-align:2px;"
+          >📞</span
+        > 635713404</a
+      >&nbsp;&nbsp;&nbsp;<a href="/contacto">✉️ aitori@ni.eus</a>
+    </p>
+  </div>
+
+  <div class="mb-10 text-lg">
+    {t("cv.hero.description")}
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{t("cv.education.name")}</div>
+  </div>
+
+  <div class="time-line-container grid mb-5">
+    <TimeLineElement
+      data="2026"
+      title={`${t("cv.education.cpJardi.title")} <a
+        href="/${lang}/galeria/tag/fraisoro"
+        id='wip-photo-btn-agao0108'
+        class='cursor-pointer inline-flex items-center justify-center rounded-md p-1 text-base-content hover:bg-primary hover:text-primary-content transition-colors align-middle shrink-0'
+        aria-label='${t("cv.education.cpJardi.title.label")}'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          class='h-4 w-4'
+        >
+          <rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect>
+          <circle cx='8.5' cy='8.5' r='1.5'></circle>
+          <polyline points='21 15 16 10 5 21'></polyline>
+        </svg>
+      </a>`}
+      subtitle={t("cv.education.cpJardi.subtitle")}
+    />
+    <TimeLineElement
+      data="2002-2004"
+      title={t("cv.education.infor.title")}
+      subtitle={t("cv.education.infor.subtitle")}
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{t("cv.experience.name")}</div>
+  </div>
+
+  <div class="time-line-container mb-5">
+    <TimeLineElement
+      data="06/2026"
+      title={`${t("cv.experience.blas.title")} <a
+        href='/${lang}/galeria/tag/blasenea'
+        id='wip-photo-btn-blasenea'
+        class='cursor-pointer inline-flex items-center justify-center rounded-md p-1 text-base-content hover:bg-primary hover:text-primary-content transition-colors align-middle shrink-0'
+        aria-label='${t("cv.experience.blas.title.label")}'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          class='h-4 w-4'
+        >
+          <rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect>
+          <circle cx='8.5' cy='8.5' r='1.5'></circle>
+          <polyline points='21 15 16 10 5 21'></polyline>
+        </svg>
+      </a>`}
+    >
+      <span set:html={t("cv.experience.blas.description")} />
+    </TimeLineElement>
+
+    <TimeLineElement
+      data={t("cv.experience.me.date")}
+      title={`${t("cv.experience.me.title")} <a
+        href='/${lang}/galeria/tag/vista-general'
+        id='wip-photo-btn-huerta'
+        class='cursor-pointer inline-flex items-center justify-center rounded-md p-1 text-base-content hover:bg-primary hover:text-primary-content transition-colors align-middle shrink-0'
+        aria-label='t("cv.experience.me.title.label")'
+      >
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          class='h-4 w-4'
+        >
+          <rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect>
+          <circle cx='8.5' cy='8.5' r='1.5'></circle>
+          <polyline points='21 15 16 10 5 21'></polyline>
+        </svg>
+      </a>`}
+    >
+      <span set:html={t("cv.experience.me.description")} />
+    </TimeLineElement>
+
+    <TimeLineElement
+      data="01/2007 - 01/2025"
+      title={t("cv.experience.infor.title")}
+    >
+    <span set:html={t("cv.experience.infor.description")} />
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{t("cv.languages.name")}</div>
+  </div>
+
+  <ul class="list-disc text-lg mx-6 mb-10 grid gap-2">
+    <li>{t("cv.languages.english")}</li>
+    <li>{t("cv.languages.spanish")}</li>
+    <li>{t("cv.languages.basque")}</li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{t("cv.other")}</div>
+  </div>
+
+  <ul class="list-disc text-lg mx-6">
+    <li>{t("cv.other.drivingLicense")}</li>
+  </ul>
+</BaseLayout>
