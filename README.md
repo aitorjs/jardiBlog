@@ -66,37 +66,14 @@ pnpm install
 
 ## TODOs
 
-- i18n:
-   - [x] quitar carpeta es y eu y meterlo todo en [lang] para no tener paginas duplicadas por idioma. segun se va traduciendo
-   - [x] rss por idioma
-   - [ ] Traducción a euskara
-      - [x] menu
-      - [x] index
-      - [ ] galeria -> en las ultimas imagenes. si estas en eu, pasaste a es y vuelves a eu y salen en eu. los pasos previos bien
-      - [x] cv
-      - [x] 404
-      - [x] contacto
-      - [x] blog (la contenido de la entrada en castellano. titulo y descripcion en i18n) 
-        - [x] tener en cuenta el language switcher (la url depende del titulo pero el language switcher entiende que la url de la entrada por idioma y por lo tanto el titulo siempre es el mismo)
-        - [x] tener la entrada una unica vez, no una por idioma
-        - [x] al entrar en una entrada de blog en euskara que salga un mensaje de "ez dago itzulia" o algo del estilo => https://docs.astro.build/es/recipes/i18n/
+## Errores conocidos
 
-    - [x] cambiar de un idioma a otro estando de una entrada de blog.
-    - [x] src/lib/timeAgo.ts i18n.
+- Textos en su idioma de las imágenes, sea dentro de la galería o en las últimas fotos. Para las ultimas fotos: ir al index en euskara, clicar en una imagen, abrir el texto de la imagen dentro del lightbox y aparece en euskara. Bien. Cambiar a castellano. Hacer lo mismo. El texto aparece en castellano. Bien. Cambiar a euskara. Hacer lo mismo pero el texto aparece en castellano en vez de en euskara. Para los mismo con la galería de imágenes.
 
 ## Mas tarde
 
 - 46 fotos con su descripcion, titulo y metatags y ordenadas por pubDate en orden descendente. Ordenado por nombre ascendente en IMG_20260705_203828.jpg como siguiente foto seleccionada a subir. Tenemos más de 90 fotos en el repo.
 - Se pueden meter datos estructurados para blog sería BlogPosting por cada blog. Para las imágenes de la galería serua ImageGallery o ImageObject.
-
-- 1 i18n. Todo en euskara menos la parte de blog
-- 2 Tiene sentido hacer un linktr.ee para conseguir enlaces hacia la pagina para seo?
-
-## Por qué oidio y no mildiu
-
-Aquí está la clave que mucha gente desconoce: el mildiu necesita agua líquida sobre la hoja para que sus esporas germinen (por eso se dispara con lluvia, rocío persistente o riego que moja el follaje). El oidio, en cambio, es casi lo contrario: sus esporas germinan mejor con humedad ambiental alta pero hoja seca. No necesita que llueva ni que la hoja esté mojada; le basta con aire húmedo y temperaturas suaves-cálidas (20-28°C aprox.), especialmente con oscilación entre días calurosos y noches algo más frescas.
-
-Así que la combinación que describes —más calor de lo habitual + algo más de humedad ambiental, pero sin encharcar hoja porque riegas con regadera a ras de pie— es prácticamente el escenario ideal para oidio y bastante desfavorable para mildiu. No es casualidad, es justo la firma climática de cada enfermedad.
 
 ## Recordatorio
 
@@ -111,4 +88,8 @@ Este proyecto está publicado bajo licencia [MIT](./LICENSE).
 
 Desarrollado y mantenido por [aitor ibañez](https://github.com/aitorjs).
 
+## Por qué oidio y no mildiu
 
+Aquí está la clave que mucha gente desconoce: el mildiu necesita agua líquida sobre la hoja para que sus esporas germinen (por eso se dispara con lluvia, rocío persistente o riego que moja el follaje). El oidio, en cambio, es casi lo contrario: sus esporas germinan mejor con humedad ambiental alta pero hoja seca. No necesita que llueva ni que la hoja esté mojada; le basta con aire húmedo y temperaturas suaves-cálidas (20-28°C aprox.), especialmente con oscilación entre días calurosos y noches algo más frescas.
+
+Así que la combinación que describes —más calor de lo habitual + algo más de humedad ambiental, pero sin encharcar hoja porque riegas con regadera a ras de pie— es prácticamente el escenario ideal para oidio y bastante desfavorable para mildiu. No es casualidad, es justo la firma climática de cada enfermedad.
