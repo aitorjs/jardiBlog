@@ -1,6 +1,6 @@
 # aitor.info
 
-> Diario personal de aitor ibañez, operario en horticultura y jardinería. Notas, fotos y aprendizajes del día a día en la huerta y el jardín.
+> Diario personal de aitor ibañez, operario de viverismo y horticultura. Notas, fotos y aprendizajes del día a día en la huerta y el jardín.
 
 ## Blog
 - [Blog (índice)](https://aitor.info/es/blog): listado completo de entradas sobre cultivo, poda, plagas y experiencias en la huerta.
@@ -13,7 +13,7 @@
 - [Galería de fotos](https://aitor.info/es/galeria): fotos de la huerta y el jardín organizadas por etiquetas (por ejemplo, tipo de cultivo o temporada).
 
 ## Sobre mí
-- [CV](https://aitor.info/es/cv): currículum vitae de aitor como operario en horticultura y jardinería.
+- [CV](https://aitor.info/es/cv): currículum vitae de aitor como operario de viverismo y horticultura.
 - [Contacto](https://aitor.info/es/contacto): formulario/vías de contacto.
 
 ## Optional

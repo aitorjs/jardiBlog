@@ -64,6 +64,10 @@ pnpm install
 - En cada carga de página, el script comprueba si esa cookie existe antes de inyectar el <script> de GoatCounter. Si existe, no lo carga y por tanto esa visita no se contabiliza.
 - Si en algún momento quieres reactivar el tracking, basta con visitar ?track para borrar la cookie.
 
+## Limpiar PDF de CV
+- Limpiar metadatos: exiftool cv-aitoribanez-es.pdf -all=empty
+- Comprimir pdf: freeconvert.com/compress-pdf
+
 ## TODOs
 
 ## Errores conocidos
@@ -93,3 +97,5 @@ Desarrollado y mantenido por [aitor ibañez](https://github.com/aitorjs).
 Aquí está la clave que mucha gente desconoce: el mildiu necesita agua líquida sobre la hoja para que sus esporas germinen (por eso se dispara con lluvia, rocío persistente o riego que moja el follaje). El oidio, en cambio, es casi lo contrario: sus esporas germinan mejor con humedad ambiental alta pero hoja seca. No necesita que llueva ni que la hoja esté mojada; le basta con aire húmedo y temperaturas suaves-cálidas (20-28°C aprox.), especialmente con oscilación entre días calurosos y noches algo más frescas.
 
 Así que la combinación que describes —más calor de lo habitual + algo más de humedad ambiental, pero sin encharcar hoja porque riegas con regadera a ras de pie— es prácticamente el escenario ideal para oidio y bastante desfavorable para mildiu. No es casualidad, es justo la firma climática de cada enfermedad.
+
+https://huerto-en-casa.com/cenicilla-en-tomate/

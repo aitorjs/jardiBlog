@@ -1,0 +1,99 @@
+---
+title:
+  es: "Receta de purín de cola de caballo"
+  eu: "Inausketa apikala eta eskejatua"
+description:
+  es: "Explico la diferencia entre poda apical y esquejado, y resumo lo que me ha funcionado al sacar esquejes de stevia y hacer una primera prueba con lavanda."
+  eu: "Inausketa apikalaren eta eskejatuaren arteko aldea azaltzen dut, eta steviaren aldaxkak ateratzean eta labandarekin lehen proba bat egitean funtzionatu didana laburbiltzen dut."
+pubDate: "Jul 27 2026"
+heroImage: "../../assets/photo_2026-07-27_12-36-26.jpg"
+tags: ["stevia", "lavanda", "poda-apical","esquejado"]
+---
+import { Image } from "astro:assets";
+import Lightbox from "@components/Lightbox.astro";
+import PhotoLightboxGrid from "@components/PhotoLightboxGrid.astro";
+import photoStevia1 from "../../assets/photo_2026-07-27_12-36-00.jpg";
+import photoStevia2 from "../../assets/photo_2026-07-27_12-36-26.jpg";
+import photoLavanda1 from "../../assets/photo_2026-07-27_12-34-45.jpg";
+import photoLavanda2 from "../../assets/photo_2026-07-27_12-36-18.jpg";
+
+export const photosStevia = [
+  {
+    image: photoStevia1,
+    title: "Poda apical de stevia",
+    description:
+      "Rama de stevia tras aplicar la poda apical, quitando la yema para fomentar brotes laterales.",
+    tags: ["stevia", "poda-apical"],
+    pubDate: "Jul 27 2026",
+  },
+  {
+    image: photoStevia2,
+    title: "Esqueje de stevia",
+    description:
+      "Esqueje de stevia recién plantado, a la espera de enraizar en semi-sombra con humedad estable.",
+    tags: ["stevia", "esquejado"],
+    pubDate: "Jul 27 2026",
+  },
+];
+
+export const photosLavanda = [
+  {
+    image: photoLavanda1,
+    title: "Poda apical de lavanda",
+    description:
+      "Rama de lavanda usada como referencia para una futura poda apical.",
+    tags: ["lavanda", "poda-apical"],
+    pubDate: new Date("Jul 27 2026"),
+  },
+  {
+    image: photoLavanda2,
+    title: "Esqueje de lavanda",
+    description:
+      "Esqueje de lavanda tras unos 10 días enraizando en semi-sombra.",
+    tags: ["lavanda", "esquejado"],
+    pubDate: new Date("Jul 27 2026"),
+  },
+];
+
+export const photos = [...photosStevia, ...photosLavanda];
+
+<Lightbox />
+
+La **poda apical** consiste en quitar la yema apical o punta de una rama para frenar el crecimiento "hacia arriba" y fomentar brotes laterales.
+
+El **esquejado**, en cambio, es una técnica de propagación asexual en la que se corta un fragmento de una planta (normalmente un tallo, a veces una hoja o raíz según la especie) y ese fragmento se coloca en condiciones que favorecen el enraizamiento para conseguir una planta **genéticamente igual (clon)** a la planta madre. No ocurre lo mismo si la misma planta se **germina desde semilla**, donde habrá variación genética y la planta resultante no tiene por qué ser igual.
+
+Este año vegetativo, he estado practicando con **stevia** y **lavanda**. Más con la primera que con la segunda.
+
+## Stevia
+
+La poda apical en una **stevia rebaudiana bertoni** no tiene ninguna diferencia respecto a la técnica habitual que ya está bien documentada.
+
+En cambio, al realizar el esquejado, durante las dos primeras semanas hasta que enraíce, conviene mantenerlos **sin sol directo**, en **semi-sombra** o **luz intensa indirecta**, procurando que el sustrato se mantenga con **humedad estable**.
+
+Con o sin enraizante, entiendo que la clave es no someter los esquejes al sol directo durante el arranque (las primeras semanas). El tiempo dirá si esto es así. 😀  
+Eso sí, hay que estar muy pendiente de los esquejes (de los de stevia, más), porque desde mi experiencia el porcentaje de esquejes satisfactorios es bajo… y es muy probable que me falte mano con ella.
+
+<PhotoLightboxGrid photos={photosStevia} gap="gap-6" columns={2} />
+
+## Lavanda
+
+Al momento de escribir esta entrada, he realizado una única prueba de esquejado. Cortar desde la yema de una rama, tres nodos hacia abajo. Quitarle las dos hojas del nodo de más abajo y pincharlo en tierra.
+
+Antes, es imprescindible haber humedecido el sustrato. Luego, dejarlo en semi-sombra y estar pendiente de que no le falte humedad.
+
+De los tres esquejes realizados, dos han enraizado y uno no. Estando en semi-sombra alrededor de 10 días.
+
+Poda apical en lavanda no he hecho. No obstante, siguiendo los pasos habituales de una poda apical, la planta debería de reaccionar positivamente.
+
+<PhotoLightboxGrid photos={photosLavanda} gap="gap-6" columns={2} />
+
+## Experimento extra
+
+Ya se tocará este tema en alguna entrada futura más en detalle, pero en mi caso el té de humus de lombriz diluido 1:10 en agua sin cloro (mejor de lluvia) parece aumentar las posibilidades de que los esquejes enraicen con más vigor. Aun así, cada planta puede responder distinto.
+
+## Aprendizajes
+- La **poda apical** sirve para ramificar al frenar el crecimiento de la punta.
+- El **esquejado** sirve para conseguir una nueva planta tipo "clon". La clave es el **arranque** hasta que enraíce.
+- En los esquejes, lo más importante es evitar el **sol directo** y mantener **humedad estable**.
+- El **té de humus diluido** parece ayudar a que los esquejes salgan con más vigor.
