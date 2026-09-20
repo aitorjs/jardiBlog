@@ -43,7 +43,7 @@ const wipFull2 = await getImage({
   quality: 80,
 });
 
-const workingOnSince = new Date("2026-08-24");
+const workingOnSince = new Date("2026-09-20");
 
 const last_posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -58,7 +58,8 @@ const last_photos = galleryEntries.map((foto) => ({
   src: foto.data.image.src,
   srcAvif: null,
   thumbSrc: foto.data.image.src,
-  title: resolveField(foto.data.title, lang) || resolveField(foto.data.alt, lang),
+  title:
+    resolveField(foto.data.title, lang) || resolveField(foto.data.alt, lang),
   description: resolveField(foto.data.description, lang),
   pubDate: foto.data.pubDate?.valueOf() ?? null,
   tags: foto.data.tags ?? [],
@@ -86,13 +87,17 @@ const wipPhotos = [];
       </text>
     </div>
     <div class="mt-8 flex items-center space-x-3">
-      <a class="btn btn-lg btn-primary" href={`/${lang}/cv`}>{t("home.readCV")}</a>
+      <a class="btn btn-lg btn-primary" href={`/${lang}/cv`}
+        >{t("home.readCV")}</a
+      >
     </div>
   </div>
 
   <!-- ── Blog ─────────────────────────────────────────────────── -->
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">{t("home.blog.text")}</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">
+      {t("home.blog.text")}
+    </div>
   </div>
   {
     last_posts.map((post) => (
@@ -112,7 +117,9 @@ const wipPhotos = [];
 
   <!-- ── Últimas fotos ─────────────────────────────────────────── -->
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">{t("home.gallery.text")}</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">
+      {t("home.gallery.text")}
+    </div>
   </div>
 
   <div class="grid mb-16">
@@ -145,7 +152,8 @@ const wipPhotos = [];
     class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 rounded-xl border border-gray-200 p-4"
   >
     <p class="text-lg">
-      <span class="font-bold">{t("home.working.text")}</span> {t("home.working.on")}
+      <span class="font-bold">{t("home.working.text")}</span>
+      {t("home.working.on")}
     </p>
     <div class="flex items-center gap-2 whitespace-nowrap">
       <p class="text-gray-400">{timeAgo(workingOnSince, lang)}</p>
