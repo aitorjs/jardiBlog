@@ -1,0 +1,83 @@
+---
+title:
+  es: "Mariposa de la col"
+  eu: "Aza tximeleta"
+description:
+  es: "Cuento cómo he detectado la mariposa de la col en la huerta, por qué elige las crucíferas para poner sus huevos y qué remedios he probado frente a sus orugas."
+  eu: "Baratzean aza tximeleta nola antzeman dudan kontatzen dut, zergatik aukeratzen dituen krucifero landareak arrautzak jartzeko eta bere beldarren aurka zer erremedio probatu ditudan."
+pubDate: "Sep 20 2026"
+heroImage: "../../assets/gallery/photo_2026-09-20_10-44-03.jpg"
+tags: ["col", "insectos"]
+---
+import { Image } from "astro:assets";
+import Lightbox from "@components/Lightbox.astro";
+import PhotoLightboxGrid from "@components/PhotoLightboxGrid.astro";
+import photoMaripouse1 from "../../assets/gallery/photo_2026-09-20_10-44-02.jpg";
+import photoMaripouse2 from "../../assets/gallery/photo_2026-09-20_10-44-34.jpg";
+import photoMaripouse3 from "../../assets/gallery/photo_2026-09-20_10-44-03.jpg";
+
+export const photosMariposa = [
+  {
+    image: photoMaripouse1,
+    title: "Oruga de la mariposa de la col sobre una hoja",
+    description:
+      "Oruga de la mariposa de la col avanzando por el nervio central de una hoja, con restos de excrementos negros junto a ella.",
+    tags: [
+      "coles",
+      "insectos"
+    ],
+    pubDate: "Sep 20 2026",
+  },
+   {
+    image: photoMaripouse2,
+    title: "Oruga sobre una hoja de col agujereada",
+    description:
+      "Oruga de la mariposa de la col posada sobre una hoja con numerosos agujeros producidos por su alimentación.",
+    tags: [
+      "coles",
+      "insectos"
+    ],
+    pubDate: "Sep 20 2026",
+  },
+  {
+    image: photoMaripouse3,
+    title: "Varias orugas comiendo hojas de col",
+    description:
+      "Dos orugas de la mariposa de la col alimentándose de las hojas tiernas del centro de la planta.",
+    tags: [
+      "coles",
+      "insectos"
+    ],
+    pubDate: "Sep 20 2026",
+  }
+];
+
+export const photos = [...photosMariposa];
+
+<Lightbox />
+
+Poco a poco, y temporada a temporada, el ojo se va agudizando y empiezas a ver cosas que en temporadas anteriores no habías visto.
+
+Esta temporada le ha tocado el turno a la **mariposa de la col**.
+
+## Cómo la he detectado
+
+El primer aviso no ha sido la mariposa en sí, sino las orugas: pequeñas, de color verde amarillento con puntos negros, avanzando por el nervio central de las hojas y dejando tras de sí un rastro de agujeros y excrementos oscuros. Donde hay una, suele haber más: en algunas hojas he encontrado dos o tres orugas repartidas entre los brotes del centro de la planta, la parte más tierna y la que más les interesa.
+
+<PhotoLightboxGrid photos={photosMariposa} gap="gap-6" columns={4} />
+
+## Por qué elige las crucíferas
+
+Le gustan las **crucíferas**, y esta temporada se ha merendado alguna hoja de col de bruselas, brócoli y berza.
+
+Esto se debe a que las crucíferas contienen compuestos llamados **glucosinolatos**, que actúan como señal química: las hembras los detectan y los usan para reconocer que esa planta es apta para que se alimenten sus orugas. Curiosamente, esos mismos compuestos son los que le dan a la col su sabor picante/amargo característico, y son una defensa de la planta contra la mayoría de insectos — pero la mariposa de la col ha evolucionado para tolerarlos e incluso usarlos a su favor.
+
+## Remedios
+
+Los remedios más habituales que se manejan contra esta plaga son el **bacillus thuringiensis**, la **tierra de diatomeas** y el **jabón potásico**. Esta vez mi opción ha sido el "DDT" de toda la vida —que no es el pesticida, sino usar el dedete— e ir retirando las orugas a mano, junto con la observación continua de las crucíferas plantadas en la huerta.
+
+## Aprendizajes
+
+- La mariposa de la col elige las crucíferas gracias a los **glucosinolatos**, que le sirven de señal para saber dónde poner sus huevos.
+- Revisar el envés y el centro de las hojas con frecuencia permite detectar orugas a tiempo, antes de que el daño se extienda.
+- Si la plaga se dispara, **bacillus thuringiensis**, **tierra de diatomeas** y **jabón potásico** son las alternativas ecológicas a tener en cuenta.
