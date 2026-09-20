@@ -65,7 +65,7 @@ pnpm install
 - Si en algún momento quieres reactivar el tracking, basta con visitar ?track para borrar la cookie.
 
 ## Limpiar PDF de CV
-- Limpiar metadatos: exiftool cv-aitoribanez-es.pdf -all=empty
+- Limpiar metadatos: exiftool cv-aitoribanez-es.pdf -all=aitor-ibanez-cv
 - Comprimir pdf: freeconvert.com/compress-pdf
 
 ## TODOs

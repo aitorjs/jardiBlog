@@ -1,5 +1,234 @@
 [
   {
+    "id": "photo_2026-09-20_10-44-34",
+    "title": {
+      "es": "Oruga sobre una hoja de col agujereada",
+      "eu": "Beldarra zulodun aza-hosto baten gainean"
+    },
+    "description": {
+      "es": "Oruga de la mariposa de la col posada sobre una hoja con numerosos agujeros producidos por su alimentación.",
+      "eu": "Aza-tximeletaren beldar bat, bere elikadurak eragindako zulo ugari dituen hosto baten gainean pausatuta."
+    },
+    "tags": [
+      "coles",
+      "insectos"
+    ],
+    "pubDate": 1789901074,
+    "alt": {
+      "es": "Oruga sobre una hoja de col agujereada",
+      "eu": "Beldarra zulodun aza-hosto baten gainean"
+    },
+    "image": "../assets/gallery/photo_2026-09-20_10-44-34.jpg"
+  },
+  {
+    "id": "photo_2026-09-20_10-44-03",
+    "title": {
+      "es": "Varias orugas comiendo hojas de col",
+      "eu": "Hainbat beldar aza-hostoak jaten"
+    },
+    "description": {
+      "es": "Dos orugas de la mariposa de la col alimentándose de las hojas tiernas del centro de la planta.",
+      "eu": "Aza-tximeletaren bi beldar landarearen erdiko hosto goxoez elikatzen."
+    },
+    "tags": [
+      "coles",
+      "insectos"
+    ],
+    "pubDate": 1789901043,
+    "alt": {
+      "es": "Varias orugas comiendo hojas de col",
+      "eu": "Hainbat beldar aza-hostoak jaten"
+    },
+    "image": "../assets/gallery/photo_2026-09-20_10-44-03.jpg"
+  },
+  {
+    "id": "photo_2026-09-20_10-44-02",
+    "title": {
+      "es": "Oruga de la mariposa de la col sobre una hoja",
+      "eu": "Aza-tximeletaren beldarra hosto baten gainean"
+    },
+    "description": {
+      "es": "Oruga de la mariposa de la col avanzando por el nervio central de una hoja, con restos de excrementos negros junto a ella.",
+      "eu": "Aza-tximeletaren beldar bat hosto baten hats-hezurretik aurrera, ondoan gorotz beltzen hondarrak dituela."
+    },
+    "tags": [
+      "coles",
+      "insectos"
+    ],
+    "pubDate": 1789901042,
+    "alt": {
+      "es": "Oruga de la mariposa de la col sobre una hoja",
+      "eu": "Aza-tximeletaren beldarra hosto baten gainean"
+    },
+    "image": "../assets/gallery/photo_2026-09-20_10-44-02.jpg"
+  },
+  {
+    "id": "photo_2026-09-19_19-12-16",
+    "title": {
+      "es": "Jardinera de fresas sobre la mesa blanca",
+      "eu": "Marrubi-jardinontzia mahai zurian"
+    },
+    "description": {
+      "es": "Jardinera con plantas de fresa bien desarrolladas, apoyadas sobre cajas de plástico, con pequeñas macetas de plantones alrededor.",
+      "eu": "Ondo garatutako marrubi-landareak dituen jardinontzia, plastikozko kutxen gainean bermatuta, inguruan landare gazteen loreontzi txikiekin."
+    },
+    "tags": [
+      "fresa"
+    ],
+    "pubDate": 1789845136,
+    "alt": {
+      "es": "Jardinera de fresas sobre la mesa blanca",
+      "eu": "Marrubi-jardinontzia mahai zurian"
+    },
+    "image": "../assets/gallery/photo_2026-09-19_19-12-16.jpg"
+  },
+  {
+    "id": "photo_2026-09-18_20-16-16",
+    "title": {
+      "es": "Stevia empezando la floración",
+      "eu": "Stevia loretan hasten"
+    },
+    "description": {
+      "es": "",
+      "eu": ""
+    },
+    "tags": [
+      "stevia"
+    ],
+    "pubDate": 1789762576,
+    "alt": {
+      "es": "Stevia empezando la floración",
+      "eu": "Stevia loretan hasten"
+    },
+    "image": "../assets/gallery/photo_2026-09-18_20-16-16.jpg"
+  },
+  {
+    "id": "photo_2026-09-18_20-16-05",
+    "title": {
+      "es": "Artemisa annua empezando su floración",
+      "eu": "Artemisa annua loretan hasten"
+    },
+    "description": {
+      "es": "",
+      "eu": ""
+    },
+    "tags": [
+      "artemisa-annua"
+    ],
+    "pubDate": 1789762565,
+    "alt": {
+      "es": "Artemisa annua empezadno su floración",
+      "eu": "Artemisa annua loretan hasten"
+    },
+    "image": "../assets/gallery/photo_2026-09-18_20-16-05.jpg"
+  },
+  {
+    "id": "photo_2026-09-08_20-03-01",
+    "title": {
+      "es": "Vista general del huerto con tomateras y caléndulas",
+      "eu": "Baratzearen ikuspegi orokorra tomate-landareekin eta kalendulekin"
+    },
+    "description": {
+      "es": "Filas de tomateras entutoradas con tomates aún verdes y maduros, con caléndulas plantadas entre ellas y puerros y espárragos al fondo a la izquierda.",
+      "eu": "Euskarridun tomate-landare ilarak, oraindik berde eta heldu dauden tomateekin, tartean landatutako kalendulekin eta hondoan ezkerrean porruekin eta zainzuriekin."
+    },
+    "tags": [
+      "tomates",
+      "vista-general",
+      "calendulas",
+      "esparragos"
+    ],
+    "pubDate": 1788897781,
+    "alt": {
+      "es": "Vista general del huerto con tomateras y caléndulas",
+      "eu": "Baratzearen ikuspegi orokorra tomate-landareekin eta kalendulekin"
+    },
+    "image": "../assets/gallery/photo_2026-09-08_20-03-01.jpg"
+  },
+  {
+    "id": "photo_2026-09-05_11-50-41",
+    "title": {
+      "es": "Mesa de un concurso de variedades de tomate",
+      "eu": "Tomate-barietateen lehiaketa baten mahaia"
+    },
+    "description": {
+      "es": "Mesa larga cubierta con mantel azul donde se exponen decenas de tomates de distintas variedades, cada uno con su etiqueta, ante el público.",
+      "eu": "Mantel urdinez estalitako mahai luzea, non hainbat barietatetako hamaika tomate erakusten diren, bakoitza bere etiketarekin, publikoaren aurrean."
+    },
+    "tags": [
+      "tomates",
+      "concurso"
+    ],
+    "pubDate": 1788609041,
+    "alt": {
+      "es": "Mesa de un concurso de variedades de tomate",
+      "eu": "Tomate-barietateen lehiaketa baten mahaia"
+    },
+    "image": "../assets/gallery/photo_2026-09-05_11-50-41.jpg"
+  },
+  {
+    "id": "photo_2026-08-25_19-27-08",
+    "title": {
+      "es": "Stevias y artemisa annuas en maceta",
+      "eu": "Steviak eta artemisa annuak loreontzitan"
+    },
+    "description": {
+      "es": "",
+      "eu": ""
+    },
+    "tags": [
+      "stevia",
+      "artemisa-annua"
+    ],
+    "pubDate": 1787686028,
+    "alt": {
+      "es": "Stevias y artemisa annuas en maceta",
+      "eu": "teviak eta artemisa annuak loreontzitan"
+    },
+    "image": "../assets/gallery/photo_2026-08-25_19-27-08.jpg"
+  },
+  {
+    "id": "photo_2026-08-25_19-25-58",
+    "title": {
+      "es": "Operación invernadero. Limpieza de zarzas",
+      "eu": "Negutegi operazioa. Sartzakak garbituta"
+    },
+    "description": {
+      "es": "",
+      "eu": ""
+    },
+    "tags": [
+      "operacion-invernaderos"
+    ],
+    "pubDate": 1787685958,
+    "alt": {
+      "es": "Operación invernadero. Limpieza de zarzas",
+      "eu": "Negutegi operazioa. Sartzakak garbituta"
+    },
+    "image": "../assets/gallery/photo_2026-08-25_19-25-58.jpg"
+  },
+  {
+    "id": "photo_2026-08-10_21-16-36",
+    "title": {
+      "es": "Cosecha de tomates de varias variedades",
+      "eu": "Askotariko tomate barietateen uzta"
+    },
+    "description": {
+      "es": "Tomates de distintos tamaños y colores: mendigorria, igeldo, raf, cherry silvestre y cherry botella amarilla.",
+      "eu": "Neurri eta kolore ezberdinetako tomateak: mendigorria, igeldo, raf, mendiko txerria y txerri botila horia."
+    },
+    "tags": [
+      "tomates",
+      "cosecha"
+    ],
+    "pubDate": 1786396596,
+    "alt": {
+      "es": "Cosecha de tomates de varias variedades",
+      "eu": "Askotariko tomate barietateen uzta"
+    },
+    "image": "../assets/gallery/photo_2026-08-10_21-16-36.jpg"
+  },
+  {
     "id": "IMG_20260807_205715",
     "title": {
       "es": "Cosecha de tomates variados",
@@ -96,8 +325,7 @@
       "eu": "Berriki birlandatutako porru-ilara tomate-landareekin eta zainzuriekin, bat baia gorriekin."
     },
     "tags": [
-      "puerros",
-      "cosecha"
+      "puerros"
     ],
     "pubDate": 1785876225,
     "alt": {
