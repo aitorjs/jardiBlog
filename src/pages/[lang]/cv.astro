@@ -163,7 +163,36 @@ export function getStaticPaths() {
       data="01/2007 - 01/2025"
       title={t("cv.experience.infor.title")}
     >
-    <span set:html={t("cv.experience.infor.description")} />
+      <span set:html={t("cv.experience.infor.description")} />
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">{t("cv.moreEducation.name")}</div>
+  </div>
+
+  <div class="time-line-container mb-5">
+    <TimeLineElement
+      data="09/2026"
+      title={`<span>${t("cv.moreEducation.ia.title")}</span> <span class="font-normal text-lg">6 ${t("hours")}</span>`}
+    >
+      <a href="https://thebigschool.com/" target="_blank">BIG school</a>.
+    </TimeLineElement>
+
+    <TimeLineElement
+      data="05/2026"
+      title={`<span>${t("cv.moreEducation.basalandare.title")}</span> <span class="font-normal text-lg">8 ${t("hours")}</span>`}
+    >
+      <a href="https://fraisoroeskola.eus" target="_blank">Fraisoro eskola</a>,
+      Zizurkil.
+    </TimeLineElement>
+
+    <TimeLineElement
+      data="03/2026"
+      title={`<span>${t("cv.moreEducation.jangarriak.title")}</span> <span class="font-normal text-lg">12 ${t("hours")}</span>`}
+    >
+      <a href="https://fraisoroeskola.eus" target="_blank">Fraisoro eskola</a>,
+      Zizurkil.
     </TimeLineElement>
   </div>
 

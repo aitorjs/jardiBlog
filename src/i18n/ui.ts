@@ -7,6 +7,7 @@ export const defaultLang = "es";
 
 export const ui = {
   es: {
+    "hours": "horas",
     "404.title": "404: Página no encontrada",
     "404.description": "La página que esta intentando buscar, no se encuentra.",
     "404.goto": "Inicio",
@@ -55,6 +56,10 @@ export const ui = {
     "cv.experience.me.description": "- Diseñé, planifiqué e implementé una huerta ecológica de más de 100 m2 para autoconsumo, aplicando técnicas de agricultura sostenible.<br />- Gestioné el ciclo completo de producción: preparación del terreno, siembra, riego, abonado y control biológico de plagas.<br />- Optimicé la producción mediante criterios de eficiencia y mejora continua.<br/>- Más de 5 años de experiencia previa en una huerta de 25 m2, cultivando en condiciones de alta humedad y baja exposición solar.",
     "cv.experience.infor.title": "Desarrollador de software y gestor de proyectos",
     "cv.experience.infor.description": "- Más de 15 años de experiencia en desarrollo de software y gestión de proyectos tecnológicos.<br />- Planifiqué y coordiné proyectos, resolviendo problemas complejos con toma de decisiones basada en datos.<br />- Desarrollé competencias transferibles: disciplina, aprendizaje continuo y orientación a resultados.",
+    "cv.moreEducation.name": "Educación complementaria",
+    "cv.moreEducation.ia.title": "Iniciación a la inteligencia artificial.",
+    "cv.moreEducation.basalandare.title": "Geobiología y radiestesia en huerta, frutales y jardín.",
+    "cv.moreEducation.jangarriak.title": "Plantas silvestres, aromáticas y comestibles en la huerta.",
     "cv.languages.name": "Idiomas",
     "cv.languages.english": "Inglés (B1)",
     "cv.languages.spanish": "Castellano (nativo)",
@@ -93,6 +98,7 @@ export const ui = {
     "gallery.next": "Fotos anteriores",
   },
   eu: {
+    "hours": "ordu",
     "404.title": "404: Orrialdea ez da aurkitu",
     "404.description": "Bilatzen saiatzen ari zaren orria ez da aurkitzen.",
     "404.goto": "Hasiera",
@@ -141,6 +147,10 @@ export const ui = {
     "cv.experience.me.description": "- 100 m2 baino gehiagoko baratze ekologikoa diseinatu, planifikatu eta inplementatu nuen autokontsumorako, nekazaritza jasangarriko teknikak aplikatuz.<br />- Ekoizpen ziklo osoa kudeatu nuen: lurra prestatzea, ereitea, ureztatzea, ongarritzea eta izurriteen kontrol biologikoa.<br />- Ekoizpena optimizatu nuen efizientzia eta etengabeko hobekuntza irizpideen bidez.<br />- 5 urte baino gehiagoko esperientzia 25 m2-ko baratze batean, hezetasun handiko eta eguzki esposizio txikiko baldintzetan.",
     "cv.experience.infor.title": "Software garatzailea eta proiektu kudeatzailea",
     "cv.experience.infor.description": "- 15 urte baino gehiagoko esperientzia software garapenean eta proiektu teknologikoen kudeaketan.<br />- Proiektuak planifikatu eta koordinatu nituen, datuetan oinarritutako erabakiak hartuz arazo konplexuak konponduz.<br />- Gaitasun transferigarriak garatu nituen: diziplina, etengabeko ikaskuntza eta emaitzetarako orientazioa.",
+    "cv.moreEducation.name": "Hezkuntza osagarria",
+    "cv.moreEducation.ia.title": "Adimen artifizialaren hastapenak.",
+    "cv.moreEducation.basalandare.title": "Geobiologia eta radiestesia baratzean, fruta-arboletan eta lorategian.",
+    "cv.moreEducation.jangarriak.title": "Basalandare usaintsuak eta jangarriak baratzean.",
     "cv.languages.name": "Hizkuntzak",
     "cv.languages.english": "Ingelesa (B1)",
     "cv.languages.spanish": "Gaztelania (ama hizkuntza)",
