@@ -148,12 +148,12 @@
   {
     "id": "photo_2026-09-05_11-50-41",
     "title": {
-      "es": "Mesa de un concurso de variedades de tomate",
-      "eu": "Tomate-barietateen lehiaketa baten mahaia"
+      "es": "Mesa de concurso-exhibición de variedades de tomate autóctono",
+      "eu": "Bertako tomate barietateen lehiaketa-erakusketa mahaia"
     },
     "description": {
-      "es": "Mesa larga cubierta con mantel azul donde se exponen decenas de tomates de distintas variedades, cada uno con su etiqueta, ante el público.",
-      "eu": "Mantel urdinez estalitako mahai luzea, non hainbat barietatetako hamaika tomate erakusten diren, bakoitza bere etiketarekin, publikoaren aurrean."
+      "es": "Mesa donde se exponen tomates de distintas variedades locales, cada uno con su etiqueta. XIV concurso-exhibición de las Euskal Jaiak de Donostia, a cargo de la Cofradía Vasca de Gastronomía.",
+      "eu": "Tokiko askotariko tomateak erakusten duen mahaia, bakoitza bere etiketarekin. Donostiako Euskal Jaien XIV. lehiaketa-erakustaldia, Gastronomiaren Euskal Kofradiaren eskutik."
     },
     "tags": [
       "tomates",
@@ -161,8 +161,8 @@
     ],
     "pubDate": 1788609041,
     "alt": {
-      "es": "Mesa de un concurso de variedades de tomate",
-      "eu": "Tomate-barietateen lehiaketa baten mahaia"
+      "es": "Mesa de concurso-exhibición de variedades de tomate autóctono",
+      "eu": "Bertako tomate barietateen lehiaketa-erakusketa mahaia"
     },
     "image": "../assets/gallery/photo_2026-09-05_11-50-41.jpg"
   },
