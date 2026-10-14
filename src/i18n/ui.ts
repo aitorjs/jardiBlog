@@ -82,7 +82,7 @@ export const ui = {
     "home.gallery.text": "Últimas fotos",
     "home.gallery.text.label": "Ver foto",
     "home.working.text": "Trabajando en",
-    "home.working.on": "Operación invernadero - fase 2: Quitar raices 🫚",
+    "home.working.on": "operación invernadero - fase 3: Layar",
     "home.image.layarPuerroBrokoli.title": "Layar para puerros y brócoli",
     "home.image.layarPuerroBrokoli.description": "Preparando el huerto para plantar puerros y brócoli esta temporada.",
 
@@ -173,7 +173,7 @@ export const ui = {
     "home.gallery.text": "Azken argazkiak",
     "home.gallery.text.label": "Argazkia ikusi",
     "home.working.text": "Hontan lanean: ",
-    "home.working.on": "Mintegi operazioa - 2.fasea: Sustraiak kendu 🫚",
+    "home.working.on": "m integi operazioa - 3.fasea: Laiatu",
     "home.image.layarPuerroBrokoli.title": "Porruak eta brokolia laiatzea",
     "home.image.layarPuerroBrokoli.description": "Baratzea prestatzen porruak eta brokolia landatzeko denboraldi honetan.",
     "gallery.title": "Baratzezaintza eta lorezaintzako argazki galeria",
