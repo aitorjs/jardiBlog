@@ -162,7 +162,7 @@
     "pubDate": 1788609041,
     "alt": {
       "es": "Mesa de concurso-exhibición de variedades de tomate autóctono",
-      "eu": "Bertako tomate barietateen lehiaketa-erakusketa mahaia"
+      "eu": "Bertako tomate barietateen lehiaketa-erakusketa mahaia "
     },
     "image": "../assets/gallery/photo_2026-09-05_11-50-41.jpg"
   },
@@ -581,143 +581,6 @@
       "eu": "Tomate-landareen bankala"
     },
     "image": "../assets/gallery/photo_2026-07-27_12-23-12.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40 (2)",
-    "title": {
-      "es": "Vista general del huerto en Julio del 2025",
-      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
-    },
-    "description": {
-      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
-    },
-    "tags": [
-      "vista-general",
-      "tomate"
-    ],
-    "pubDate": 1785010660,
-    "alt": {
-      "es": "Vista general del huerto en Julio del 2025",
-      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-40",
-    "title": {
-      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
-      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
-    },
-    "description": {
-      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
-      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
-    },
-    "tags": [
-      "calabacin",
-      "acelga",
-      "tomtate"
-    ],
-    "pubDate": 1785010660,
-    "alt": {
-      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
-      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (5)",
-    "title": {
-      "es": "Alubias, maíz y calabacín",
-      "eu": "Baba-ilarrak, artoa eta kalabazina"
-    },
-    "description": {
-      "es": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
-      "eu": "Baba-ilarrak kanabera altuen gainean, artoa hondoan eta loretan dauden kalabazinak aurreko planoan."
-    },
-    "tags": [
-      "alubias",
-      "maíz",
-      "calabacín"
-    ],
-    "pubDate": 1785010659,
-    "alt": {
-      "es": "Alubias, maíz y calabacín",
-      "eu": "Baba-ilarrak, artoa eta kalabazina"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (4)",
-    "title": {
-      "es": "Calabaza, fresas y bidones de agua",
-      "eu": "Kalabaza, marrubiak eta ur bidoiak"
-    },
-    "description": {
-      "es": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
-      "eu": "Kalabaza-hosto handiak dituen eremua, ur bidoi urdinak, loreontzitako landareak dituen mahai bat marrubien artean, eta zaldi-gorotza estaltzen duen olana urdin bat."
-    },
-    "tags": [
-      "calabaza",
-      "fresa",
-      "agua"
-    ],
-    "pubDate": 1785010659,
-    "alt": {
-      "es": "Calabacines, acelgas y chupones de tomateras",
-      "eu": "Kalabazinak, zerbak eta tomate-landareen kimuak"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39 (3)",
-    "title": {
-      "es": "Pimientos, gindillas, alubias, maiz y calabacines",
-      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
-    },
-    "description": {
-      "es": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
-      "eu": "Baba-ilarrak kanaberekin, artoa hondoan eta kalabazin hostoak aurreko planoan, piper eta gindillekin."
-    },
-    "tags": [
-      "judías",
-      "calabacín",
-      "tomate",
-      "pimiento",
-      "gindilla",
-      "arriba"
-    ],
-    "pubDate": 1785010659,
-    "alt": {
-      "es": "Pimientos, gindillas, judías maiz y calabacines",
-      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
-  },
-  {
-    "id": "photo_2025-07-25_20-17-39",
-    "title": {
-      "es": "Vista general a finales de Julio del 2025",
-      "eu": "Ikuspegi orokorra 2025eko uztail bukaeran"
-    },
-    "description": {
-      "es": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
-      "eu": "Tomate-landareentzako kanabera-ilarak, hondoan letxuga-ilara bat piper eta gindillekin. Kalabazak aurreko planoan."
-    },
-    "tags": [
-      "tomate",
-      "lechuga",
-      "pimiento",
-      "gindilla",
-      "calabaza",
-      "vista-general"
-    ],
-    "pubDate": 1785010659,
-    "alt": {
-      "es": "Vista general del bancal",
-      "eu": "Bankalaren ikuspegi orokorra"
-    },
-    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
   },
   {
     "id": "enfermedades-fungicas",
@@ -1217,5 +1080,142 @@
       "eu": "Parterrea etxola zaharraren ondoan"
     },
     "image": "../assets/gallery/photo_2026-04-24_10-59-39.jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-40 (2)",
+    "title": {
+      "es": "Vista general del huerto en Julio del 2025",
+      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
+    },
+    "description": {
+      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
+    },
+    "tags": [
+      "vista-general",
+      "tomate"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Vista general del huerto en Julio del 2025",
+      "eu": "Baratzearen ikuspegi orokorra 2025eko uztailean"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40 (2).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-40",
+    "title": {
+      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
+      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
+    },
+    "description": {
+      "es": "Vista general de una parcela con hileras de tutores de bambú con tomateras y zonas de hierba alta.",
+      "eu": "Bambuzko euskarri-ilarak eta tomate-landareak dituen lursail baten ikuspegi orokorra, belar altuko eremuekin."
+    },
+    "tags": [
+      "calabacin",
+      "acelga",
+      "tomtate"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Bancal con calabacines, acelgas y chupones de tomateras",
+      "eu": "Kuiatxo, zerba eta tomate-landareen kimuz betetako bankala"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-40.jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (5)",
+    "title": {
+      "es": "Alubias, maíz y calabacín",
+      "eu": "Baba-ilarrak, artoa eta kalabazina"
+    },
+    "description": {
+      "es": "Alubias sobre cañas altas, maíz al fondo y calabacines en flor en primer plano.",
+      "eu": "Baba-ilarrak kanabera altuen gainean, artoa hondoan eta loretan dauden kalabazinak aurreko planoan."
+    },
+    "tags": [
+      "alubias",
+      "maíz",
+      "calabacín"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Alubias, maíz y calabacín",
+      "eu": "Baba-ilarrak, artoa eta kalabazina"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (5).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (4)",
+    "title": {
+      "es": "Calabaza, fresas y bidones de agua",
+      "eu": "Kalabaza, marrubiak eta ur bidoiak"
+    },
+    "description": {
+      "es": "Zona con grandes hojas de calabaza, bidones azules de agua, una mesa con plantones en maceta entre otras fresas y una lona azul cubriendo heces de caballo.",
+      "eu": "Kalabaza-hosto handiak dituen eremua, ur bidoi urdinak, loreontzitako landareak dituen mahai bat marrubien artean, eta zaldi-gorotza estaltzen duen olana urdin bat."
+    },
+    "tags": [
+      "calabaza",
+      "fresa",
+      "agua"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Calabacines, acelgas y chupones de tomateras",
+      "eu": "Kalabazinak, zerbak eta tomate-landareen kimuak"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (4).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39 (3)",
+    "title": {
+      "es": "Pimientos, gindillas, alubias, maiz y calabacines",
+      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
+    },
+    "description": {
+      "es": "Alubias con cañas, maíz al fondo y hojas de calabacín en primer término, con pimientos y gindillas.",
+      "eu": "Baba-ilarrak kanaberekin, artoa hondoan eta kalabazin hostoak aurreko planoan, piper eta gindillekin."
+    },
+    "tags": [
+      "judías",
+      "calabacín",
+      "tomate",
+      "pimiento",
+      "gindilla",
+      "arriba"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Pimientos, gindillas, judías maiz y calabacines",
+      "eu": "Piperrak, gindillak, baba-ilarrak, artoa eta kalabazinak"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39 (3).jpg"
+  },
+  {
+    "id": "photo_2025-07-25_20-17-39",
+    "title": {
+      "es": "Vista general a finales de Julio del 2025",
+      "eu": "Ikuspegi orokorra 2025eko uztail bukaeran"
+    },
+    "description": {
+      "es": "Hileras de cañas para tomateras, una hilera de lechugas al fondo con pimientos y gindillas. Calabazas en primer plano.",
+      "eu": "Tomate-landareentzako kanabera-ilarak, hondoan letxuga-ilara bat piper eta gindillekin. Kalabazak aurreko planoan."
+    },
+    "tags": [
+      "tomate",
+      "lechuga",
+      "pimiento",
+      "gindilla",
+      "calabaza",
+      "vista-general"
+    ],
+    "pubDate": 1753467460,
+    "alt": {
+      "es": "Vista general del bancal",
+      "eu": "Bankalaren ikuspegi orokorra"
+    },
+    "image": "../assets/gallery/photo_2025-07-25_20-17-39.jpg"
   }
 ]
