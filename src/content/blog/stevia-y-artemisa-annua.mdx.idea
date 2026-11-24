@@ -1,0 +1,61 @@
+---
+title:
+  es: "Stevia y artemisa annua en maceta"
+  eu: "Steviak eta artemisa annuak loreontzitan"
+description:
+  es: "Cómo tengo la stevia y la artemisa annua en maceta y cómo las vi empezar a florecer en septiembre."
+  eu: "Stevia eta artemisa annua loreontzietan nola ditudan eta irailean nola hasi ziren loratzen."
+pubDate: "Nov 22 2026"
+heroImage: "../../assets/gallery/photo_2026-08-25_19-27-08.jpg"
+tags: ["stevia", "artemisa-annua"]
+---
+import { Image } from "astro:assets";
+import Lightbox from "@components/Lightbox.astro";
+import PhotoLightboxGrid from "@components/PhotoLightboxGrid.astro";
+import photoStevia1 from "../../assets/gallery/photo_2026-08-25_19-27-08.jpg";
+import photoStevia2 from "../../assets/gallery/photo_2026-09-18_20-16-16.jpg";
+import photoStevia3 from "../../assets/gallery/photo_2026-09-18_20-16-05.jpg";
+
+export const photosStevia = [
+  {
+    image: photoStevia1,
+    title: "Stevias y artemisa annuas en maceta",
+    description: "Stevias y artemisas annuas en maceta a finales de agosto.",
+    tags: ["stevia", "artemisa-annua"],
+    pubDate: "Aug 25 2026",
+  },
+  {
+    image: photoStevia2,
+    title: "Stevia empezando la floración",
+    description: "Stevia con las primeras flores a mediados de septiembre.",
+    tags: ["stevia"],
+    pubDate: "Sep 18 2026",
+  },
+  {
+    image: photoStevia3,
+    title: "Artemisa annua empezando su floración",
+    description: "Artemisa annua con las primeras flores a mediados de septiembre.",
+    tags: ["artemisa-annua"],
+    pubDate: "Sep 18 2026",
+  },
+];
+
+export const photos = [...photosStevia];
+
+<Lightbox />
+
+Este año he tenido **stevia** y **artemisa annua** en maceta, y las he visto llegar hasta la floración.
+
+## En maceta
+
+A finales de agosto tenía varias stevias y artemisas annuas repartidas en macetas.
+
+## Floración
+
+A mediados de septiembre las dos habían empezado a florecer.
+
+<PhotoLightboxGrid photos={photosStevia} gap="gap-6" columns={2} />
+
+## Sobre la stevia
+
+Las pruebas de esquejado con stevia las conté en la entrada sobre poda apical y esquejado: el porcentaje de esquejes que me salieron bien fue bajo.

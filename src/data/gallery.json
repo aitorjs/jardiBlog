@@ -1,5 +1,270 @@
 [
   {
+    "id": "IMG_20261122_135937",
+    "title": {
+      "es": "Bancal acolchado con hojas secas",
+      "eu": "Hosto lehorrez estalitako bankala"
+    },
+    "description": {
+      "es": "Bancal delimitado con troncos y cubierto con hojas secas y restos de maíz a modo de acolchado, con pimientos al fondo.",
+      "eu": "Enborrez mugatutako bankala, hosto lehorrez eta artoaren hondarrez estalita lurra babesteko, hondoan piperrak."
+    },
+    "tags": [
+      "acolchado",
+      "pimientos",
+      "arriba"
+    ],
+    "pubDate": 1795355977,
+    "alt": {
+      "es": "Bancal acolchado con hojas secas",
+      "eu": "Hosto lehorrez estalitako bankala"
+    },
+    "image": "../assets/gallery/IMG_20261122_135937.jpg"
+  },
+  {
+    "id": "IMG_20261108_160850",
+    "title": {
+      "es": "Terreno labrado junto a la caseta",
+      "eu": "Etxolaren ondoan landutako lursaila"
+    },
+    "description": {
+      "es": "Terreno recién removido y rastrillado junto a la caseta, con un rollo de persianas blancas a la izquierda, una cubierta de plástico transparente a la derecha y plantas verdes al fondo.",
+      "eu": "Etxolaren ondoan berriki mugitutako eta arrastelatutako lursaila, ezkerrean pertsiana zurien errolo bat, eskuinean plastiko gardenezko estalkia eta hondoan landare berdeak."
+    },
+    "tags": [
+      "terreno",
+      "caseta"
+    ],
+    "pubDate": 1794154130,
+    "alt": {
+      "es": "Terreno labrado junto a la caseta",
+      "eu": "Etxolaren ondoan landutako lursaila"
+    },
+    "image": "../assets/gallery/IMG_20261108_160850.jpg"
+  },
+  {
+    "id": "IMG_20261108_160809",
+    "title": {
+      "es": "Tajete en flor junto a tomateras secas",
+      "eu": "Tajetea loretan tomate-landare lehorren ondoan"
+    },
+    "description": {
+      "es": "Mata de tajetes llena de flores naranjas junto a los restos secos de las tomateras atadas a las cañas.",
+      "eu": "Lore laranjaz betetako tajete-sorta, kanaberetara lotutako tomate-landareen hondar lehorren ondoan."
+    },
+    "tags": [
+      "tajete",
+      "tomates"
+    ],
+    "pubDate": 1794154089,
+    "alt": {
+      "es": "Tajete en flor junto a tomateras secas",
+      "eu": "Tajetea loretan tomate-landare lehorren ondoan"
+    },
+    "image": "../assets/gallery/IMG_20261108_160809.jpg"
+  },
+  {
+    "id": "IMG_20261108_160727",
+    "title": {
+      "es": "Vista general del huerto a principios de Noviembre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko azaro hasieran"
+    },
+    "description": {
+      "es": "Tierra removida en primer plano, con espárragos amarillentos, puerros y tomateras ya secas con caléndulas al fondo.",
+      "eu": "Lur mugitua aurreko planoan, hondoan zainzuri hori-horixkak, porruak eta tomate-landare lehorrak kalendulekin."
+    },
+    "tags": [
+      "vista-general",
+      "esparragos",
+      "puerros",
+      "calendulas"
+    ],
+    "pubDate": 1794154047,
+    "alt": {
+      "es": "Vista general del huerto a principios de Noviembre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko azaro hasieran"
+    },
+    "image": "../assets/gallery/IMG_20261108_160727.jpg"
+  },
+  {
+    "id": "IMG_20261108_160722",
+    "title": {
+      "es": "Bancal removido con la pala clavada",
+      "eu": "Bankal mugitua palarekin sartuta"
+    },
+    "description": {
+      "es": "Bancal recién removido con la pala clavada en la tierra y un barreño azul, con hojas caídas por encima y puerros, espárragos y tomateras al fondo.",
+      "eu": "Berriki mugitutako bankala, pala lurrean sartuta eta upel urdin batekin, gainean erori diren hostoekin eta hondoan porruak, zainzuriak eta tomate-landareak dituela."
+    },
+    "tags": [
+      "bancal",
+      "esparragos",
+      "puerros"
+    ],
+    "pubDate": 1794154042,
+    "alt": {
+      "es": "Bancal removido con la pala clavada",
+      "eu": "Bankal mugitua palarekin sartuta"
+    },
+    "image": "../assets/gallery/IMG_20261108_160722.jpg"
+  },
+  {
+    "id": "IMG_20261030_175345",
+    "title": {
+      "es": "Coles de bruselas y lombardas a finales de Octubre",
+      "eu": "Bruselako azak eta aza gorriak urri bukaeran"
+    },
+    "description": {
+      "es": "Coles bien desarrolladas junto al contenedor verde, con pimientos al fondo y el bancal cubierto de hojas secas a la derecha.",
+      "eu": "Ondo garatutako azak edukiontzi berdearen ondoan, hondoan piperrak eta eskuinean hosto lehorrez estalitako bankala."
+    },
+    "tags": [
+      "coles",
+      "lombarda",
+      "abajo"
+    ],
+    "pubDate": 1793382825,
+    "alt": {
+      "es": "Coles de bruselas y lombardas a finales de Octubre",
+      "eu": "Bruselako azak eta aza gorriak urri bukaeran"
+    },
+    "image": "../assets/gallery/IMG_20261030_175345.jpg"
+  },
+  {
+    "id": "IMG_20261030_175337",
+    "title": {
+      "es": "Coles y tomateras secas junto al contenedor",
+      "eu": "Azak eta tomate-landare lehorrak edukiontziaren ondoan"
+    },
+    "description": {
+      "es": "Contenedor verde entre las tomateras secas y las coles, con caléndulas todavía en flor.",
+      "eu": "Edukiontzi berdea tomate-landare lehorren eta azen artean, oraindik loretan dauden kalendulekin."
+    },
+    "tags": [
+      "coles",
+      "lombarda",
+      "tomates",
+      "calendulas",
+      "abajo"
+    ],
+    "pubDate": 1793382817,
+    "alt": {
+      "es": "Coles y tomateras secas junto al contenedor",
+      "eu": "Azak eta tomate-landare lehorrak edukiontziaren ondoan"
+    },
+    "image": "../assets/gallery/IMG_20261030_175337.jpg"
+  },
+  {
+    "id": "IMG_20261030_175312",
+    "title": {
+      "es": "Tomateras al final de temporada",
+      "eu": "Tomate-landareak denboraldi amaieran"
+    },
+    "description": {
+      "es": "Tomateras secas entutoradas con algún tomate verde, rodeadas de caléndulas en flor, junto al contenedor verde y las coles.",
+      "eu": "Tomate berde batzuk dituzten tomate-landare lehor euskarridunak, loretan dauden kalendulez inguratuta, edukiontzi berdearen eta azen ondoan."
+    },
+    "tags": [
+      "tomates",
+      "calendulas",
+      "abajo"
+    ],
+    "pubDate": 1793382792,
+    "alt": {
+      "es": "Tomateras al final de temporada",
+      "eu": "Tomate-landareak denboraldi amaieran"
+    },
+    "image": "../assets/gallery/IMG_20261030_175312.jpg"
+  },
+  {
+    "id": "IMG_20261030_175300",
+    "title": {
+      "es": "Vista general del huerto a finales de Octubre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko urri bukaeran"
+    },
+    "description": {
+      "es": "Vista general con la caseta al fondo a la izquierda, las cañas de las tomateras, el contenedor verde, caléndulas en flor y las coles a la derecha.",
+      "eu": "Ikuspegi orokorra, ezkerreko hondoan etxola, tomate-landareen kanabera, edukiontzi berdea, loretan dauden kalendulak eta eskuinean azak."
+    },
+    "tags": [
+      "vista-general",
+      "coles",
+      "tomates",
+      "abajo"
+    ],
+    "pubDate": 1793382780,
+    "alt": {
+      "es": "Vista general del huerto a finales de Octubre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko urri bukaeran"
+    },
+    "image": "../assets/gallery/IMG_20261030_175300.jpg"
+  },
+  {
+    "id": "IMG_20261026_181114",
+    "title": {
+      "es": "Terreno despejado con persianas apiladas",
+      "eu": "Lursail garbitua pilatutako pertsianekin"
+    },
+    "description": {
+      "es": "Terreno limpio y desbrozado con un barreño azul y persianas blancas apiladas, con tomateras, caléndulas y puerros al fondo.",
+      "eu": "Lursail garbitua eta sastrakarik gabea, upel urdin batekin eta pilatutako pertsiana zuriekin, hondoan tomate-landareak, kalendulak eta porruak dituela."
+    },
+    "tags": [
+      "terreno",
+      "vista-general"
+    ],
+    "pubDate": 1793038274,
+    "alt": {
+      "es": "Terreno despejado con persianas apiladas",
+      "eu": "Lursail garbitua pilatutako pertsianekin"
+    },
+    "image": "../assets/gallery/IMG_20261026_181114.jpg"
+  },
+  {
+    "id": "IMG_20260925_193329",
+    "title": {
+      "es": "Cosecha de tomates en caja",
+      "eu": "Tomateen uzta kaxan"
+    },
+    "description": {
+      "es": "Caja de plástico llena de tomates maduros de distintos tamaños, alguno con pequeños daños, y uno todavía verde.",
+      "eu": "Neurri ezberdinetako tomate helduz betetako plastikozko kaxa, batzuk kalte txikiekin, eta oraindik berde dagoen bat."
+    },
+    "tags": [
+      "tomates",
+      "cosecha"
+    ],
+    "pubDate": 1790364809,
+    "alt": {
+      "es": "Cosecha de tomates en caja",
+      "eu": "Tomateen uzta kaxan"
+    },
+    "image": "../assets/gallery/IMG_20260925_193329.jpg"
+  },
+  {
+    "id": "IMG_20260925_193249",
+    "title": {
+      "es": "Vista general del huerto a finales de Septiembre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko iraila bukaeran"
+    },
+    "description": {
+      "es": "Tomateras entutoradas con tomates aún verdes y alguno maduro, rodeadas de caléndulas y tajetes en plena floración.",
+      "eu": "Euskarridun tomate-landareak, oraindik berde dauden tomateekin eta heldu bat edo beste batekin, lore betean dauden kalendulez eta tajeteez inguratuta."
+    },
+    "tags": [
+      "vista-general",
+      "tomates",
+      "calendulas",
+      "tajete"
+    ],
+    "pubDate": 1790364769,
+    "alt": {
+      "es": "Vista general del huerto a finales de Septiembre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko iraila bukaeran"
+    },
+    "image": "../assets/gallery/IMG_20260925_193249.jpg"
+  },
+  {
     "id": "photo_2026-09-20_10-44-34",
     "title": {
       "es": "Oruga sobre una hoja de col agujereada",

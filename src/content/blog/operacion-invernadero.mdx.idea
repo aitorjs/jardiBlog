@@ -1,0 +1,49 @@
+---
+title:
+  es: "Operación invernadero"
+  eu: "Negutegi operazioa"
+description:
+  es: "Primeros pasos para montar un invernadero: cómo estaba el seto de zarzas en julio y la limpieza de zarzas que hice después."
+  eu: "Negutegi bat jartzeko lehen urratsak: sasi-hesia nolakoa zen uztailean eta ondoren egin nuen sasien garbiketa."
+pubDate: "Nov 22 2026"
+heroImage: "../../assets/gallery/IMG_20260719_184213.jpg"
+tags: ["invernadero", "zarzas"]
+---
+import { Image } from "astro:assets";
+import Lightbox from "@components/Lightbox.astro";
+import PhotoLightboxGrid from "@components/PhotoLightboxGrid.astro";
+import photoInvernadero1 from "../../assets/gallery/IMG_20260719_184213.jpg";
+import photoInvernadero2 from "../../assets/gallery/photo_2026-08-25_19-25-58.jpg";
+
+export const photosInvernadero = [
+  {
+    image: photoInvernadero1,
+    title: "Estado del seto antes de la operación invernadero",
+    description: "Matorral de zarzas donde irá el futuro invernadero.",
+    tags: ["invernadero"],
+    pubDate: "Jul 19 2026",
+  },
+  {
+    image: photoInvernadero2,
+    title: "Operación invernadero. Limpieza de zarzas",
+    description: "El mismo espacio después de limpiar las zarzas.",
+    tags: ["operacion-invernaderos"],
+    pubDate: "Aug 25 2026",
+  },
+];
+
+export const photos = [...photosInvernadero];
+
+<Lightbox />
+
+Voy a montar un **invernadero**, y el sitio donde irá está ocupado por un seto de **zarzas**. Así que la **operación invernadero** empieza por lo más básico: dejar el terreno libre.
+
+## El punto de partida
+
+A mediados de julio así estaba el seto: un matorral de zarzas justo donde irá el futuro invernadero.
+
+## Limpieza de zarzas
+
+Para el 25 de agosto ya tenía hecha la limpieza de zarzas. La diferencia con la primera foto se nota a simple vista.
+
+<PhotoLightboxGrid photos={photosInvernadero} gap="gap-6" columns={2} />
