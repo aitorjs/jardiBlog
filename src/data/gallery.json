@@ -2,12 +2,12 @@
   {
     "id": "IMG_20261122_135937",
     "title": {
-      "es": "Bancal acolchado con hojas secas",
-      "eu": "Hosto lehorrez estalitako bankala"
+      "es": "Vista general en noviembre del 2026",
+      "eu": "Baratzaren bista orokorra 2026ko azaroan"
     },
     "description": {
-      "es": "Bancal delimitado con troncos y cubierto con hojas secas y restos de maíz a modo de acolchado, con pimientos al fondo.",
-      "eu": "Enborrez mugatutako bankala, hosto lehorrez eta artoaren hondarrez estalita lurra babesteko, hondoan piperrak."
+      "es": "",
+      "eu": ""
     },
     "tags": [
       "acolchado",
@@ -89,12 +89,12 @@
   {
     "id": "IMG_20261108_160722",
     "title": {
-      "es": "Bancal removido con la pala clavada",
-      "eu": "Bankal mugitua palarekin sartuta"
+      "es": "Vista general del huerto a principios de Noviembre del 2026",
+      "eu": "Baratzearen ikuspegi orokorra 2026ko azaro hasieran"
     },
     "description": {
-      "es": "Bancal recién removido con la pala clavada en la tierra y un barreño azul, con hojas caídas por encima y puerros, espárragos y tomateras al fondo.",
-      "eu": "Berriki mugitutako bankala, pala lurrean sartuta eta upel urdin batekin, gainean erori diren hostoekin eta hondoan porruak, zainzuriak eta tomate-landareak dituela."
+      "es": "Espárragos amarillentos y tomateras ya secas con caléndulas.",
+      "eu": "Zainzuri hori-horixkak, tomate-landare lehorrak kalendulekin."
     },
     "tags": [
       "bancal",
@@ -104,7 +104,7 @@
     "pubDate": 1794154042,
     "alt": {
       "es": "Bancal removido con la pala clavada",
-      "eu": "Bankal mugitua palarekin sartuta"
+      "eu": "Baratzearen ikuspegi orokorra 2026ko azaro hasieran"
     },
     "image": "../assets/gallery/IMG_20261108_160722.jpg"
   },
@@ -115,8 +115,8 @@
       "eu": "Bruselako azak eta aza gorriak urri bukaeran"
     },
     "description": {
-      "es": "Coles bien desarrolladas junto al contenedor verde, con pimientos al fondo y el bancal cubierto de hojas secas a la derecha.",
-      "eu": "Ondo garatutako azak edukiontzi berdearen ondoan, hondoan piperrak eta eskuinean hosto lehorrez estalitako bankala."
+      "es": "Coles bien desarrolladas junto al contenedor verde, con tomateras.",
+      "eu": "Ondo garatutako azak edukiontzi berdearen ondoan, tomate-landarekin."
     },
     "tags": [
       "coles",
@@ -129,30 +129,6 @@
       "eu": "Bruselako azak eta aza gorriak urri bukaeran"
     },
     "image": "../assets/gallery/IMG_20261030_175345.jpg"
-  },
-  {
-    "id": "IMG_20261030_175337",
-    "title": {
-      "es": "Coles y tomateras secas junto al contenedor",
-      "eu": "Azak eta tomate-landare lehorrak edukiontziaren ondoan"
-    },
-    "description": {
-      "es": "Contenedor verde entre las tomateras secas y las coles, con caléndulas todavía en flor.",
-      "eu": "Edukiontzi berdea tomate-landare lehorren eta azen artean, oraindik loretan dauden kalendulekin."
-    },
-    "tags": [
-      "coles",
-      "lombarda",
-      "tomates",
-      "calendulas",
-      "abajo"
-    ],
-    "pubDate": 1793382817,
-    "alt": {
-      "es": "Coles y tomateras secas junto al contenedor",
-      "eu": "Azak eta tomate-landare lehorrak edukiontziaren ondoan"
-    },
-    "image": "../assets/gallery/IMG_20261030_175337.jpg"
   },
   {
     "id": "IMG_20261030_175312",
@@ -177,30 +153,29 @@
     "image": "../assets/gallery/IMG_20261030_175312.jpg"
   },
   {
-    "id": "IMG_20261030_175300",
+    "id": "IMG_20261030_175337",
     "title": {
-      "es": "Vista general del huerto a finales de Octubre del 2026",
-      "eu": "Baratzearen ikuspegi orokorra 2026ko urri bukaeran"
+      "es": "Bancal acolchado con hojas secas",
+      "eu": "Hosto lehorrez estalitako bankala"
     },
     "description": {
-      "es": "Vista general con la caseta al fondo a la izquierda, las cañas de las tomateras, el contenedor verde, caléndulas en flor y las coles a la derecha.",
-      "eu": "Ikuspegi orokorra, ezkerreko hondoan etxola, tomate-landareen kanabera, edukiontzi berdea, loretan dauden kalendulak eta eskuinean azak."
+      "es": "Bancal delimitado con troncos y cubierto con hojas secas y restos de maíz a modo de acolchado, con pimientos al fondo.",
+      "eu": "Enborrez mugatutako bankala, hosto lehorrez eta artoaren hondarrez estalita lurra babesteko, hondoan piperrak."
     },
     "tags": [
-      "vista-general",
-      "coles",
-      "tomates",
-      "abajo"
+      "acolchado",
+      "pimientos",
+      "arriba"
     ],
-    "pubDate": 1793382780,
+    "pubDate": 1793379217,
     "alt": {
-      "es": "Vista general del huerto a finales de Octubre del 2026",
-      "eu": "Baratzearen ikuspegi orokorra 2026ko urri bukaeran"
+      "es": "Bancal acolchado con hojas secas",
+      "eu": "Hosto lehorrez estalitako bankala"
     },
-    "image": "../assets/gallery/IMG_20261030_175300.jpg"
+    "image": "../assets/gallery/IMG_20261030_175337.jpg"
   },
   {
-    "id": "IMG_20261026_181114",
+    "id": "IMG_20260925_193329",
     "title": {
       "es": "Terreno despejado con persianas apiladas",
       "eu": "Lursail garbitua pilatutako pertsianekin"
@@ -221,7 +196,7 @@
     "image": "../assets/gallery/IMG_20261026_181114.jpg"
   },
   {
-    "id": "IMG_20260925_193329",
+    "id": "IMG_20261030_175300",
     "title": {
       "es": "Cosecha de tomates en caja",
       "eu": "Tomateen uzta kaxan"
